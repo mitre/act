@@ -15,5 +15,6 @@ CLAUDE.md
 session.md
 .vimrc
 
-# Backups
+# Temporary files and backups
 backup/
+temp/
