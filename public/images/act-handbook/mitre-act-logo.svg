@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 751 751" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-133,-59)">
+        <g transform="matrix(2.39447,0,0,1,2569,-266.966)">
+            <g id="MITRE-ACT-Logo" serif:id="MITRE ACT Logo" transform="matrix(0.417629,0,0,1,-1519.16,-823.835)">
+                <g id="ACT-Logo" serif:id="ACT Logo" transform="matrix(1,0,0,1,996.6,883.858)">
+                    <g id="ACT-Logo-shape-solid-white-background-" serif:id="ACT Logo shape solid white background " transform="matrix(0.451919,0,0,0.451919,188.799,248.804)">
+                        <path d="M866.463,1676.52C813.732,1690.01 758.482,1697.19 701.569,1697.19C335.124,1697.19 37.617,1399.68 37.617,1033.24C37.617,860.452 103.761,702.994 212.088,584.824C268.079,274.894 539.493,39.491 865.454,39.491C1190.46,39.491 1461.23,273.512 1518.32,582.093C1628.14,700.562 1695.31,859.117 1695.31,1033.24C1695.31,1399.68 1397.8,1697.19 1031.36,1697.19C974.445,1697.19 919.195,1690.01 866.463,1676.52Z" style="fill:white;stroke:white;stroke-width:2.21px;"/>
+                    </g>
+                    <g id="ACT-Logo-with-Transparency" serif:id="ACT Logo with Transparency" transform="matrix(0.451919,0,0,0.451919,188.799,248.804)">
+                        <g transform="matrix(1.56132,0,0,1.56132,-1309.53,-810.028)">
+                            <circle cx="1393.04" cy="969.353" r="425.25" style="fill:rgb(26,230,49);fill-opacity:0.5;"/>
+                        </g>
+                        <g transform="matrix(1.56132,0,0,1.56132,-1473.42,-480.234)">
+                            <circle cx="1393.04" cy="969.353" r="425.25" style="fill:rgb(242,13,13);fill-opacity:0.5;"/>
+                        </g>
+                        <g transform="matrix(1.56132,0,0,1.56132,-1143.63,-480.234)">
+                            <circle cx="1393.04" cy="969.353" r="425.25" style="fill:rgb(13,121,242);fill-opacity:0.5;"/>
+                        </g>
+                        <g transform="matrix(7.373,0,0,6.96466,-6315.64,-7882.29)">
+                            <g transform="matrix(66.5654,0,0,66.5654,1021.63,1310.73)">
+                            </g>
+                            <text x="917.882px" y="1310.73px" style="font-family:'abug'slife-debugged-Regular', 'a bug's life - debugged', sans-serif;font-size:66.565px;fill:white;stroke:white;stroke-width:0.31px;stroke-linecap:butt;stroke-miterlimit:2;">A<tspan x="961.046px 996.896px " y="1310.73px 1310.73px ">CT</tspan></text>
+                        </g>
+                    </g>
+                </g>
+                <g id="MITRE-text" serif:id="MITRE text" transform="matrix(0.234565,0,0,0.234565,1587.97,1432.98)">
+                    <g transform="matrix(1,0,0,1,-500,-191.667)">
+                        <g transform="matrix(4.16667,0,0,4.16667,0,0)">
+                            <g>
+                                <path d="M62.1,14.5L47.6,51.9L32.9,14.5L21.2,14.5L10,74.4L22,74.4L29.1,36.9L43,74.4L52,74.4L65.9,36.9L73,74.4L85.4,74.4L73.8,14.5L62.1,14.5Z" style="fill:white;fill-rule:nonzero;"/>
+                                <rect x="88.4" y="14.5" width="11.2" height="60" style="fill:white;"/>
+                                <path d="M103.3,14.5L103.3,24.2L116.5,24.2L116.5,74.4L127.7,74.4L127.7,24.2L140.9,24.2L140.9,14.5L103.3,14.5Z" style="fill:white;fill-rule:nonzero;"/>
+                                <g>
+                                    <path d="M155.8,74.4L144.6,74.4L144.6,14.4L171.3,14.4C172.4,14.4 174.2,14.8 176.7,15.5C179.2,16.2 181.7,17.9 184.2,20.4C186.7,23 187.9,26.7 187.9,31.6C187.9,36.7 186.6,40.6 183.9,43.2C181.2,45.9 178.5,47.5 175.7,48.2C173,49 170.9,49.3 169.6,49.3L189.6,74.3L176,74.3L157.7,49.5L157.7,38.9L168.9,38.8L169.5,38.8C171,38.8 172.6,38.2 174.1,37.1C175.8,35.8 176.6,34 176.6,31.7C176.6,29.6 175.9,27.9 174.5,26.5C173.1,25.2 171.2,24.5 168.8,24.5L155.7,24.5L155.7,74.4L155.8,74.4Z" style="fill:white;fill-rule:nonzero;"/>
+                                    <path d="M189.5,14.5L224.3,14.5L224.3,24.2L200.8,24.2L200.8,39.6L224,39.6L224,49.3L200.8,49.3L200.8,64.7L224.3,64.7L224.3,74.4L189.5,74.4L189.5,14.5Z" style="fill:white;fill-rule:nonzero;"/>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

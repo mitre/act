@@ -5,6 +5,7 @@
 Based on the handbook's structure, I recommend organizing the content as follows:
 
 ### Directory Structure
+
 ```
 content/
   1.docs/
@@ -30,41 +31,42 @@ content/
 ```
 
 ### Navigation Structure
+
 The `_navigation.yml` file would look something like:
 
 ```yaml
-title: 'ACT Handbook'
-icon: 'heroicons:book-open'
+title: "ACT Handbook"
+icon: "heroicons:book-open"
 items:
-  - title: 'Introduction'
-    to: '/docs/act-handbook/introduction'
+  - title: "Introduction"
+    to: "/docs/act-handbook/introduction"
     children:
-      - title: 'Handbook Purpose'
-        to: '/docs/act-handbook/introduction/handbook-purpose'
-      - title: 'How to Use This Handbook'
-        to: '/docs/act-handbook/introduction/how-to-use'
-      - title: 'Framework Overview'
-        to: '/docs/act-handbook/introduction/framework-overview'
-  - title: 'ACT Process'
-    to: '/docs/act-handbook/act-process'
+      - title: "Handbook Purpose"
+        to: "/docs/act-handbook/introduction/handbook-purpose"
+      - title: "How to Use This Handbook"
+        to: "/docs/act-handbook/introduction/how-to-use"
+      - title: "Framework Overview"
+        to: "/docs/act-handbook/introduction/framework-overview"
+  - title: "ACT Process"
+    to: "/docs/act-handbook/act-process"
     children:
-      - title: 'Phase 1: Planning'
-        to: '/docs/act-handbook/act-process/phase-1-planning'
-      - title: 'Phase 2: Assessment'
-        to: '/docs/act-handbook/act-process/phase-2-assessment'
-      - title: 'Phase 3: Reporting' 
-        to: '/docs/act-handbook/act-process/phase-3-reporting'
-      - title: 'Process Improvement'
-        to: '/docs/act-handbook/act-process/process-improvement'
-  - title: 'Attachments'
-    to: '/docs/act-handbook/attachments'
-  - title: 'Reference'
-    to: '/docs/act-handbook/reference'
+      - title: "Phase 1: Planning"
+        to: "/docs/act-handbook/act-process/phase-1-planning"
+      - title: "Phase 2: Assessment"
+        to: "/docs/act-handbook/act-process/phase-2-assessment"
+      - title: "Phase 3: Reporting"
+        to: "/docs/act-handbook/act-process/phase-3-reporting"
+      - title: "Process Improvement"
+        to: "/docs/act-handbook/act-process/process-improvement"
+  - title: "Attachments"
+    to: "/docs/act-handbook/attachments"
+  - title: "Reference"
+    to: "/docs/act-handbook/reference"
     children:
-      - title: 'Acronyms'
-        to: '/docs/act-handbook/reference/acronyms'
-      - title: 'Footnotes'
-        to: '/docs/act-handbook/reference/footnotes'
+      - title: "Acronyms"
+        to: "/docs/act-handbook/reference/acronyms"
+      - title: "Footnotes"
+        to: "/docs/act-handbook/reference/footnotes"
 ```
 
 ## Implementation Steps

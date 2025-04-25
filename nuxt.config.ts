@@ -39,7 +39,7 @@ export default defineNuxtConfig({
 
   ui: {
     global: true,
-    icons: ['lucide', 'simple-icons']
+    icons: ['lucide', 'simple-icons', 'heroicons', 'vscode-icons'],
   },
 
   // Nuxt Studio integration
@@ -47,6 +47,14 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio'
     }
+  },
+
+  // Image processing configuration - using a simpler approach
+  image: {
+    // Disable image optimization for now to avoid Sharp/IPX issues
+    // This will cause all images to be served directly from their source
+    provider: 'none',
+    dir: 'public'
   },
 
   eslint: {

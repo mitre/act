@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "1dd4d3e5e7bf43cd",
+    "type": "split",
+    "children": [
+      {
+        "id": "877968845220d65a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3e0dec7912fe8fa6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00 - MITRE ACT Assessment Handbook v1.0 DRAFT.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "00 - MITRE ACT Assessment Handbook v1.0 DRAFT"
+            }
+          },
+          {
+            "id": "88d7678a2245ed13",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.6"
+              },
+              "icon": "lucide-file",
+              "title": "Release Notes 1.7.6"
+            }
+          },
+          {
+            "id": "51a5710b46a1dc91",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "00 - MITRE ACT Assessment Handbook v1.0 DRAFT.md",
+                "mode": "preview",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "00 - MITRE ACT Assessment Handbook v1.0 DRAFT"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "983da44269173861",
+    "type": "split",
+    "children": [
+      {
+        "id": "68bbb3f573eefaad",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0a1245d51f080cdb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0f0678ce12acbdb9",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "76f403790c91ef76",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 430.5
+  },
+  "right": {
+    "id": "40335e10b7d053e6",
+    "type": "split",
+    "children": [
+      {
+        "id": "051270b7c4441ad5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "388c28d84deadc06",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "f00e44e9bd3c93b6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "32ba6b5675af68c4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "23347488cca0f0ab",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {},
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "cb9e53194dceda0d",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-importer:Open Importer": false
+    }
+  },
+  "active": "51a5710b46a1dc91",
+  "lastOpenFiles": [
+    "Images/ACT Logo.png",
+    "Images/ACT Hero Questions.jpg",
+    "Untitled.md",
+    "00 - MITRE ACT Assessment Handbook v1.0 DRAFT.md",
+    "Images/Workflow - Phase 2 - Security Assessment.png",
+    "Images/Workflow - Phase 2 - Risk Assessment.png",
+    "Images/Levels of Testing Rigor Table.pdf",
+    "Images/MITRE Logo.png",
+    "Images/Levels of Testing Rigor Table.png",
+    "Images/Workflow - Phase 3.png",
+    "Images/Workflow - Phase 1.png",
+    "Images/Assessment Boundary example.png",
+    "Images/Authorization Boundary example.png",
+    "Images/Security and Risk Assessment Phases Overview.png",
+    "Welcome.md",
+    "2.md",
+    "1.md",
+    "Images",
+    "HTML import"
+  ]
+}
