@@ -49,12 +49,42 @@ export default defineNuxtConfig({
     }
   },
 
-  // Image processing configuration - using a simpler approach
+  // Image configuration - maximum compatibility for Apple Silicon (M1/M2/M3)
   image: {
-    // Disable image optimization for now to avoid Sharp/IPX issues
-    // This will cause all images to be served directly from their source
+    // 'none' provider for maximum compatibility on Apple Silicon
+    // This disables image optimization but ensures reliable operation
     provider: 'none',
-    dir: 'public'
+    dir: 'public',
+
+    // Even without optimization, we still define responsive breakpoints
+    // for consistent image size references in NuxtImg/NuxtPicture components
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536
+    },
+    
+    // Force component registration with proper capitalization
+    components: {
+      nuxtImg: true,
+      nuxtPicture: true
+    }
+    
+    /* 
+    If you want to re-enable IPX in the future, replace with:
+    
+    provider: 'ipx',
+    dir: 'public',
+    sharp: {
+      useSharper: false
+    },
+    formats: ['webp', 'png', 'jpeg', 'jpg'],
+    quality: 80,
+    cacheDir: '.nuxt/image-cache'
+    */
   },
 
   eslint: {

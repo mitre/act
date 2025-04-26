@@ -6,6 +6,8 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "dev:log": "nuxt dev 2>&1 | tee logs/dev-$(date +%Y%m%d-%H%M%S).log",
+    "dev:clean": "nuxt dev --clean-cache",
+    "dev:clean-log": "nuxt dev --clean-cache 2>&1 | tee logs/dev-clean-$(date +%Y%m%d-%H%M%S).log",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -45,7 +47,12 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "better-sqlite3"
+      "@parcel/watcher",
+      "better-sqlite3",
+      "esbuild",
+      "sharp",
+      "unrs-resolver",
+      "vue-demi"
     ]
   },
   "packageManager": "pnpm@10.7.0"
