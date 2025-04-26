@@ -36,35 +36,37 @@ if (post.value.image?.src) {
 <template>
   <UContainer v-if="post">
     <UPageHeader
-      :title="post.title"
-      :description="post.description"
+      :title="post?.title || ''"
+      :description="post?.description || ''"
     >
-      <template #headline>
+      <template #headline v-if="post?.badge || post?.date">
         <UBadge
-          v-bind="post.badge"
+          v-if="post?.badge"
+          v-bind="post?.badge"
           variant="subtle"
         />
-        <span class="text-(--ui-text-muted)">&middot;</span>
-        <time class="text-(--ui-text-muted)">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+        <span v-if="post?.badge && post?.date" class="text-(--ui-text-muted)">&middot;</span>
+        <time v-if="post?.date" class="text-(--ui-text-muted)">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
       </template>
 
-      <div class="flex flex-wrap items-center gap-3 mt-4">
+      <div v-if="post?.authors?.length" class="flex flex-wrap items-center gap-3 mt-4">
         <UButton
-          v-for="(author, index) in post.authors"
+          v-for="(author, index) in post?.authors || []"
           :key="index"
-          :to="author.to"
+          :to="author?.to || '#'"
           color="neutral"
           variant="subtle"
           target="_blank"
           size="sm"
         >
           <UAvatar
+            v-if="author?.avatar"
             v-bind="author.avatar"
             alt="Author avatar"
             size="2xs"
           />
 
-          {{ author.name }}
+          {{ author?.name || 'Author' }}
         </UButton>
       </div>
     </UPageHeader>
@@ -78,14 +80,14 @@ if (post.value.image?.src) {
 
         <USeparator v-if="surround?.length" />
 
-        <UContentSurround :surround="surround" />
+        <UContentSurround v-if="surround?.length" :surround="surround || []" />
       </UPageBody>
 
       <template
         v-if="post?.body?.toc?.links?.length"
         #right
       >
-        <UContentToc :links="post.body.toc.links" />
+        <UContentToc :links="post?.body?.toc?.links || []" />
       </template>
     </UPage>
   </UContainer>

@@ -29,26 +29,26 @@ defineOgImageComponent('Saas')
 <template>
   <UPage v-if="page">
     <UPageHeader
-      :title="page.title"
-      :description="page.description"
+      :title="page?.title || ''"
+      :description="page?.description || ''"
     />
 
     <UPageBody>
       <ContentRenderer
-        v-if="page.body"
+        v-if="page?.body"
         :value="page"
       />
 
       <USeparator v-if="surround?.length" />
 
-      <UContentSurround :surround="surround" />
+      <UContentSurround v-if="surround?.length" :surround="surround || []" />
     </UPageBody>
 
     <template
       v-if="page?.body?.toc?.links?.length"
       #right
     >
-      <UContentToc :links="page.body.toc.links" />
+      <UContentToc :links="page?.body?.toc?.links || []" />
     </template>
   </UPage>
 </template>

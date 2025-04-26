@@ -17,7 +17,7 @@ const color = ref('#3B82F6')
     <UPageHero
       :title="page.title"
       :description="page.description"
-      :links="page.hero.links"
+      :links="page.hero?.links"
     >
       <template #top>
         <div class="absolute rounded-full dark:bg-(--ui-primary) blur-[300px] size-60 sm:size-80 transform -translate-x-1/2 left-1/2 -translate-y-80" />
@@ -25,10 +25,15 @@ const color = ref('#3B82F6')
         <LazyStarsBg />
       </template>
 
-      <PromotionalVideo />
+      <PromotionalVideo v-if="false" />
+      
+      <div class="flex items-center justify-center my-6">
+        <NuxtImg src="/images/act-handbook/mitre-act-logo.svg" alt="ACT Logo" class="h-48" />
+      </div>
     </UPageHero>
 
     <UPageSection
+      v-if="page.sections && page.sections.length"
       v-for="(section, index) in page.sections"
       :key="index"
       :title="section.title"
@@ -41,12 +46,13 @@ const color = ref('#3B82F6')
     </UPageSection>
 
     <UPageSection
+      v-if="page.features"
       :title="page.features.title"
       :description="page.features.description"
     >
       <UPageGrid>
         <UPageCard
-          v-for="(item, index) in page.features.items"
+          v-for="(item, index) in (page.features.items || [])"
           :key="index"
           v-bind="item"
           spotlight
@@ -55,6 +61,7 @@ const color = ref('#3B82F6')
     </UPageSection>
 
     <UPageSection
+      v-if="page.testimonials"
       id="testimonials"
       :headline="page.testimonials.headline"
       :title="page.testimonials.title"
@@ -62,7 +69,7 @@ const color = ref('#3B82F6')
     >
       <UPageColumns class="xl:columns-4">
         <UPageCard
-          v-for="(testimonial, index) in page.testimonials.items"
+          v-for="(testimonial, index) in (page.testimonials.items || [])"
           :key="index"
           variant="subtle"
           :description="testimonial.quote"
@@ -78,19 +85,10 @@ const color = ref('#3B82F6')
       </UPageColumns>
     </UPageSection>
 
-    <UPageSection title="Color Picker Demo" description="A demonstration of the Nuxt UI Color Picker component">
-      <div class="flex flex-col items-center gap-4 py-8">
-        <div class="flex items-center gap-4">
-          <div class="w-24 h-24 rounded-lg shadow-lg" :style="{ backgroundColor: color }"></div>
-          <UColorPicker v-model="color" />
-        </div>
-        <p class="text-lg font-medium">Selected color: {{ color }}</p>
-      </div>
-    </UPageSection>
-
-    <USeparator />
+    <USeparator v-if="page.cta" />
 
     <UPageCTA
+      v-if="page.cta"
       v-bind="page.cta"
       variant="naked"
       class="overflow-hidden"
