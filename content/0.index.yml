@@ -1,150 +1,110 @@
-title: Build your SaaS with Nuxt UI Pro
-description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes. It includes all primitives to build landing pages, documentations, blogs, dashboards or entire SaaS products.
+title: MITRE Adaptive Capabilities Testing (ACT)
+description: A comprehensive, flexible, repeatable, and measurable security and risk assessment framework that enables risk-based decision-making.
 seo:
-  title: Nuxt UI Pro - SaaS template
-  description: Nuxt UI Pro is a collection of premium Vue components built on top of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+  title: MITRE ACT - Adaptive Capabilities Testing
+  description: MITRE's Adaptive Capabilities Testing (ACT) framework provides a risk-driven approach to security assessment and authorization.
 navigation: false
 hero:
   links:
-    - label: Get started
-      icon: i-lucide-arrow-right
+    - label: Explore the Handbook
+      icon: i-heroicons-book-open
       trailing: true
-      to: https://ui.nuxt.com/getting-started/installation/pro/nuxt
-      target: _blank
+      to: "/docs/act-handbook"
       size: xl
-    - label: Use this template
+    - label: View on GitHub
       icon: i-simple-icons-github
       size: xl
       color: neutral
       variant: subtle
-      to: https://github.com/nuxt-ui-pro/saas
+      to: "https://github.com/mitre/act"
       target: _blank
 sections:
-  - title: Enterprise-Grade Solutions
-    description: Transform your business with our comprehensive suite of tools. Built for scale, security, and seamless integration, our platform empowers teams to achieve more while maintaining complete control.
-    id: features
+  - title: Risk-Based Decision Making
+    description: ACT revolutionizes security assessment by focusing on risk at the capability level rather than compliance with technical requirements.
+    id: advantages
     orientation: horizontal
     features:
-      - name: Developer-First
-        description: Built by developers for developers, with extensive API documentation and flexible integration options.
-        icon: i-lucide-cog
-      - name: 99.9% Uptime
-        description: Enterprise-grade infrastructure with guaranteed reliability and automatic failover protection.
-        icon: i-lucide-check
-      - name: Bank-Level Security
-        description: SOC 2 Type II certified with end-to-end encryption and advanced threat detection.
-        icon: i-lucide-lock
-  - title: Optimized for Growth
-    description: Scale your business confidently with our enterprise-ready platform. From startups to Fortune 500 companies, we provide the tools and support you need to succeed.
+      - name: Risk-Driven
+        description: Focuses on identifying and analyzing risks at the capability level rather than technical compliance.
+        icon: i-heroicons-chart-bar
+      - name: Capability-Oriented
+        description: Emphasizes system capabilities and objectives rather than specific implementation requirements.
+        icon: i-heroicons-cube
+      - name: Comprehensive Analysis
+        description: Considers all available risk information sources, not just control compliance status.
+        icon: i-heroicons-document-chart-bar
+  - title: Systematic Three-Phase Approach
+    description: ACT implements a structured methodology that ensures comprehensive security assessment and meaningful results.
     orientation: horizontal
     reverse: true
     features:
-      - name: Lightning Fast
-        description: Global CDN with sub-100ms latency and automatic performance optimization.
-        icon: i-lucide-rocket
-      - name: Predictable Pricing
-        description: Transparent, usage-based pricing with no hidden fees and volume discounts.
-        icon: i-lucide-circle-dollar-sign
-      - name: Infinite Scale
-        description: Auto-scaling architecture handles millions of requests without breaking a sweat.
-        icon: i-lucide-chart-bar
+      - name: Planning
+        description: Establish scope, develop methodology, create test plan, and prepare the assessment team.
+        icon: i-heroicons-clipboard-document-list
+      - name: Assessment
+        description: Execute security testing and risk analysis activities according to the assessment plan.
+        icon: i-heroicons-magnifying-glass
+      - name: Reporting
+        description: Document findings, develop actionable recommendations, and present results.
+        icon: i-heroicons-document-text
 features:
-  title: Features That Set Us Apart
-  description: Our platform combines enterprise-grade reliability with developer-friendly features, providing everything you need to build and scale your applications.
+  title: Benefits of ACT
+  description: ACT provides organizations with a more effective approach to security assessment that drives better decision-making and resource allocation.
   items:
-    - title: Developer Experience
-      description: Comprehensive documentation, powerful CLI tools, and intuitive APIs that make development a joy.
-      icon: i-lucide-cog
-    - title: Enterprise Ready
-      description: SOC 2 Type II certified, GDPR compliant, with 24/7 enterprise support and dedicated success managers.
-      icon: i-lucide-check
-    - title: Advanced Security
-      description: Multi-factor authentication, role-based access control, and audit logs keep your data protected.
-      icon: i-lucide-lock
-    - title: Global Performance
-      description: Edge computing network spans 200+ locations ensuring lightning-fast response times worldwide.
-      icon: i-lucide-rocket
-    - title: Flexible Pricing
-      description: Pay only for what you use with transparent pricing and no long-term commitments required.
-      icon: i-lucide-circle-dollar-sign
-    - title: Infinite Scalability
-      description: Built on cloud-native architecture that automatically scales to meet any demand.
-      icon: i-lucide-chart-bar
-testimonials:
-  headline: Customer Success Stories
-  title: Trusted by Industry Leaders
-  description: Join thousands of companies worldwide who have transformed their digital presence with our platform.
-  items:
-    - quote: The developer experience is unmatched. We migrated our entire infrastructure in weeks instead of months, and our team's productivity has increased dramatically. The TypeScript support and component library saved us months of development time.
-      user:
-        name: Sarah Chen
-        description: CTO at TechScale Solutions
-        avatar:
-          src: https://i.pravatar.cc/120?img=1
-    - quote: After implementing the edge computing features, our global application response times dropped by 70%. Our European and Asian markets saw immediate improvements in user engagement and conversion rates.
-      user:
-        name: Marcus Rodriguez
-        description: VP of Engineering at DataFlow
-        avatar:
-          src: https://i.pravatar.cc/120?img=7
-    - quote: The platform's security features gave us peace of mind during our SOC 2 certification. The built-in compliance tools and audit logs made the process seamless.
-      user:
-        name: David Kumar
-        description: Security Director at SecureStack
-        avatar:
-          src: https://i.pravatar.cc/120?img=3
-    - quote: During our Black Friday sale, we handled 15x our normal traffic without a hitch. The auto-scaling features worked flawlessly, and our monitoring dashboard gave us real-time insights throughout the event.
-      user:
-        name: Emily Zhang
-        description: Lead Architect at ScaleForce
-        avatar:
-          src: https://i.pravatar.cc/120?img=5
-    - quote: The support team goes above and beyond. They helped us optimize our CI/CD pipeline and suggested performance improvements that reduced our build times by 45%.
-      user:
-        name: James Wilson
-        description: DevOps Lead at CloudPro
-        avatar:
-          src: https://i.pravatar.cc/120?img=8
-    - quote: Switching to this platform reduced our infrastructure costs by 40% while improving performance. The cost savings alone paid for the investment within the first quarter.
-      user:
-        name: Lisa Patel
-        description: CEO at AutoScale
-        avatar:
-          src: https://i.pravatar.cc/120?img=9
-    - quote: The accessibility features and responsive components helped us achieve WCAG 2.1 compliance with minimal custom development. Our site now scores 100 on Lighthouse accessibility metrics.
-      user:
-        name: Michael Torres
-        description: Frontend Lead at AccessFirst
-        avatar:
-          src: https://i.pravatar.cc/120?img=11
-    - quote: We serve millions of API requests daily, and the real-time analytics and monitoring tools have been invaluable for optimizing our performance and identifying bottlenecks.
-      user:
-        name: Rachel Kim
-        description: Performance Engineer at APIHub
-        avatar:
-          src: https://i.pravatar.cc/120?img=10
-    - quote: The component library and design system tools helped us maintain consistency across our 20+ micro-frontends. Our development velocity has never been better.
-      user:
-        name: Thomas Weber
-        description: UI Architecture Lead at DesignScale
-        avatar:
-          src: https://i.pravatar.cc/120?img=12
-    - quote: Integration with our existing tools was seamless. The webhooks and API documentation made it easy to automate our workflows and enhance our development pipeline.
-      user:
-        name: Sophia Martinez
-        description: Integration Specialist at TechFlow
-        avatar:
-          src: https://i.pravatar.cc/120?img=14
+    - title: Enhanced Risk Visibility
+      description: Provides leadership with a clearer picture of real security risks to mission and business.
+      icon: i-heroicons-eye
+    - title: RMF Alignment
+      description: Directly supports NIST Risk Management Framework objectives while reducing documentation burden.
+      icon: i-heroicons-check-badge
+    - title: Actionable Insights
+      description: Delivers findings and recommendations that are immediately useful for decision makers.
+      icon: i-heroicons-light-bulb
+    - title: Compliance Efficacy
+      description: Evaluates how well compliance activities actually reduce risk rather than just checking boxes.
+      icon: i-heroicons-clipboard-document-check
+    - title: Resource Optimization
+      description: Helps focus security resources on the areas with highest risk reduction potential.
+      icon: i-heroicons-arrow-trending-up
+    - title: Adaptable Methodology
+      description: Flexible approach that can be tailored to diverse organizational contexts and objectives.
+      icon: i-heroicons-adjustments-horizontal
+# DEVELOPER NOTE:
+# Example testimonials section below - uncomment and modify as needed
+# When left commented out, the page template will automatically hide this section
+# To use, remove the '#' characters and adjust content appropriately
+#
+# testimonials:
+#   headline: Applications of ACT
+#   title: Real-World Implementation
+#   description: ACT has been successfully implemented across various organizations and contexts.
+#   items:
+#     - quote: The ACT framework allowed our organization to shift from a compliance-focused approach to a risk-driven security program that better aligns with our business objectives.
+#       user:
+#         name: Security Leader
+#         description: Federal Government Agency
+#         avatar:
+#           src: /images/act-handbook/mitre-logo.png
+#     - quote: By adopting the ACT methodology, we were able to prioritize security investments based on actual risk reduction potential rather than just meeting compliance requirements.
+#       user:
+#         name: CISO
+#         description: Critical Infrastructure Organization
+#         avatar:
+#           src: /images/act-handbook/mitre-logo.png
+#     - quote: ACT provided a structured approach that helped us integrate findings from various security assessments into a unified risk picture for executive decision-making.
+#       user:
+#         name: Program Manager
+#         description: Defense Contractor
+#         avatar:
+#           src: /images/act-handbook/mitre-logo.png
 cta:
-  title: Start with Nuxt UI Pro today!
-  description: Nuxt UI Pro is free in development, but you need a license to use it in production.
+  title: Start your ACT journey today
+  description: Explore the comprehensive ACT handbook to learn how to implement risk-driven security assessment in your organization.
   links:
-    - label: Buy now
-      to: https://ui.nuxt.com/pro/purchase
-      target: _blank
-      icon: i-lucide-shopping-cart
-    - label: License
-      to: https://ui.nuxt.com/getting-started/license
-      trailingIcon: i-lucide-circle-help
-      target: _blank
+    - label: Read the Handbook
+      to: "/docs/act-handbook"
+      icon: i-heroicons-book-open
+    - label: Contact the ACT Team
+      to: "mailto:act@mitre.org"
       variant: subtle
+      icon: i-heroicons-envelope
