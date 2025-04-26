@@ -265,6 +265,22 @@ Apple Silicon Macs (M1/M2/M3) have specific considerations, particularly for nat
 
 ## Common Issues and Solutions
 
+### Sourcemap Warning During Build
+
+You may see this warning during build:
+
+```
+[warn] [plugin @tailwindcss/vite:generate:build] Sourcemap is likely to be incorrect: a plugin (@tailwindcss/vite:generate:build) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help
+```
+
+**What's happening**: TailwindCSS v4.0.17 with Vite doesn't generate proper sourcemaps for CSS transformations. This is a known issue with Tailwind CSS v4 when used with Vite and Nuxt.
+
+**Impact**: This is just a warning and doesn't affect the functionality of your application. The main impact is that developer tools may not show accurate line numbers for CSS in development.
+
+**Status**: This issue is being tracked by the Tailwind CSS team and will be resolved in future updates.
+
+**Workaround**: This warning can be safely ignored as it doesn't impact functionality.
+
 ### Image Handling
 
 Images with spaces in filenames don't display properly in Nuxt Content. Always:
