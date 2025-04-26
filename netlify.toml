@@ -6,10 +6,6 @@
   publish = ".output/public"
   environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
 
-# Use Node.js 22
-[build.environment]
-  NODE_VERSION = "22"
-
 # Optional: Configure redirects for SPA routing
 [[redirects]]
   from = "/*"
