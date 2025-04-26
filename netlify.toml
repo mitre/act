@@ -1,0 +1,17 @@
+# Netlify configuration for MITRE ACT website
+# Increases memory allocation to prevent JavaScript heap out of memory errors
+
+[build]
+  command = "pnpm run build"
+  publish = ".output/public"
+  environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
+
+# Use Node.js 22
+[build.environment]
+  NODE_VERSION = "22"
+
+# Optional: Configure redirects for SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
