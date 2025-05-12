@@ -1,6 +1,6 @@
 # MITRE Adaptive Capabilities Testing (ACT)
 
-The MITRE Adaptive Capabilities Testing (ACT) framework is a comprehensive approach to security and risk assessment that facilitates and encourages risk-based decision-making. This repository contains the web implementation of the ACT program, including the ACT Handbook, methodology documentation, and supporting resources.
+The MITRE Adaptive Capabilities Testing (ACT) framework is a comprehensive approach to security and risk assessment that facilitates and encourages risk-based decision-making.
 
 ![MITRE ACT](./public/images/MITRE-ACT-Arrow-Square-600.png)
 
