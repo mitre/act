@@ -2,11 +2,7 @@
 
 The MITRE Adaptive Capabilities Testing (ACT) framework is a comprehensive approach to security and risk assessment that facilitates and encourages risk-based decision-making. This repository contains the web implementation of the ACT program, including the ACT Handbook, methodology documentation, and supporting resources.
 
-[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
-[![MITRE](https://img.shields.io/badge/MITRE-ACT%20Framework-003764)](https://www.mitre.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-4.5+-blue.svg)](https://www.typescriptlang.org/)
-
-![MITRE ACT](./public/images/act-handbook/mitre-act-logo.png)
+![MITRE ACT](./public/images/act-handbook/Arrow-ACT-Outline-Background-Square-600.png)
 
 ## About ACT
 
