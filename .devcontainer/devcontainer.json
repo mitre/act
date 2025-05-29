@@ -39,6 +39,8 @@
   // Environment variables
   "remoteEnv": {
     "NODE_ENV": "development",
-    "NUXT_UI_PRO_LICENSE": "${localEnv:NUXT_UI_PRO_LICENSE}"
+    "NUXT_UI_PRO_LICENSE": "${localEnv:NUXT_UI_PRO_LICENSE}",
+    "ORYX_DISABLE_NODE_AUTODETECT": "true",
+    "ORYX_SKIP_NODE_BUILD": "true"
   }
 }
