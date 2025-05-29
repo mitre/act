@@ -22,17 +22,13 @@ export COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 corepack enable
 corepack prepare pnpm@latest --activate
 
-# Install dependencies
+# Install dependencies (with scripts to avoid approval prompts)
 echo "📦 Installing dependencies..."
 pnpm install --frozen-lockfile
 
-# Approve safe build scripts
-echo "✅ Approving build scripts..."
-echo "@tailwindcss/oxide" | pnpm approve-builds
-
-# Rebuild native modules
+# Rebuild native modules and other necessary packages
 echo "🔧 Rebuilding native modules..."
-pnpm rebuild
+pnpm rebuild better-sqlite3 sharp @tailwindcss/oxide
 
 # Create .env file if it doesn't exist and add the Nuxt UI Pro license if available
 if [ ! -f .env ] && [ -n "$NUXT_UI_PRO_LICENSE" ]; then
