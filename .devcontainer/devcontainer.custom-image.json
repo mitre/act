@@ -1,0 +1,95 @@
+{
+  "name": "MITRE ACT Nuxt Development",
+  
+  // Use Node.js 22 devcontainer image
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+  
+  // Features to add to the dev container
+  "features": {
+    // Node.js feature with pnpm support
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "22"
+    },
+    // Common utilities
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "upgradePackages": true
+    },
+    // Git support
+    "ghcr.io/devcontainers/features/git:1": {
+      "ppa": true,
+      "version": "latest"
+    }
+  },
+
+  // Configure pnpm and install dependencies
+  "postCreateCommand": "npm install -g pnpm@latest && pnpm install --frozen-lockfile && pnpm rebuild",
+  
+  // Start dev server
+  "postStartCommand": "pnpm run dev",
+  
+  // Port forwarding - auto-forward all ports that the app opens
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Nuxt Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+  
+  // Automatically forward all detected ports
+  "otherPortsAttributes": {
+    "onAutoForward": "silent"
+  },
+
+  // VS Code specific settings
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "typescript.preferences.importModuleSpecifier": "relative",
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "npm.packageManager": "pnpm"
+      },
+      "extensions": [
+        // Vue and Nuxt
+        "Vue.volar",
+        "nuxtr.nuxtr-vscode",
+        "nuxt.mdc",
+        
+        // Code quality
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        
+        // Utilities
+        "bradlc.vscode-tailwindcss",
+        "formulahendry.auto-rename-tag",
+        "eamodio.gitlens",
+        "usernamehw.errorlens",
+        
+        // Icons and themes
+        "PKief.material-icon-theme",
+        "antfu.icons-carbon"
+      ]
+    }
+  },
+  
+  // Container environment variables
+  "remoteEnv": {
+    "NODE_ENV": "development",
+    "NUXT_UI_PRO_LICENSE": "${localEnv:NUXT_UI_PRO_LICENSE}"
+  },
+  
+  // Mounts - persist pnpm store between rebuilds
+  "mounts": [
+    "source=${localWorkspaceFolderBasename}-pnpm-store,target=/home/node/.local/share/pnpm/store,type=volume"
+  ],
+  
+  // Run as non-root user
+  "remoteUser": "node"
+}
