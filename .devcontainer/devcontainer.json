@@ -23,11 +23,11 @@
     }
   },
 
-  // Use pnpm and install dependencies, rebuild native modules
-  "postCreateCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm rebuild better-sqlite3 sharp",
+  // Configure pnpm and install dependencies
+  "postCreateCommand": "npm install -g pnpm@latest && pnpm install --frozen-lockfile && pnpm rebuild",
   
-  // Ensure native modules are rebuilt before starting dev server
-  "postStartCommand": "pnpm rebuild better-sqlite3 && pnpm run dev",
+  // Start dev server
+  "postStartCommand": "pnpm run dev",
   
   // Port forwarding - auto-forward all ports that the app opens
   "forwardPorts": [3000],
