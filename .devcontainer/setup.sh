@@ -3,13 +3,18 @@ set -e
 
 echo "🚀 Setting up MITRE ACT development environment..."
 
-# Install Node.js 22 using nvm (already available in default Codespaces image)
+# The universal image has nvm at /usr/local/share/nvm
+export NVM_DIR="/usr/local/share/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+# Install Node.js 22
 echo "📦 Installing Node.js 22..."
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 nvm install 22
 nvm use 22
 nvm alias default 22
+
+# Verify Node installation
+echo "✅ Node.js version: $(node -v)"
 
 # Enable corepack for pnpm
 echo "📦 Enabling pnpm via corepack..."
