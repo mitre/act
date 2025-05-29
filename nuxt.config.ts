@@ -37,9 +37,10 @@ export default defineNuxtConfig({
     }
   },
 
-  ui: {
-    global: true,
-    icons: ['lucide', 'simple-icons', 'heroicons', 'vscode-icons'],
+  ui: {},
+
+  icon: {
+    collections: ['lucide', 'simple-icons', 'heroicons', 'vscode-icons']
   },
 
   // Nuxt Studio integration

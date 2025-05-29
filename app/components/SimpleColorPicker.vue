@@ -5,6 +5,7 @@
 const appConfig = useAppConfig()
 
 // Primary color options
+type UIColor = 'primary' | 'secondary' | 'neutral' | 'error' | 'warning' | 'success' | 'info'
 const colors = [
   { name: 'blue', label: 'Blue' },
   { name: 'green', label: 'Green' },
@@ -18,7 +19,7 @@ const primaryColor = computed({
   get() {
     return appConfig.ui.colors.primary || 'blue'
   },
-  set(color) {
+  set(color: string) {
     appConfig.ui.colors.primary = color
     if (process.client) {
       localStorage.setItem('nuxt-ui-primary', color)
@@ -27,9 +28,9 @@ const primaryColor = computed({
 })
 
 // Reference to menu
-const menuRef = ref(null)
+const menuRef = ref<HTMLDivElement>()
 // Reference to button
-const buttonRef = ref(null)
+const buttonRef = ref<HTMLButtonElement>()
 
 // Toggle menu visibility
 function toggleMenu() {
@@ -46,14 +47,14 @@ function hideMenu() {
 }
 
 // Set color and hide menu
-function setColor(color) {
+function setColor(color: string) {
   primaryColor.value = color
   hideMenu()
 }
 
 // Handle clicks outside menu
-function onClickOutside(event) {
-  if (buttonRef.value && !buttonRef.value.contains(event.target) &&
+function onClickOutside(event: MouseEvent) {
+  if (buttonRef.value && event.target instanceof Node && !buttonRef.value.contains(event.target) &&
       menuRef.value && !menuRef.value.contains(event.target)) {
     hideMenu()
   }
@@ -97,7 +98,7 @@ onUnmounted(() => {
         <UButton
           v-for="color in colors"
           :key="color.name"
-          :color="color.name"
+          :color="color.name as UIColor"
           :variant="color.name === primaryColor ? 'solid' : 'ghost'"
           size="xs"
           class="w-full flex justify-between items-center"

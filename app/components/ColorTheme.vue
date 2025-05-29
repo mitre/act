@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // Available colors for selection
-const colors = ['blue', 'green', 'red', 'purple', 'orange']
+type UIColor = 'primary' | 'secondary' | 'neutral' | 'error' | 'warning' | 'success' | 'info'
+const colors: string[] = ['blue', 'green', 'red', 'purple', 'orange']
 
 // Get app config
 const appConfig = useAppConfig()
@@ -9,7 +10,7 @@ const appConfig = useAppConfig()
 const primaryColor = ref(appConfig.ui?.colors?.primary || 'blue')
 
 // Function to update primary color
-function updateColor(color) {
+function updateColor(color: string) {
   primaryColor.value = color
   
   if (process.client) {
@@ -36,7 +37,7 @@ function resetColor() {
     <!-- Color selector dropdown -->
     <UDropdownMenu>
       <UButton
-        color="gray"
+        color="neutral"
         variant="ghost"
         icon="i-lucide-palette"
       />
@@ -49,7 +50,7 @@ function resetColor() {
             <UButton 
               v-for="color in colors"
               :key="color"
-              :color="color"
+              :color="color as any"
               size="xs"
               variant="solid"
               class="w-6 h-6 p-0"

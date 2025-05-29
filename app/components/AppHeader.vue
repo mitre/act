@@ -1,17 +1,16 @@
 <script setup lang="ts">
 const route = useRoute()
 
-const items = computed(() => [{
+const items = [{
   label: 'Docs',
-  to: '/docs',
-  active: route.path.startsWith('/docs')
+  to: '/docs'
 }, {
   label: 'Pricing',
   to: '/pricing'
 }, {
   label: 'Blog',
   to: '/blog'
-}])
+}]
 
 // Access theme state using useState
 const themeState = useState('nuxt-ui-theme')
