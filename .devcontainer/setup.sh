@@ -36,4 +36,4 @@ if [ ! -f .env ] && [ -n "$NUXT_UI_PRO_LICENSE" ]; then
     echo "NUXT_UI_PRO_LICENSE=$NUXT_UI_PRO_LICENSE" > .env
 fi
 
-echo "✅ Setup complete! Run 'pnpm dev' to start the development server."
+echo "✅ Setup complete! Run 'pnpm run dev' to start the development server."

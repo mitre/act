@@ -7,21 +7,12 @@
   // Run our setup script
   "postCreateCommand": "bash .devcontainer/setup.sh",
   
-  // Start dev server
-  "postStartCommand": "pnpm run dev",
+  // Welcome message - no auto-start
+  "postStartCommand": "echo '✨ Codespace is ready! Run \"pnpm run dev\" to start the development server.'",
   
-  // Port forwarding - auto-forward all ports
-  "forwardPorts": [3000],
-  "portsAttributes": {
-    "3000": {
-      "label": "Nuxt Dev Server",
-      "onAutoForward": "notify"
-    }
-  },
-  
-  // Auto-forward any other ports
+  // Auto-forward all ports that the application opens
   "otherPortsAttributes": {
-    "onAutoForward": "silent"
+    "onAutoForward": "notify"
   },
 
   // VS Code settings
