@@ -26,6 +26,10 @@ corepack prepare pnpm@latest --activate
 echo "📦 Installing dependencies..."
 pnpm install --frozen-lockfile
 
+# Approve safe build scripts
+echo "✅ Approving build scripts..."
+echo "@tailwindcss/oxide" | pnpm approve-builds
+
 # Rebuild native modules
 echo "🔧 Rebuilding native modules..."
 pnpm rebuild
