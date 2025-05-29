@@ -18,3 +18,38 @@ The MITRE Adaptive Capabilities Testing (ACT) framework moves security assessmen
 # ACT Materials
 
 Coming soon.
+
+## Development
+
+### Quick Start with GitHub Codespaces
+
+The fastest way to get started is using GitHub Codespaces:
+
+1. Click the green "Code" button above
+2. Select "Create codespace on main"
+3. Wait for the environment to build (~2-3 minutes)
+4. The development server will start automatically
+
+### Local Development
+
+Requirements:
+- Node.js 22.x
+- pnpm 10.7.0 or higher
+
+```bash
+# Install pnpm if you haven't already
+corepack enable
+corepack prepare pnpm@10.7.0 --activate
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+```
+
+The development server will start at http://localhost:3000
+
+### VS Code Dev Containers
+
+This project includes a dev container configuration. See [.devcontainer/README.md](.devcontainer/README.md) for details.
