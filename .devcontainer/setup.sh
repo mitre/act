@@ -16,8 +16,9 @@ nvm alias default 22
 # Verify Node installation
 echo "✅ Node.js version: $(node -v)"
 
-# Enable corepack for pnpm
-echo "📦 Enabling pnpm via corepack..."
+# Enable corepack for pnpm with auto-download
+echo "📦 Setting up pnpm..."
+export COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 corepack enable
 corepack prepare pnpm@latest --activate
 
