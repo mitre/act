@@ -18,6 +18,15 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  // Nuxt Studio integration
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
+  },
+
+  ui: {},
+
   routeRules: {
     '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
@@ -37,17 +46,17 @@ export default defineNuxtConfig({
     }
   },
 
-  ui: {},
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  },
 
   icon: {
     collections: ['lucide', 'simple-icons', 'heroicons', 'vscode-icons']
-  },
-
-  // Nuxt Studio integration
-  content: {
-    preview: {
-      api: 'https://api.nuxt.studio'
-    }
   },
 
   // Image configuration - maximum compatibility for Apple Silicon (M1/M2/M3)
@@ -67,16 +76,16 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1536
     },
-    
+
     // Force component registration with proper capitalization
     components: {
       nuxtImg: true,
       nuxtPicture: true
     }
-    
-    /* 
+
+    /*
     If you want to re-enable IPX in the future, replace with:
-    
+
     provider: 'ipx',
     dir: 'public',
     sharp: {
@@ -86,14 +95,5 @@ export default defineNuxtConfig({
     quality: 80,
     cacheDir: '.nuxt/image-cache'
     */
-  },
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
   }
 })
