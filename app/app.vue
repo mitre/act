@@ -4,7 +4,7 @@ import colors from 'tailwindcss/colors'
 const appConfig = useAppConfig()
 const colorMode = useColorMode()
 
-const color = computed(() => colorMode.value === 'dark' ? (colors as any)[appConfig.ui.colors.neutral][900] : 'white')
+const color = computed(() => colorMode.value === 'dark' ? (colors as Record<string, Record<string, string>>)[appConfig.ui.colors.neutral][900] : 'white')
 const radius = computed(() => `:root { --ui-radius: ${appConfig.theme.radius}rem; }`)
 const blackAsPrimary = computed(() => appConfig.theme.blackAsPrimary ? `:root { --ui-primary: black; } .dark { --ui-primary: white; }` : ':root {}')
 

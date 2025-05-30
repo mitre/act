@@ -17,7 +17,7 @@ const neutral = computed({
 })
 
 const colorsToOmit = ['inherit', 'current', 'transparent', 'black', 'white', ...neutralColors]
-const primaryColors = Object.keys(omit(colors, colorsToOmit as any))
+const primaryColors = Object.keys(omit(colors, colorsToOmit as unknown as (keyof typeof colors)[]))
 const primary = computed({
   get() {
     return appConfig.ui.colors.primary || 'blue'

@@ -30,7 +30,6 @@ const colorModeIcon = computed(() => {
 })
 
 // Available primary colors
-type UIColor = 'primary' | 'secondary' | 'neutral' | 'error' | 'warning' | 'success' | 'info'
 const primaryColors: string[] = ['blue', 'green', 'red', 'purple', 'orange']
 
 // Current primary color

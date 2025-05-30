@@ -8,8 +8,6 @@ useSeoMeta({
   description: page.value?.seo?.description || page.value?.description,
   ogDescription: page.value?.seo?.description || page.value?.description
 })
-
-const color = ref('#3B82F6')
 </script>
 
 <template>
@@ -36,18 +34,19 @@ const color = ref('#3B82F6')
       </div>
     </UPageHero>
 
-    <UPageSection
-      v-for="(section, index) in page.sections"
-      v-if="page.sections && page.sections.length"
-      :key="index"
-      :title="section.title"
-      :description="section.description"
-      :orientation="section.orientation"
-      :reverse="section.reverse"
-      :features="section.features"
-    >
-      <ImagePlaceholder />
-    </UPageSection>
+    <template v-if="page.sections && page.sections.length">
+      <UPageSection
+        v-for="(section, index) in page.sections"
+        :key="index"
+        :title="section.title"
+        :description="section.description"
+        :orientation="section.orientation"
+        :reverse="section.reverse"
+        :features="section.features"
+      >
+        <ImagePlaceholder />
+      </UPageSection>
+    </template>
 
     <UPageSection
       v-if="page.features"
