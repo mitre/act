@@ -2,28 +2,28 @@
 const columns = [{
   label: 'Resources',
   children: [
-//  {
-//    label: 'Help center'
-//  }, 
-  {
-    label: 'Docs',
-    to: '/docs',
-    target: '_top'
-  }, 
-  {
-    label: 'Downloads',
-    to: '/docs',
-    target: '_top'
-  }, 
-//  {
-//    label: 'Roadmap'
-//  }, 
-// {
-//    label: 'Changelog'
-//  }
+    //  {
+    //    label: 'Help center'
+    //  },
+    {
+      label: 'Docs',
+      to: '/docs',
+      target: '_top'
+    },
+    {
+      label: 'Downloads',
+      to: '/docs',
+      target: '_top'
+    }
+    //  {
+    //    label: 'Roadmap'
+    //  },
+    // {
+    //    label: 'Changelog'
+    //  }
   ]
-}, 
-//{
+},
+// {
 //  label: 'Features',
 //  children: [
 //  {
@@ -32,21 +32,21 @@ const columns = [{
 //    label: 'Portal'
 //  }, {
 //    label: 'Jobs'
-//  }, 
+//  },
 //  {
 //    label: 'Sponsors'
 //  }]
-// }, 
+// },
 {
   label: 'Company',
   children: [{
     label: 'About',
     to: 'https://www.mitre.org/',
     target: '_blank'
-  }, 
-//  {
-//    label: 'Careers'
-//  }, 
+  },
+  //  {
+  //    label: 'Careers'
+  //  },
   {
     label: 'Blog',
     to: '/blog',
@@ -116,7 +116,7 @@ const columns = [{
     <template #default>
       <p class="text-center text-(--ui-text-muted) text-sm">
         Copyright © 1997-2025, The MITRE Corporation. All rights reserved. <br>
-MITRE is a registered trademark of The MITRE Corporation. Material on this site may be copied and distributed with permission only.
+        MITRE is a registered trademark of The MITRE Corporation. Material on this site may be copied and distributed with permission only.
       </p>
     </template>
 
