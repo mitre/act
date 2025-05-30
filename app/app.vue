@@ -4,9 +4,17 @@ import colors from 'tailwindcss/colors'
 const appConfig = useAppConfig()
 const colorMode = useColorMode()
 
-const color = computed(() => colorMode.value === 'dark' ? (colors as Record<string, Record<string, string>>)[appConfig.ui.colors.neutral][900] : 'white')
-const radius = computed(() => `:root { --ui-radius: ${appConfig.theme.radius}rem; }`)
-const blackAsPrimary = computed(() => appConfig.theme.blackAsPrimary ? `:root { --ui-primary: black; } .dark { --ui-primary: white; }` : ':root {}')
+// Type assertion for Tailwind colors - the object has mixed types (strings and color scales)
+type TailwindColors = Record<string, string | Record<string, string>>
+const color = computed(() => {
+  if (colorMode.value === 'dark' && appConfig.ui?.colors?.neutral) {
+    const neutralColor = (colors as TailwindColors)[appConfig.ui.colors.neutral]
+    return typeof neutralColor === 'object' && '900' in neutralColor ? neutralColor['900'] : '#020617'
+  }
+  return 'white'
+})
+const radius = computed(() => `:root { --ui-radius: ${appConfig.theme?.radius ?? 0.375}rem; }`)
+const blackAsPrimary = computed(() => appConfig.theme?.blackAsPrimary ? `:root { --ui-primary: black; } .dark { --ui-primary: white; }` : ':root {}')
 
 useHead({
   meta: [

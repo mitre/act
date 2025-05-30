@@ -37,7 +37,7 @@ function setBlackAsPrimary(value: boolean) {
 const radiuses = [0, 0.125, 0.25, 0.375, 0.5]
 const radius = computed({
   get() {
-    return appConfig.theme?.radius || 0.375
+    return appConfig.theme?.radius ?? 0.375
   },
   set(option) {
     appConfig.theme.radius = option
