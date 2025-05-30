@@ -650,6 +650,97 @@ pnpm run lint
 
 2. **Deploy the `.output` directory** to a Node.js hosting service
 
+## Branching Strategy
+
+### Branch Naming Convention
+
+Use descriptive branch names with prefixes to indicate the type of work:
+
+- `feature/` - New features (e.g., `feature/user-authentication`)
+- `fix/` - Bug fixes (e.g., `fix/navigation-mobile-menu`)
+- `docs/` - Documentation changes (e.g., `docs/api-endpoints`)
+- `refactor/` - Code refactoring (e.g., `refactor/component-structure`)
+- `chore/` - Maintenance tasks (e.g., `chore/update-dependencies`)
+- `hotfix/` - Urgent production fixes (e.g., `hotfix/security-patch`)
+
+### Branch Workflow
+
+1. **Starting New Work**:
+   ```bash
+   # Always start from updated main
+   git checkout main
+   git pull origin main
+   
+   # Create new branch
+   git checkout -b feature/your-feature-name
+   ```
+
+2. **During Development**:
+   ```bash
+   # Regular commits with clear messages
+   git add .
+   git commit -m "feat: add user profile component"
+   
+   # Keep branch updated with main
+   git fetch origin
+   git rebase origin/main  # or merge if preferred
+   ```
+
+3. **Before Creating PR**:
+   ```bash
+   # Run all checks locally
+   pnpm run lint
+   pnpm run typecheck
+   pnpm run build
+   
+   # Push to remote
+   git push origin feature/your-feature-name
+   ```
+
+### Commit Message Format
+
+Follow [Conventional Commits](https://www.conventionalcommits.org/) specification:
+
+- `feat:` - New feature
+- `fix:` - Bug fix
+- `docs:` - Documentation changes
+- `style:` - Code style changes (formatting, etc.)
+- `refactor:` - Code refactoring
+- `test:` - Test additions or changes
+- `chore:` - Maintenance tasks
+- `perf:` - Performance improvements
+
+Examples:
+```
+feat: add PDF download functionality to resources page
+fix: resolve theme picker radius selection issue
+docs: update README with deployment instructions
+chore: update dependencies to latest versions
+```
+
+### Merge Strategy
+
+**For feature branches:**
+- Use **squash and merge** for clean history
+- Ensure PR title follows commit message format
+- Delete branch after merge
+
+**For release branches:**
+- Use **merge commit** to preserve history
+- Tag release after merge
+
+### Protected Branch Rules
+
+The `main` branch should have these protections:
+
+1. **Require pull request reviews** (at least 1)
+2. **Require status checks to pass**:
+   - ESLint (`pnpm run lint`)
+   - TypeScript (`pnpm run typecheck`)
+   - Build (`pnpm run build`)
+3. **Require branches to be up to date**
+4. **Dismiss stale PR approvals when new commits are pushed**
+
 ## Contributing Guidelines
 
 1. **Follow the code style** and guidelines outlined in this document
@@ -661,10 +752,65 @@ pnpm run lint
 
 ### Pull Request Process
 
-1. Ensure your code passes all linting and type checks
-2. Link your PR to relevant issues
-3. Request review from appropriate team members
-4. Address all code review comments
-5. Wait for approval before merging
+1. **Before Creating a PR**:
+   - Ensure your code passes all linting and type checks
+   - Update tests if functionality changed
+   - Update documentation if needed
+   - Rebase on latest main
+
+2. **PR Template** - Include in your PR description:
+   ```markdown
+   ## Summary
+   Brief description of what this PR does
+   
+   ## Type of Change
+   - [ ] Bug fix
+   - [ ] New feature
+   - [ ] Breaking change
+   - [ ] Documentation update
+   
+   ## Testing
+   - [ ] Tested locally
+   - [ ] All tests pass
+   - [ ] Added new tests (if applicable)
+   
+   ## Checklist
+   - [ ] Code follows style guidelines
+   - [ ] Self-reviewed my code
+   - [ ] Commented hard-to-understand areas
+   - [ ] Made corresponding documentation changes
+   - [ ] No new warnings generated
+   ```
+
+3. **After Creating PR**:
+   - Link PR to relevant issues (use "Fixes #123" in description)
+   - Request review from appropriate team members
+   - Respond to code review comments promptly
+   - Keep PR up to date with main branch
+
+4. **Merging**:
+   - Wait for all required approvals
+   - Ensure all CI checks pass
+   - Use appropriate merge strategy
+   - Delete branch after merge
+
+### Release Process
+
+1. **Version Tagging**:
+   ```bash
+   git tag -a v1.0.0 -m "Release version 1.0.0"
+   git push origin v1.0.0
+   ```
+
+2. **Release Notes**:
+   - Use GitHub Releases
+   - Include changelog with all changes since last release
+   - Link to relevant PRs and issues
+   - Thank contributors
+
+3. **Deployment**:
+   - Merging to main triggers automatic deployment via GitHub Actions
+   - Monitor deployment status
+   - Verify deployment success
 
 Thank you for contributing to the MITRE ACT project!
