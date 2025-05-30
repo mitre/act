@@ -1,7 +1,12 @@
 <script setup lang="ts">
+import colors from 'tailwindcss/colors'
+
+const appConfig = useAppConfig()
 const colorMode = useColorMode()
 
-const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white')
+const color = computed(() => colorMode.value === 'dark' ? (colors as any)[appConfig.ui.colors.neutral][900] : 'white')
+const radius = computed(() => `:root { --ui-radius: ${appConfig.theme.radius}rem; }`)
+const blackAsPrimary = computed(() => appConfig.theme.blackAsPrimary ? `:root { --ui-primary: black; } .dark { --ui-primary: white; }` : ':root {}')
 
 useHead({
   meta: [
@@ -11,6 +16,10 @@ useHead({
   ],
   link: [
     { rel: 'icon', href: '/favicon.ico' }
+  ],
+  style: [
+    { innerHTML: radius, id: 'nuxt-ui-radius', tagPriority: -2 },
+    { innerHTML: blackAsPrimary, id: 'nuxt-ui-black-as-primary', tagPriority: -2 }
   ],
   htmlAttrs: {
     lang: 'en'
@@ -23,15 +32,6 @@ useSeoMeta({
   twitterImage: 'https://saas-template.nuxt.dev/social-card.png',
   twitterCard: 'summary_large_image'
 })
-
-// Initialize theme config state
-const themeState = useState('nuxt-ui-theme', () => ({
-  ui: {
-    primary: undefined,
-    gray: undefined,
-    rounded: undefined
-  }
-}))
 
 const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
   transform: data => data.find(item => item.path === '/docs')?.children || []

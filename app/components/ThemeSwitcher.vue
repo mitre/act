@@ -73,7 +73,10 @@ const items = [
 </script>
 
 <template>
-  <UDropdown :items="items" :popper="{ placement: 'bottom-end' }">
+  <UDropdown
+    :items="items"
+    :popper="{ placement: 'bottom-end' }"
+  >
     <UButton
       color="neutral"
       variant="ghost"
@@ -87,20 +90,29 @@ const items = [
       :icon="colorModeIcon"
       class="md:hidden"
     />
-    
+
     <template #theme>
       <div class="p-3">
-        <p class="text-sm font-medium mb-2">Primary Color</p>
+        <p class="text-sm font-medium mb-2">
+          Primary Color
+        </p>
         <div class="flex gap-1">
           <UButton
             v-for="color in primaryColors"
             :key="color"
-            :color="color as UIColor"
-            variant="solid" 
-            class="w-8 h-8 p-0 rounded-md"
+            color="neutral"
+            variant="solid"
+            class="w-8 h-8 p-0 rounded-md overflow-hidden"
             :class="{ 'ring-2 ring-offset-2': color === primaryColor }"
             @click="primaryColor = color"
-          />
+          >
+            <span
+              class="w-full h-full block"
+              :style="{
+                backgroundColor: `var(--color-${color}-500)`
+              }"
+            />
+          </UButton>
         </div>
       </div>
     </template>
