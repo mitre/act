@@ -26,12 +26,15 @@ const columns = [{
   children: [{
     label: 'About'
   }, {
-    label: 'Pricing'
-  }, {
     label: 'Careers'
   }, {
     label: 'Blog'
-  }]
+  }
+  // Commented out - may use later
+  // , {
+  //   label: 'Pricing'
+  // }
+  ]
 }]
 
 const toast = useToast()
@@ -58,7 +61,8 @@ function onSubmit() {
     <template #top>
       <UContainer>
         <UFooterColumns :columns="columns">
-          <template #right>
+          <!-- Newsletter form - commented out for now -->
+          <!-- <template #right>
             <form @submit.prevent="onSubmit">
               <UFormField
                 name="email"
@@ -82,7 +86,7 @@ function onSubmit() {
                 </UInput>
               </UFormField>
             </form>
-          </template>
+          </template> -->
         </UFooterColumns>
       </UContainer>
     </template>
