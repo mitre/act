@@ -23,7 +23,7 @@ const items = [{
   <UHeader>
     <template #left>
       <NuxtLink to="/">
-        <ACTLogo class="w-auto sm:h-4 md:h-6 lg:h-8 shrink-0" />
+        <ACTLogo class="w-auto h-8 lg:h-10 shrink-0" />
       </NuxtLink>
       <!-- <TemplateMenu /> -->
     </template>
