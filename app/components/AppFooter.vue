@@ -6,18 +6,26 @@ const columns = [{
 //    label: 'Help center'
 //  }, 
   {
-    label: 'Docs'
+    label: 'Docs',
+    to: '/docs',
+    target: '_top'
+  }, 
+  {
+    label: 'Downloads',
+    to: '/docs',
+    target: '_top'
   }, 
 //  {
 //    label: 'Roadmap'
-//  }, {
+//  }, 
+// {
 //    label: 'Changelog'
 //  }
   ]
 }, 
-{
-  label: 'Features',
-  children: [
+//{
+//  label: 'Features',
+//  children: [
 //  {
 //    label: 'Affiliates'
 //  }, {
@@ -25,19 +33,24 @@ const columns = [{
 //  }, {
 //    label: 'Jobs'
 //  }, 
-  {
-    label: 'Sponsors'
-  }]
-}, {
+//  {
+//    label: 'Sponsors'
+//  }]
+// }, 
+{
   label: 'Company',
   children: [{
-    label: 'About'
+    label: 'About',
+    to: 'https://www.mitre.org/',
+    target: '_blank'
   }, 
 //  {
 //    label: 'Careers'
 //  }, 
   {
-    label: 'Blog'
+    label: 'Blog',
+    to: '/blog',
+    target: '_top'
   }
   // Commented out - may use later
   // , {
@@ -100,8 +113,8 @@ const columns = [{
       </UContainer>
     </template>
 
-    <template #left>
-      <p class="w-full text-(--ui-text-muted) text-sm">
+    <template #default>
+      <p class="text-center text-(--ui-text-muted) text-sm">
         Copyright © 1997-2025, The MITRE Corporation. All rights reserved. <br>
 MITRE is a registered trademark of The MITRE Corporation. Material on this site may be copied and distributed with permission only.
       </p>
@@ -111,7 +124,7 @@ MITRE is a registered trademark of The MITRE Corporation. Material on this site 
       <UColorModeButton />
 
       <UButton
-        to="https://github.com/nuxt-ui-pro/saas"
+        to="https://github.com/mitre/act"
         target="_blank"
         icon="i-simple-icons-github"
         aria-label="GitHub"
