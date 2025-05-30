@@ -41,7 +41,10 @@ defineOgImageComponent('Saas')
 
       <USeparator v-if="surround?.length" />
 
-      <UContentSurround v-if="surround?.length" :surround="surround || []" />
+      <UContentSurround
+        v-if="surround?.length"
+        :surround="surround || []"
+      />
     </UPageBody>
 
     <template

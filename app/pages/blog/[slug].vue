@@ -39,17 +39,29 @@ if (post.value.image?.src) {
       :title="post?.title || ''"
       :description="post?.description || ''"
     >
-      <template #headline v-if="post?.badge || post?.date">
+      <template
+        v-if="post?.badge || post?.date"
+        #headline
+      >
         <UBadge
           v-if="post?.badge"
           v-bind="post?.badge"
           variant="subtle"
         />
-        <span v-if="post?.badge && post?.date" class="text-(--ui-text-muted)">&middot;</span>
-        <time v-if="post?.date" class="text-(--ui-text-muted)">{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
+        <span
+          v-if="post?.badge && post?.date"
+          class="text-(--ui-text-muted)"
+        >&middot;</span>
+        <time
+          v-if="post?.date"
+          class="text-(--ui-text-muted)"
+        >{{ new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) }}</time>
       </template>
 
-      <div v-if="post?.authors?.length" class="flex flex-wrap items-center gap-3 mt-4">
+      <div
+        v-if="post?.authors?.length"
+        class="flex flex-wrap items-center gap-3 mt-4"
+      >
         <UButton
           v-for="(author, index) in post?.authors || []"
           :key="index"
@@ -80,7 +92,10 @@ if (post.value.image?.src) {
 
         <USeparator v-if="surround?.length" />
 
-        <UContentSurround v-if="surround?.length" :surround="surround || []" />
+        <UContentSurround
+          v-if="surround?.length"
+          :surround="surround || []"
+        />
       </UPageBody>
 
       <template

@@ -26,15 +26,19 @@ const color = ref('#3B82F6')
       </template>
 
       <PromotionalVideo v-if="false" />
-      
+
       <div class="flex items-center justify-center my-6">
-        <NuxtImg src="/images/act-handbook/mitre-act-logo.svg" alt="ACT Logo" class="h-48" />
+        <NuxtImg
+          src="/images/act-handbook/mitre-act-logo.svg"
+          alt="ACT Logo"
+          class="h-48"
+        />
       </div>
     </UPageHero>
 
     <UPageSection
-      v-if="page.sections && page.sections.length"
       v-for="(section, index) in page.sections"
+      v-if="page.sections && page.sections.length"
       :key="index"
       :title="section.title"
       :description="section.description"
