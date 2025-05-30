@@ -11,7 +11,7 @@ const isDark = computed({
 </script>
 
 <template>
-  <UDropdown 
+  <UDropdown
     :items="[
       [
         {
