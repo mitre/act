@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const route = useRoute()
+// const route = useRoute() // Commented out - may use later for active state
 
 const items = [{
   label: 'Docs',
@@ -16,7 +16,7 @@ const items = [{
 ]
 
 // Access theme state using useState
-const themeState = useState('nuxt-ui-theme')
+// const themeState = useState('nuxt-ui-theme') // Commented out - may use later
 </script>
 
 <template>
@@ -28,7 +28,10 @@ const themeState = useState('nuxt-ui-theme')
       <TemplateMenu />
     </template>
 
-    <UNavigationMenu :items="items" variant="link" />
+    <UNavigationMenu
+      :items="items"
+      variant="link"
+    />
 
     <template #right>
       <UColorModeButton class="mr-2" />
@@ -41,7 +44,11 @@ const themeState = useState('nuxt-ui-theme')
     </template>
 
     <template #body>
-      <UNavigationMenu :items="items" orientation="vertical" class="-mx-2.5" />
+      <UNavigationMenu
+        :items="items"
+        orientation="vertical"
+        class="-mx-2.5"
+      />
 
       <!-- Mobile sign in/sign up buttons - commented out for now -->
       <!-- <USeparator class="my-6" />
