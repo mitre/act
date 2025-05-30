@@ -1,33 +1,42 @@
 <script setup lang="ts">
 const columns = [{
   label: 'Resources',
-  children: [{
-    label: 'Help center'
-  }, {
+  children: [
+//  {
+//    label: 'Help center'
+//  }, 
+  {
     label: 'Docs'
-  }, {
-    label: 'Roadmap'
-  }, {
-    label: 'Changelog'
-  }]
-}, {
+  }, 
+//  {
+//    label: 'Roadmap'
+//  }, {
+//    label: 'Changelog'
+//  }
+  ]
+}, 
+{
   label: 'Features',
-  children: [{
-    label: 'Affiliates'
-  }, {
-    label: 'Portal'
-  }, {
-    label: 'Jobs'
-  }, {
+  children: [
+//  {
+//    label: 'Affiliates'
+//  }, {
+//    label: 'Portal'
+//  }, {
+//    label: 'Jobs'
+//  }, 
+  {
     label: 'Sponsors'
   }]
 }, {
   label: 'Company',
   children: [{
     label: 'About'
-  }, {
-    label: 'Careers'
-  }, {
+  }, 
+//  {
+//    label: 'Careers'
+//  }, 
+  {
     label: 'Blog'
   }
   // Commented out - may use later
@@ -92,8 +101,9 @@ const columns = [{
     </template>
 
     <template #left>
-      <p class="text-(--ui-text-muted) text-sm">
-        Copyright © {{ new Date().getFullYear() }}. All rights reserved.
+      <p class="w-full text-(--ui-text-muted) text-sm">
+        Copyright © 1997-2025, The MITRE Corporation. All rights reserved. <br>
+MITRE is a registered trademark of The MITRE Corporation. Material on this site may be copied and distributed with permission only.
       </p>
     </template>
 
