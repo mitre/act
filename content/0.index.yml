@@ -6,11 +6,11 @@ seo:
 navigation: false
 hero:
   links:
-    - label: Explore the Handbook
-      icon: i-heroicons-book-open
-      trailing: true
-      to: "/docs/act-handbook"
-      size: xl
+    # - label: Explore the Handbook
+    #   icon: i-heroicons-book-open
+    #   trailing: true
+    #   to: "/docs/act-handbook"
+    #   size: xl
     - label: View on GitHub
       icon: i-simple-icons-github
       size: xl
@@ -23,6 +23,9 @@ sections:
     description: ACT revolutionizes security assessment by focusing on risk at the capability level rather than compliance with technical requirements.
     id: advantages
     orientation: horizontal
+    image:
+      src: /images/heroes/risk-based-decision-making.svg
+      alt: Risk-Based Decision Making
     features:
       - name: Risk-Driven
         description: Focuses on identifying and analyzing risks at the capability level rather than technical compliance.
@@ -37,6 +40,9 @@ sections:
     description: ACT implements a structured methodology that ensures comprehensive security assessment and meaningful results.
     orientation: horizontal
     reverse: true
+    image:
+      src: /images/heroes/systematic-three-phase-approach.png
+      alt: Systematic Three-Phase Approach
     features:
       - name: Planning
         description: Establish scope, develop methodology, create test plan, and prepare the assessment team.
@@ -47,6 +53,39 @@ sections:
       - name: Reporting
         description: Document findings, develop actionable recommendations, and present results.
         icon: i-heroicons-document-text
+  - title: MITRE Cyber Solutions Innovation Center
+    description: MITRE ACT is developed by The MITRE Corporation's Cyber Solutions Innovation Center (CSIC), bringing together world-class expertise to address cybersecurity challenges.
+    orientation: horizontal
+    reverse: false
+    image:
+      src: /images/heroes/csic-hero-image.svg
+      alt: MITRE Cyber Solutions Innovation Center
+    features:
+      - name: World-Class Expertise
+        description: The Center brings together world-class expertise and thought leadership to address the extraordinary cybersecurity challenges facing our government, military, and private industry partners.
+        icon: i-heroicons-user-group
+      - name: Operational Solutions
+        description: Leveraging MITRE's deep knowledge of adversary cyber threats, the Center works with sponsors to architect, assess, and acquire safe, secure, and resilient cyber systems that meet their operational needs.
+        icon: i-heroicons-shield-check
+      - name: Research & Innovation
+        description: In areas where there are gaps, the Center performs high-impact research and investigations to advance innovative and effective cyber solutions.
+        icon: i-heroicons-light-bulb
+    links:
+      - label: Visit CSIC Website
+        to: https://www.mitre.org/our-impact/mitre-labs/cyber-solutions-innovation-center
+        target: _blank
+        trailingIcon: i-heroicons-arrow-top-right-on-square
+        color: neutral
+      - label: Learn More About ACT
+        to: /docs
+        color: neutral
+        variant: subtle
+        trailingIcon: i-heroicons-arrow-right
+      - label: Contact ACT Team
+        to: mailto:act@mitre.org
+        icon: i-heroicons-envelope
+        color: neutral
+        variant: subtle
 features:
   title: Benefits of ACT
   description: ACT provides organizations with a more effective approach to security assessment that drives better decision-making and resource allocation.
@@ -99,10 +138,10 @@ features:
 #           src: /images/act-handbook/mitre-logo.png
 cta:
   title: Start your ACT journey today
-  description: Explore the comprehensive ACT handbook to learn how to implement risk-driven security assessment in your organization.
+  description: Learn about the ACT framework and access resources to implement risk-driven security assessment in your organization.
   links:
-    - label: Read the Handbook
-      to: "/docs/act-handbook"
+    - label: Get Started
+      to: "/docs"
       icon: i-heroicons-book-open
     - label: Contact the ACT Team
       to: "mailto:act@mitre.org"

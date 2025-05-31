@@ -25,9 +25,17 @@ useHead({
   link: [
     { rel: 'icon', href: '/favicon.ico' }
   ],
+  script: [
+    {
+      src: 'https://cmp.osano.com/AzyhULTdPkqmy4aDN/61e442cb-3c14-4a28-b9ca-5c364a87187f/osano.js',
+      tagPriority: 1, // Ensure this loads first
+      tagPosition: 'head'
+    }
+  ],
   style: [
     { innerHTML: radius, id: 'nuxt-ui-radius', tagPriority: -2 },
-    { innerHTML: blackAsPrimary, id: 'nuxt-ui-black-as-primary', tagPriority: -2 }
+    { innerHTML: blackAsPrimary, id: 'nuxt-ui-black-as-primary', tagPriority: -2 },
+    { innerHTML: '.osano-cm-widget{display: none;}', tagPriority: 0 }
   ],
   htmlAttrs: {
     lang: 'en'

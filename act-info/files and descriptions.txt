@@ -1,0 +1,49 @@
+Structure of data below:
+# Category
+[Document ID]	Display Title	Filename
+
+
+
+
+# Core Assessment Documents:
+C-01	Risk Assessment Plan	C-01 - SYSTEMNAME ACT Risk Assessment Plan YYYYMMDD.docx
+C-02	Risk Assessment Report	C-02 - SYSTEMNAME ACT Risk Assessment Report YYYYMMMDD.docx
+C-03	Security Assessment Plan	C-03 - SYSTEMNAME ACT Security Assessment Plan YYYYMMDD.docx
+C-04	Security Assessment Report	C-04 - SYSTEMNAME ACT Security Assessment Report YYYYMMDD.docx
+C-05	Security Assessment Findings	C-05 - SYSTEMNAME ACT Security Assessment Findings YYYYMMDD.xlsx
+C-06	Risk Assessment Risks	C-06 - SYSTEMNAME ACT Risk Assessment Risks YYYYMMDD.xlsx
+C-07	Final Package Folder Structure	C-07 - ACT Final Package Folder Structure.zip
+
+# Guidance:
+G-01	MITRE ACT Assessment Handbook	G-01 - MITRE ACT Assessment Handbook.docx
+G-02	Capabilities and Controls Matrix	G-02 - ACT Capabilities and Controls Matrix.xlsx
+G-03	Authorization Boundary Diagram Guidance	G-03 - Authorization Boundary Diagram Guidance.docx
+G-04	Levels of Testing Rigor and Assurance	G-04 - ACT Levels of Testing Rigor and Assurance.xlsx
+G-07	Deliverable Review Panel (DRP) Review Process	G-07 - ACT Deliverable Review Panel (DRP) Review Process.docx
+G-08	Assessment LoE Estimator	G-08 - ACT Assessment LoE Estimator.xlsx
+G-09	SSP Development Process Guide	G-09 - ACT SSP Development Process Guide.docx
+
+# Preparation:
+P-01	Preliminary Intake Form	P-01 - SYSTEMNAME ACT Preliminary Intake Form.docx
+P-03	Preliminary Discussion Meeting Notes	P-03 - SYSTEMNAME ACT Preliminary Discussion Meeting Notes YYYYMMDD.docx
+P-04	Foreign Military Sales (FMS) Assessment Scope & Checklist	P-04 - SYSTEMNAME FMS Assessment Scope & Checklist.xlsx
+
+# Work Aids:
+W-03	Meeting Notes	W-03 - SYSTEMNAME ACT Meeting Notes YYYYMMDD.docx
+W-04	Findings	W-04 - SYSTEMNAME ACT Findings YYYYMMDD.xlsx
+W-05	Daily Briefing Agenda	W-05 - SYSTEMNAME ACT Daily Briefing Agenda YYYYMMDD.docx
+W-06	Web Application Testing Guide and Checklist	W-06 - SYSTEMNAME ACT Web Application Testing Guide and Checklist.docx
+W-07	Facilities Compliance Checklist	W-07 - SYSTEMNAME Facilities Compliance Checklist.docx
+W-08	Questionnaire - Management and Operations	W-08 - SYSTEMNAME Questionnaire - Management and Operations.docx
+W-09	Questionnaire - Privacy	W-09 - SYSTEMNAME Questionnaire - Privacy.docx
+W-10	Questionnaire - Application Developer	W-10 - SYSTEMNAME Questionnaire - Application Developer.docx
+W-11	Questionnaire - Database Administrator	W-11 - SYSTEMNAME Questionnaire - Database Administrator.docx
+W-12	Questionnaire - Network and Operating System	W-12 - SYSTEMNAME Questionnaire - Network and Operating System.docx
+W-14	Questionnaire - Mainframe	W-14 - SYSTEMNAME Questionnaire - Mainframe.docx
+W-15	System Security Plan (SSP) Document Evaluation Checklist	W-15 - SYSTEMNAME SSP Evaluation YYYYMMDD.docx
+W-16	Contingency Plan (CP) Document Evaluation Checklist	W-16 - SYSTEMNAME CP Evaluation YYYYMMDD.docx
+W-17	Information System Risk Assessment (ISRA) Document Evaluation Checklist	W-17 - SYSTEMNAME RA Evaluation YYYYMMDD.docx
+W-18	Privacy Impact Assessment (PIA) Document Evaluation Checklist	W-18 - SYSTEMNAME PIA Evaluation YYYYMMDD.docx
+W-19	Risk Identification Workbook	W-19 - SYSTEMNAME ACT Risk Identification Workbook YYYYMMDD.xlsx
+W-20	Internal ACT Team Meeting	W-20 - SYSTEMNAME Internal ACT Team Meeting YYYYMMDD.docx
+W-21	System Security Plan	W-21 - SYSTEMNAME ACT System Security Plan.docx

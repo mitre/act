@@ -23,9 +23,9 @@ const items = [{
   <UHeader>
     <template #left>
       <NuxtLink to="/">
-        <LogoPro class="w-auto h-6 shrink-0" />
+        <ACTLogo class="w-auto h-8 lg:h-10 shrink-0" />
       </NuxtLink>
-      <TemplateMenu />
+      <!-- <TemplateMenu /> -->
     </template>
 
     <UNavigationMenu
