@@ -6,7 +6,7 @@ seo:
 navigation: false
 hero:
   links:
-    - label: Read the Docs
+    - label: Get the Docs
       icon: i-heroicons-book-open
       size: xl
       trailing: true
