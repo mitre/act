@@ -6,10 +6,5 @@
   publish = "dist"
   environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
 
-# Enable Netlify's Pretty URLs feature
-# This automatically handles trailing slashes and .html extensions
-[build.processing]
-  skip_processing = false
-
-[build.processing.html]
-  pretty_urls = true
+# Note: Trailing slash handling is now done by generating directory structure
+# with index.html files, which works on both GitHub Pages and Netlify
