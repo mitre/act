@@ -23,6 +23,9 @@ sections:
     description: ACT revolutionizes security assessment by focusing on risk at the capability level rather than compliance with technical requirements.
     id: advantages
     orientation: horizontal
+    image:
+      src: /images/heroes/risk-based-decision-making.png
+      alt: Risk-Based Decision Making
     features:
       - name: Risk-Driven
         description: Focuses on identifying and analyzing risks at the capability level rather than technical compliance.
@@ -37,6 +40,9 @@ sections:
     description: ACT implements a structured methodology that ensures comprehensive security assessment and meaningful results.
     orientation: horizontal
     reverse: true
+    image:
+      src: /images/heroes/systematic-three-phase-approach.png
+      alt: Systematic Three-Phase Approach
     features:
       - name: Planning
         description: Establish scope, develop methodology, create test plan, and prepare the assessment team.
