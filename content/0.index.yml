@@ -132,10 +132,10 @@ features:
 #           src: /images/act-handbook/mitre-logo.png
 cta:
   title: Start your ACT journey today
-  description: Explore the comprehensive ACT handbook to learn how to implement risk-driven security assessment in your organization.
+  description: Learn about the ACT framework and access resources to implement risk-driven security assessment in your organization.
   links:
-    - label: Read the Handbook
-      to: "/docs/act-handbook"
+    - label: Get Started
+      to: "/docs"
       icon: i-heroicons-book-open
     - label: Contact the ACT Team
       to: "mailto:act@mitre.org"
