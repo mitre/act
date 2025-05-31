@@ -6,18 +6,18 @@ seo:
 navigation: false
 hero:
   links:
-    # - label: Explore the Handbook
-    #   icon: i-heroicons-book-open
-    #   trailing: true
-    #   to: "/docs/act-handbook"
-    #   size: xl
-    - label: View on GitHub
-      icon: i-simple-icons-github
+    - label: Read the Docs
+      icon: i-heroicons-book-open
       size: xl
-      color: neutral
-      variant: subtle
-      to: "https://github.com/mitre/act"
-      target: _blank
+      trailing: true
+      to: "/docs"
+    # - label: View on GitHub
+    #   icon: i-simple-icons-github
+    #   size: xl
+    #   color: neutral
+    #   variant: subtle
+    #   to: "https://github.com/mitre/act"
+    #   target: _blank
 sections:
   - title: Risk-Based Decision Making
     description: ACT revolutionizes security assessment by focusing on risk at the capability level rather than compliance with technical requirements.
