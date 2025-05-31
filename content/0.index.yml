@@ -24,7 +24,7 @@ sections:
     id: advantages
     orientation: horizontal
     image:
-      src: /images/heroes/risk-based-decision-making.png
+      src: /images/heroes/risk-based-decision-making.svg
       alt: Risk-Based Decision Making
     features:
       - name: Risk-Driven
