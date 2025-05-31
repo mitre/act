@@ -48,19 +48,38 @@ sections:
         description: Document findings, develop actionable recommendations, and present results.
         icon: i-heroicons-document-text
   - title: MITRE Cyber Solutions Innovation Center
-    description: |
-      MITRE ACT is developed by The MITRE Corporation's Cyber Solutions Innovation Center (CSIC). The Center brings together world-class expertise and thought leadership to address the extraordinary cybersecurity challenges facing our government, military, and private industry partners.
-      
-      Leveraging MITRE's deep knowledge of adversary cyber threats, the Center works with sponsors to architect, assess, and acquire safe, secure, and resilient cyber systems that meet their operational needs. In areas where there are gaps, the Center performs high-impact research and investigations to advance innovative and effective cyber solutions.
-      
-      For more information about the MITRE Cyber Solutions Innovation Center, visit: https://www.mitre.org/our-impact/mitre-labs/cyber-solutions-innovation-center
-      
-      For more information about MITRE ACT visit: https://act.mitre.org/ or email the ACT Development Team at act@mitre.org.
+    description: MITRE ACT is developed by The MITRE Corporation's Cyber Solutions Innovation Center (CSIC), bringing together world-class expertise to address cybersecurity challenges.
     orientation: horizontal
     reverse: false
     image:
-      src: /images/heroes/csic-hero-image.png
+      src: /images/heroes/csic-hero-image.svg
       alt: MITRE Cyber Solutions Innovation Center
+    features:
+      - name: World-Class Expertise
+        description: The Center brings together world-class expertise and thought leadership to address the extraordinary cybersecurity challenges facing our government, military, and private industry partners.
+        icon: i-heroicons-user-group
+      - name: Operational Solutions
+        description: Leveraging MITRE's deep knowledge of adversary cyber threats, the Center works with sponsors to architect, assess, and acquire safe, secure, and resilient cyber systems that meet their operational needs.
+        icon: i-heroicons-shield-check
+      - name: Research & Innovation
+        description: In areas where there are gaps, the Center performs high-impact research and investigations to advance innovative and effective cyber solutions.
+        icon: i-heroicons-light-bulb
+    links:
+      - label: Visit CSIC Website
+        to: https://www.mitre.org/our-impact/mitre-labs/cyber-solutions-innovation-center
+        target: _blank
+        trailingIcon: i-heroicons-arrow-top-right-on-square
+        color: neutral
+      - label: Learn More About ACT
+        to: /docs
+        color: neutral
+        variant: subtle
+        trailingIcon: i-heroicons-arrow-right
+      - label: Contact ACT Team
+        to: mailto:act@mitre.org
+        icon: i-heroicons-envelope
+        color: neutral
+        variant: subtle
 features:
   title: Benefits of ACT
   description: ACT provides organizations with a more effective approach to security assessment that drives better decision-making and resource allocation.

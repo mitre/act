@@ -43,6 +43,7 @@ useSeoMeta({
         :orientation="section.orientation"
         :reverse="section.reverse"
         :features="section.features"
+        :links="section.links"
       >
         <NuxtImg
           v-if="section.image"

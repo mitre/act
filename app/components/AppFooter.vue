@@ -1,4 +1,10 @@
 <script setup lang="ts">
+const showCookiePreferences = () => {
+  if (typeof window !== 'undefined' && window.Osano?.cm) {
+    window.Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')
+  }
+}
+
 const columns = [{
   label: 'Resources',
   children: [
@@ -127,6 +133,14 @@ const columns = [{
 
     <template #right>
       <UColorModeButton />
+
+      <UButton
+        icon="i-heroicons-shield-check"
+        aria-label="Cookie Preferences"
+        color="neutral"
+        variant="ghost"
+        @click="showCookiePreferences"
+      />
 
       <UButton
         to="https://github.com/mitre/act"
