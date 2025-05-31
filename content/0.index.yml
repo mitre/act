@@ -6,11 +6,11 @@ seo:
 navigation: false
 hero:
   links:
-    - label: Explore the Handbook
-      icon: i-heroicons-book-open
-      trailing: true
-      to: "/docs/act-handbook"
-      size: xl
+    # - label: Explore the Handbook
+    #   icon: i-heroicons-book-open
+    #   trailing: true
+    #   to: "/docs/act-handbook"
+    #   size: xl
     - label: View on GitHub
       icon: i-simple-icons-github
       size: xl
@@ -47,6 +47,20 @@ sections:
       - name: Reporting
         description: Document findings, develop actionable recommendations, and present results.
         icon: i-heroicons-document-text
+  - title: MITRE Cyber Solutions Innovation Center
+    description: |
+      MITRE ACT is developed by The MITRE Corporation's Cyber Solutions Innovation Center (CSIC). The Center brings together world-class expertise and thought leadership to address the extraordinary cybersecurity challenges facing our government, military, and private industry partners.
+      
+      Leveraging MITRE's deep knowledge of adversary cyber threats, the Center works with sponsors to architect, assess, and acquire safe, secure, and resilient cyber systems that meet their operational needs. In areas where there are gaps, the Center performs high-impact research and investigations to advance innovative and effective cyber solutions.
+      
+      For more information about the MITRE Cyber Solutions Innovation Center, visit: https://www.mitre.org/our-impact/mitre-labs/cyber-solutions-innovation-center
+      
+      For more information about MITRE ACT visit: https://act.mitre.org/ or email the ACT Development Team at act@mitre.org.
+    orientation: horizontal
+    reverse: false
+    image:
+      src: /images/heroes/csic-hero-image.png
+      alt: MITRE Cyber Solutions Innovation Center
 features:
   title: Benefits of ACT
   description: ACT provides organizations with a more effective approach to security assessment that drives better decision-making and resource allocation.

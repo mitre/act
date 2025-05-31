@@ -51,6 +51,11 @@ const columns = [{
     label: 'Blog',
     to: '/blog',
     target: '_top'
+  },
+  {
+    label: 'Cyber Solutions Innovation Center',
+    to: 'https://www.mitre.org/our-impact/mitre-labs/cyber-solutions-innovation-center',
+    target: '_blank'
   }
   // Commented out - may use later
   // , {

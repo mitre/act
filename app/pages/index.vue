@@ -27,8 +27,8 @@ useSeoMeta({
 
       <div class="flex items-center justify-center my-6">
         <NuxtImg
-          src="/images/act-handbook/mitre-act-logo.svg"
-          alt="ACT Logo"
+          src="/images/logos/mitre-act-arrow-logo.svg"
+          alt="MITRE ACT Logo"
           class="h-48"
         />
       </div>
@@ -44,7 +44,13 @@ useSeoMeta({
         :reverse="section.reverse"
         :features="section.features"
       >
-        <ImagePlaceholder />
+        <NuxtImg
+          v-if="section.image"
+          :src="section.image.src"
+          :alt="section.image.alt || section.title"
+          class="rounded-lg shadow-xl"
+        />
+        <ImagePlaceholder v-else />
       </UPageSection>
     </template>
 
