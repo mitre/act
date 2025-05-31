@@ -6,8 +6,10 @@
   publish = "dist"
   environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
 
-# Optional: Configure redirects for SPA routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Enable Netlify's Pretty URLs feature
+# This automatically handles trailing slashes and .html extensions
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
