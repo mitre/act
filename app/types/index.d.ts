@@ -13,3 +13,40 @@ export interface BlogPost extends ParsedContent {
     avatar: Avatar
   } & Link)[]
 }
+
+export interface PageSection {
+  title: string
+  description: string
+  id?: string
+  orientation?: 'vertical' | 'horizontal'
+  reverse?: boolean
+  features?: ({
+    name: string
+    description: string
+    icon: string
+  } | {
+    title: string
+    description: string
+    icon: string
+  })[]
+  image?: {
+    src: string
+    alt: string
+  }
+  links?: Link[]
+}
+
+// Osano consent manager types
+interface OsanoConsentManager {
+  showDrawer: (type: string) => void
+}
+
+interface Osano {
+  cm: OsanoConsentManager
+}
+
+declare global {
+  interface Window {
+    Osano?: Osano
+  }
+}

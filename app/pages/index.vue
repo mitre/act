@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { PageSection } from '~/types'
+
 const { data: page } = await useAsyncData('index', () => queryCollection('index').first())
 
 useSeoMeta({
@@ -36,7 +38,7 @@ useSeoMeta({
 
     <template v-if="page.sections && page.sections.length">
       <UPageSection
-        v-for="(section, index) in page.sections"
+        v-for="(section, index) in (page.sections as PageSection[])"
         :key="index"
         :title="section.title"
         :description="section.description"
