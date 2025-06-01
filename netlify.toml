@@ -2,8 +2,8 @@
 # Increases memory allocation to prevent JavaScript heap out of memory errors
 
 [build]
-  command = "pnpm run build"
-  publish = "dist"
+  command = "pnpm run generate"
+  publish = ".output/public"
   environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
 
 # Note: Trailing slash handling is now done by generating directory structure
