@@ -11,7 +11,7 @@ import path from 'path'
 // Check which output directory exists (Nuxt may use different dirs)
 async function findOutputDir() {
   const possibleDirs = ['.output/public', 'dist', '.nuxt/dist']
-  
+
   for (const dir of possibleDirs) {
     try {
       await fs.access(dir)
@@ -21,7 +21,7 @@ async function findOutputDir() {
       // Directory doesn't exist, try next
     }
   }
-  
+
   throw new Error('No output directory found. Tried: ' + possibleDirs.join(', '))
 }
 
@@ -64,7 +64,7 @@ async function restructureFiles(dir) {
 
 async function main() {
   console.log('Restructuring files for GitHub Pages...')
-  
+
   try {
     const outputDir = await findOutputDir()
     await restructureFiles(outputDir)
