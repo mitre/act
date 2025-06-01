@@ -1,252 +1,185 @@
-# MITRE ACT Handbook Project Recovery Prompt
+# Recovery Prompt - ACT Website Project
 
-This document captures the core challenges and solutions discovered while developing the MITRE ACT Handbook website using Nuxt UI Pro with Nuxt Content.
+## Project Overview
+The MITRE ACT (Adaptive Capabilities Testing) website is a Nuxt 3 application with Nuxt UI Pro, deployed to GitHub Pages at https://act.mitre.org/. The site provides documentation, resources, and templates for the ACT security assessment framework.
 
-## Core Issues Addressed
+## Current Status (May 31, 2025)
+- Main site is live and functional at https://act.mitre.org/
+- All initial content from PR #3 has been merged to main
+- Cookie consent (Osano) is implemented and working
+- Hero images and content sections are complete
+- Blog has "ACT Website Goes Live" article
+- Artifacts page has all templates with download functionality
+- Complete template package download available
 
-### Image Handling in Nuxt Content
+## Active Issues Being Researched
 
-Problem: Images with spaces in filenames weren't displaying properly in markdown content.
+### Issue #10: 404 on Page Refresh with Trailing Slash (HIGH PRIORITY)
+**Root Cause**: GitHub Pages serves static files differently than Nuxt expects
+- Nuxt generates: `/docs/artifacts.html`
+- Browser navigates to: `/docs/artifacts` (works)
+- On refresh, GitHub Pages adds: `/docs/artifacts/`
+- Looks for: `/docs/artifacts/index.html` (doesn't exist → 404)
 
-Solution path:
-1. Tried URL encoding with `%20` for spaces
-2. Tried using various image components (`<nuxt-img>`, `<NuxtPicture>`, HTML `<img>` tags)
-3. Root cause: Complex interaction between Nuxt Content, image processing modules, and filepath parsing
-4. Final solution: Renamed all images to follow web standards (lowercase, hyphens instead of spaces)
-
-### Nuxt UI Pro Component Integration
-
-Problem: Difficulty with proper syntax for advanced Nuxt UI Pro components in markdown.
-
-Solutions:
-- Use `::callout` instead of `::alert` with parameters: `icon`, `color`, `to`
-- Use `::card-group` and `::card` for organized content blocks
-- Use `::accordion` with `::accordion-item{label="..."}` (not `title`)
-- Use `::steps{level="3"}` with corresponding heading levels
-- Use `::div{class="..."}` for custom styling and containers
-- Use shorthand formats like `::tip`, `::note`, `::warning` for common callout types
-- Fixed component resolution errors by using built-in shorthand components
-
-### Component Resolution Errors
-
-Problem: Vue warnings about "Failed to resolve component: Alert" and similar errors.
-
-Solutions:
-- Replaced custom Alert components with built-in callout shorthands:
-  - `::note` - For informational content (blue)
-  - `::warning` - For warnings and alerts (amber) 
-  - `::tip` - For success messages and tips (green)
-- Used standard component syntax for card groups:
-```md
-::card-group
-  ::card{title="Card Title" icon="i-heroicons-document-text"}
-    Card content here...
-  ::
-::
-```
-- Avoided custom components that require proper registration with Nuxt Content
-
-### IPX/Sharp Image Processing Issues
-
-Problem: Sharp library incompatibility on Apple Silicon (M1/M2) Macs.
-
-Solutions:
-- Used the 'none' provider to avoid Sharp/IPX dependency altogether:
-```typescript
-image: {
-  // Disable image optimization to avoid Sharp/IPX issues
-  provider: 'none',
-  dir: 'public',
-  // Keep responsive breakpoints for consistency
-  screens: {
-    xs: 320, sm: 640, md: 768, lg: 1024, xl: 1280, xxl: 1536
-  }
-}
-```
-
-- Added proper .npmrc configuration for native modules:
-```
-# Allow proper handling of native module dependencies
-shamefully-hoist=true
-
-# Specific package hoisting patterns for native modules
-public-hoist-pattern[]=*sharp*
-public-hoist-pattern[]=*better-sqlite3*
-public-hoist-pattern[]=*parcel*
-public-hoist-pattern[]=*vue*
-
-# Ensure these built dependencies are handled correctly
-only-built-dependencies=@parcel/watcher,better-sqlite3,sharp,unrs-resolver,vue-demi
-```
-
-- Created specialized npm scripts for clean cache restart:
-```json
-"dev:clean": "nuxt dev --clean-cache",
-"dev:clean-log": "nuxt dev --clean-cache 2>&1 | tee logs/dev-clean-$(date +%Y%m%d-%H%M%S).log",
-```
-
-- Verified that standard HTML `<img>` tags work best across all platforms
-- Added comprehensive image usage documentation and examples
-
-### Template Robustness Issues
-
-Problem: The default template wasn't handling missing sections gracefully, causing errors when sections were removed.
-
-Solutions:
-- Added conditional rendering with `v-if` checks for all sections
-- Used optional chaining (`?.`) for nested properties
-- Added fallbacks with the `||` operator for arrays
-- Added conditional separators that only display when needed
-- Documented optional sections with commented YAML examples
-
-```vue
-<!-- Example pattern -->
-<UPageSection
-  v-if="page.sections && page.sections.length"
-  v-for="(section, index) in page.sections"
-  :key="index"
-  :title="section.title"
-  :description="section.description"
->
-  <!-- Content -->
-</UPageSection>
-```
-
-## Customizations Implemented
-
-### Homepage Customization
-
-- Replaced template content with ACT-specific information
-- Created sections for Risk-Based Decision Making and Three-Phase Approach
-- Added Benefits of ACT with appropriate icons 
-- Integrated ACT logo in the hero section
-- Removed demo elements (color picker, promotional video)
-- Added ACT-specific call-to-action
-
-### Development Documentation
-
-- Created detailed documentation on page structure and components
-- Added reference guides for template patterns
-- Documented best practices for both Vue templates and MDC syntax
-- Added examples for proper component usage
-
-## Learnings
-
-1. File naming best practices: lowercase, hyphens, no spaces
-2. Template robustness requires conditional rendering for all optional sections
-3. YAML comments provide valuable documentation for other developers
-4. Nuxt UI Pro components can be customized extensively but require proper syntax
-5. Always consider cross-platform compatibility in configuration
-6. Test component syntax in dedicated test files before widespread implementation
-7. Maintain thorough documentation of patterns and best practices
-
-## Project Structure
-
-- Landing page: `/content/0.index.yml`
-- Handbook content: `/content/1.docs/2.act-handbook/`
-- Development documentation: `/content/1.docs/3.development/`
-- Images: `/public/images/act-handbook/`
-- Project documentation: `/project-docs/`
-- Session logs: `/logs/` (git-ignored)
-
-## Enhanced Template Robustness
-
-We've now applied the template robustness patterns to all main template pages:
-
-1. **Homepage**: `/app/pages/index.vue` - Added complete robustness treatment
-2. **Doc Pages**: `/app/pages/docs/[...slug].vue` - Enhanced with optional chaining and fallbacks:
+**Researched Solutions**:
+1. **Create error.vue with client-side redirect** (most pragmatic, community consensus)
    ```vue
-   <UPageHeader
-     :title="page?.title || ''"
-     :description="page?.description || ''"
-   />
-   
-   <UContentSurround v-if="surround?.length" :surround="surround || []" />
+   <!-- error.vue in project root -->
+   <script setup>
+   onMounted(() => {
+     const path = window.location.pathname
+     if (path.endsWith('/') && path !== '/') {
+       const newPath = path.slice(0, -1)
+       router.replace(newPath)
+     }
+   })
+   </script>
    ```
 
-3. **Blog List**: `/app/pages/blog/index.vue` - Added conditional rendering:
-   ```vue
-   <UPageHeader
-     v-if="page"
-     :title="page?.title || ''"
-     :description="page?.description || ''"
-     class="py-[50px]"
-   />
-   
-   <UBlogPosts v-if="posts?.length">
-     <!-- Blog post rendering with fallbacks -->
-   </UBlogPosts>
-   ```
+2. Configure Nitro to generate directory-based routes
+3. Post-build script to restructure output
+4. Route rules for trailing slash handling
 
-4. **Blog Post**: `/app/pages/blog/[slug].vue` - Enhanced with detailed conditional rendering:
-   ```vue
-   <template #headline v-if="post?.badge || post?.date">
-     <UBadge
-       v-if="post?.badge"
-       v-bind="post?.badge"
-       variant="subtle"
-     />
-     <span v-if="post?.badge && post?.date" class="text-(--ui-text-muted)">&middot;</span>
-     <time v-if="post?.date" class="text-(--ui-text-muted)">{{ new Date(post.date).toLocaleDateString('en') }}</time>
-   </template>
-   ```
+**Important Note**: This is a known Nuxt 3 issue (#15462) open since 2022 with 63+ upvotes. The error.vue approach is most reliable across all static hosts.
 
-This comprehensive approach ensures all templates gracefully handle missing data and provide fallbacks, resulting in a more robust application.
+### Issue #11: Safari Download Behavior (HIGH PRIORITY)
+**Root Cause**: Safari opens new tabs for downloads with `target="_blank"` that don't auto-close
 
-## Development Documentation Cleanup Status
+**Solution**: Remove `target="_blank"` from all download links in artifacts.md
+```markdown
+<!-- Change from -->
+::card{icon="..." :to="/downloads/file.docx" target="_blank"}
+<!-- To -->
+::card{icon="..." :to="/downloads/file.docx"}
+```
 
-1. **Completed Documentation Improvements**:
-   - Successfully consolidated duplicate content for better organization:
-     - ✅ Merged `4.icon-test.md` into `5.nuxt-ui-with-content.md` as a comprehensive UI component guide
-     - ✅ Renamed `1.test-nuxt-image.md` to `1.image-usage-guide.md` to better reflect its purpose
-     - ✅ Removed redundant files and updated all references
-     - ✅ Created new `9.code-conventions.md` with project standards and style guide
-   - ✅ Ensured consistent MDC syntax across all documentation files
-   - ✅ Updated index.md references to reflect reorganized files
-   - Added live examples with actual MDC syntax for each component type
-   - Enhanced best practices section for image usage
-   - Centralized code style and conventions documentation
+### Issue #15: Mobile Navigation Overflow (HIGH PRIORITY)
+**Problem**: 
+- Mobile hamburger menu extends beyond viewport
+- Theme switcher and cookie preferences buttons not integrated into mobile menu
+- No separation between nav links and controls
 
-## Project Organization Improvements
+**Solution**: Review Nuxt UI Pro landing template for proper implementation
+- Move theme controls to mobile menu slots
+- Add proper separator
+- Ensure all content stays within viewport
 
-We've enhanced the overall project organization with the following improvements:
+## Upcoming Issues (Lower Priority)
 
-1. **Root Directory Cleanup**:
-   - ✅ Removed redundant blog article draft that was properly formatted in the content directory
-   - ✅ Moved handbook-related documentation to `project-docs/handbook-docs/`
-   - ✅ Archived backup configuration files to `project-docs/backups/`
-   - ✅ Added README to the project-docs directory explaining its purpose and organization
+### Issue #13: Link Preview Image (Open Graph)
+- Configure proper meta tags in app.vue
+- Use arrow logo or slogan image
+- Recommended size: 1200x630px
 
-2. **Directory Structure Enhancement**:
-   - Created organized subdirectories for specific documentation types
-   - Established clear naming conventions for files
-   - Improved separation between active code/content and development resources
-   - Reduced clutter in the project root for better navigation
+### Issue #14: Google Analytics Implementation
+- Add GA4 tracking script
+- Coordinate with team for measurement ID
+- Ensure Osano consent compliance
+- Consider @nuxtjs/google-analytics module
 
-## Next Development Focus
+## Technical Context & Decisions
 
-2. **Standard Image Implementation**:
-   - Standardize on HTML `<img>` tags in markdown content for compatibility
-   - Use consistent `::div{class="flex justify-center my-6"}` wrapper for image centering
-   - Add `loading="lazy"` attribute for below-the-fold images
-   - Document final image best practices in a consolidated guide
+### File Structure
+```
+/content/               # Nuxt Content markdown files
+  0.index.yml          # Homepage content
+  1.docs/              # Documentation pages
+    1.getting-started/ # Introduction
+    4.artifacts.md     # Downloads page
+  3.blog/              # Blog articles
+/content-staging/       # Hidden content not yet published
+  act-handbook/        # Full ACT handbook (hidden)
+  development/         # Dev documentation (hidden)
+  blog/               # Example blog posts (hidden)
+/public/
+  downloads/           # Template downloads
+    act-templates/     # Individual ACT templates
+    MITRE-ACT-Template-Set-*.zip  # Complete package
+  images/
+    heroes/           # Section hero images
+    logos/            # ACT logos
+    act-handbook/     # Handbook images
+/app/
+  components/         # Vue components
+    AppHeader.vue     # Has mobile nav issue
+    AppFooter.vue     # Has cookie preferences
+  app.vue            # Osano script, SEO meta
+```
 
-3. **Component Guidelines**:
-   - Create clear guidelines for using built-in shorthand components (note, tip, warning)
-   - Document proper card-group formatting with consistent spacing
-   - Ensure all component examples follow the established standards
+### Key Technical Decisions Made
+1. **Image Provider**: Using `provider: 'none'` for Apple Silicon compatibility (avoids Sharp/IPX issues)
+2. **Cookie Consent**: Osano script loads first in head with `tagPriority: 1`
+3. **Content Staging**: Moved unready content to `/content-staging/` to hide from production
+4. **File Naming**: All images use lowercase with hyphens (no spaces)
+5. **Download Strategy**: Direct file downloads without `target="_blank"` for Safari compatibility
 
-4. **Documentation Enhancements**:
-   - Document the IPX/Sharp compatibility resolution permanently
-   - Create a troubleshooting guide for common issues
-   - Add platform-specific notes for Windows, macOS (Intel), and Apple Silicon
+### Recent Changes
+- Changed hero button from "View on GitHub" to "Get the Docs"
+- Moved "Download All Templates" section to top of artifacts page
+- Fixed blog post issues (preview image, author link, URL text)
+- Added hero images to main page sections
 
-5. **Testing and Browser Compatibility**:
-   - Test image rendering across different browsers and devices
-   - Verify responsive behavior of all components
-   - Check for any rendering issues or layout shifts
+## Todo List & PR Strategy
 
-6. **Content Enhancement**:
-   - Continue enhancing handbook content with ACT-specific information
-   - Implement additional page templates based on PDF content
-   - Add more interactive elements to improve user experience
+### PR 1: Fix Critical UX Issues (Issues #10 & #11) - IN PROGRESS
+- Implement error.vue for trailing slash 404 fix
+- Remove target="_blank" from download links
+
+### PR 2: Fix Mobile Navigation (Issue #15) - HIGH PRIORITY
+- Review Nuxt UI Pro landing template
+- Restructure mobile menu components
+- Move theme controls to proper slots
+
+### PR 3: Configure Link Preview (Issue #13) - MEDIUM
+- Update Open Graph meta tags
+- Test on social platforms
+
+### PR 4: Implement Analytics (Issue #14) - MEDIUM
+- Add GA4 tracking
+- Ensure Osano compliance
+
+## Commands & Workflow
+```bash
+# Development
+pnpm run dev           # Start dev server
+pnpm run build         # Build application
+pnpm run generate      # Generate static site
+pnpm run preview       # Preview production build
+
+# Code Quality
+pnpm run lint          # Run ESLint
+pnpm run typecheck     # Run TypeScript checks
+
+# Git Workflow
+git checkout -b feature/issue-XX
+# Make changes
+pnpm run lint && pnpm run typecheck
+git add -A && git commit -m "message"
+git push origin feature/issue-XX
+# Create PR to main
+```
+
+## Deployment
+- Automatic via GitHub Actions on push to main
+- Deploys to GitHub Pages at https://act.mitre.org/
+- Uses `pnpm run generate` for static site generation
+
+## Important URLs
+- Production: https://act.mitre.org/
+- GitHub Repo: https://github.com/mitre/act
+- Artifacts Page: /docs/artifacts
+- Introduction: /docs/getting-started
+- Blog: /blog
+
+## Known Issues & Workarounds
+1. **Trailing Slash 404**: Known Nuxt 3 issue, implementing error.vue workaround
+2. **Safari Downloads**: Remove target="_blank" from download links
+3. **Mobile Navigation**: Needs restructuring per Nuxt UI Pro patterns
+4. **IPX/Sharp on Apple Silicon**: Using provider: 'none' to avoid issues
+
+## Session Context
+- Working from main branch after successful PR #3 merge
+- Fixed two quick issues on main (hero button text, artifacts layout)
+- Currently researching solutions for Issues #10 and #11
+- Created Issue #15 for mobile navigation problem
+- At 4% content limit, maintaining context via these files

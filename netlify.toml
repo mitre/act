@@ -2,12 +2,17 @@
 # Increases memory allocation to prevent JavaScript heap out of memory errors
 
 [build]
-  command = "pnpm run build"
+  command = "pnpm run generate"
   publish = "dist"
   environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
 
-# Optional: Configure redirects for SPA routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Note: Trailing slash handling is now done by generating directory structure
+# with index.html files, which works on both GitHub Pages and Netlify
+
+[build.processing]
+  # Disable Netlify's post-processing to avoid conflicts with our structure
+  skip_processing = true
+
+[build.processing.html]
+  # Disable Pretty URLs since we handle it ourselves
+  pretty_urls = false

@@ -10,9 +10,12 @@ dist
 .DS_Store
 .data
 
-# Claude documentation
+# Claude documentation and context files
 CLAUDE.md
 session.md
+recovery-prompt.md
+session-*.md
+pr-summary.md
 .vimrc
 .claude/
 
