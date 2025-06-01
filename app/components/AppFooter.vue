@@ -16,7 +16,7 @@ const columns = [{
       to: '/docs'
     },
     {
-      label: 'Artifacts', 
+      label: 'Artifacts',
       to: '/docs/artifacts'
     }
     //  {

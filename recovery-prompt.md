@@ -3,7 +3,7 @@
 ## Project Overview
 The MITRE ACT (Adaptive Capabilities Testing) website is a Nuxt 3 application with Nuxt UI Pro, deployed to GitHub Pages at https://act.mitre.org/. The site provides documentation, resources, and templates for the ACT security assessment framework.
 
-## Current Status (May 31, 2025)
+## Current Status (January 6, 2025)
 - Main site is live and functional at https://act.mitre.org/
 - All initial content from PR #3 has been merged to main
 - Cookie consent (Osano) is implemented and working
@@ -11,36 +11,60 @@ The MITRE ACT (Adaptive Capabilities Testing) website is a Nuxt 3 application wi
 - Blog has "ACT Website Goes Live" article
 - Artifacts page has all templates with download functionality
 - Complete template package download available
+- Issue #10 (404 on trailing slash) has been SOLVED with Nitro hook
+- Build warnings cleaned up (chunk size, sourcemaps)
 
 ## Active Issues Being Researched
 
-### Issue #10: 404 on Page Refresh with Trailing Slash (HIGH PRIORITY)
+### Issue #10: 404 on Page Refresh with Trailing Slash (SOLVED ✓)
 **Root Cause**: GitHub Pages serves static files differently than Nuxt expects
-- Nuxt generates: `/docs/artifacts.html`
-- Browser navigates to: `/docs/artifacts` (works)
-- On refresh, GitHub Pages adds: `/docs/artifacts/`
-- Looks for: `/docs/artifacts/index.html` (doesn't exist → 404)
+- Nuxt generates: `/docs/artifacts/index.html`
+- GitHub Pages expects either: `/docs/artifacts.html` OR `/docs/artifacts/index.html`
+- Direct URL access fails because GitHub Pages can't find `/docs/artifacts.html`
 
-**Researched Solutions**:
-1. **Create error.vue with client-side redirect** (most pragmatic, community consensus)
-   ```vue
-   <!-- error.vue in project root -->
-   <script setup>
-   onMounted(() => {
-     const path = window.location.pathname
-     if (path.endsWith('/') && path !== '/') {
-       const newPath = path.slice(0, -1)
-       router.replace(newPath)
-     }
-   })
-   </script>
-   ```
+**Working Solution (January 6, 2025)**:
+Implemented Nitro hook to generate duplicate HTML files during build:
+```typescript
+// nuxt.config.ts
+nitro: {
+  hooks: {
+    'prerender:done': async () => {
+      const { promises: fs } = await import('fs')
+      const { join, dirname, resolve } = await import('path')
+      const publicDir = resolve('.output/public')
+      
+      async function processDirectory(dir) {
+        const entries = await fs.readdir(dir, { withFileTypes: true })
+        for (const entry of entries) {
+          const fullPath = join(dir, entry.name)
+          if (entry.isDirectory()) {
+            await processDirectory(fullPath)
+          } else if (entry.isFile() && entry.name === 'index.html') {
+            const relativePath = fullPath.replace(publicDir + '/', '')
+            const dirPath = dirname(relativePath)
+            if (dirPath === '.') continue
+            const duplicatePath = join(publicDir, `${dirPath}.html`)
+            await fs.copyFile(fullPath, duplicatePath)
+          }
+        }
+      }
+      await processDirectory(publicDir)
+    }
+  }
+}
+```
 
-2. Configure Nitro to generate directory-based routes
-3. Post-build script to restructure output
-4. Route rules for trailing slash handling
+**Result**: Creates both `/docs/artifacts.html` and `/docs/artifacts/index.html`, making both URL patterns work on GitHub Pages.
 
-**Important Note**: This is a known Nuxt 3 issue (#15462) open since 2022 with 63+ upvotes. The error.vue approach is most reliable across all static hosts.
+**Previous Attempts**:
+1. Custom 404.html with JavaScript redirect - caused infinite redirect loops
+2. Post-build script (fix-trailing-slash.js) - didn't solve the core issue
+3. Changing footer links to client-side navigation - worked but didn't fix direct access
+
+**Important Discovery**: 
+- nuxt.com uses Vercel (not GitHub Pages), which handles routing differently
+- GitHub Pages has stricter file resolution requirements
+- The Nitro hook solution generates files in both formats for full compatibility
 
 ### Issue #11: Safari Download Behavior (HIGH PRIORITY)
 **Root Cause**: Safari opens new tabs for downloads with `target="_blank"` that don't auto-close
@@ -122,8 +146,8 @@ The MITRE ACT (Adaptive Capabilities Testing) website is a Nuxt 3 application wi
 ## Todo List & PR Strategy
 
 ### PR 1: Fix Critical UX Issues (Issues #10 & #11) - IN PROGRESS
-- Implement error.vue for trailing slash 404 fix
-- Remove target="_blank" from download links
+- ✓ Implement Nitro hook for trailing slash 404 fix (Issue #10 - SOLVED)
+- Remove target="_blank" from download links (Issue #11)
 
 ### PR 2: Fix Mobile Navigation (Issue #15) - HIGH PRIORITY
 - Review Nuxt UI Pro landing template
@@ -137,6 +161,18 @@ The MITRE ACT (Adaptive Capabilities Testing) website is a Nuxt 3 application wi
 ### PR 4: Implement Analytics (Issue #14) - MEDIUM
 - Add GA4 tracking
 - Ensure Osano compliance
+
+## Planned Improvements
+
+### Nuxt GitHub Pages Module
+After validating the Nitro hook fix, we plan to:
+1. Extract the solution into a reusable Nuxt module
+2. Publish as `nuxt-github-pages` on MITRE's GitHub
+3. Features will include:
+   - Automatic duplicate HTML file generation
+   - Configuration options (enabled, excludePaths)
+   - Clear documentation for GitHub Pages deployment
+   - Compatible with Nuxt 3 static generation
 
 ## Commands & Workflow
 ```bash
