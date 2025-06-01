@@ -8,3 +8,11 @@
 
 # Note: Trailing slash handling is now done by generating directory structure
 # with index.html files, which works on both GitHub Pages and Netlify
+
+[build.processing]
+  # Disable Netlify's post-processing to avoid conflicts with our structure
+  skip_processing = true
+
+[build.processing.html]
+  # Disable Pretty URLs since we handle it ourselves
+  pretty_urls = false
