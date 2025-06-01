@@ -13,13 +13,11 @@ const columns = [{
     //  },
     {
       label: 'Docs',
-      to: '/docs/getting-started',
-      target: '_top'
+      to: '/docs'
     },
     {
-      label: 'Artifacts',
-      to: '/docs/artifacts',
-      target: '_top'
+      label: 'Artifacts', 
+      to: '/docs/artifacts'
     }
     //  {
     //    label: 'Roadmap'

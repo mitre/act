@@ -75,17 +75,6 @@ async function main() {
     const outputDir = await findOutputDir()
     await restructureFiles(outputDir, outputDir)
 
-    // Ensure the custom 404.html is copied to handle GitHub Pages routing
-    const source404 = path.join('public', '404.html')
-    const dest404 = path.join(outputDir, '404.html')
-
-    try {
-      await fs.access(source404)
-      await fs.copyFile(source404, dest404)
-      console.log('✓ Copied custom 404.html for GitHub Pages routing')
-    } catch {
-      console.log('Note: No custom 404.html found to copy')
-    }
 
     console.log('✓ File restructuring complete')
   } catch (error) {
