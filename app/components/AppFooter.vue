@@ -13,12 +13,12 @@ const columns = [{
     //  },
     {
       label: 'Docs',
-      to: '/docs',
+      to: '/docs/getting-started',
       target: '_top'
     },
     {
-      label: 'Downloads',
-      to: '/docs',
+      label: 'Artifacts',
+      to: '/docs/artifacts',
       target: '_top'
     }
     //  {
