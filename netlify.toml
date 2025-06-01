@@ -3,7 +3,7 @@
 
 [build]
   command = "pnpm run generate"
-  publish = ".output/public"
+  publish = "dist"
   environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
 
 # Note: Trailing slash handling is now done by generating directory structure

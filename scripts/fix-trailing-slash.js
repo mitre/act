@@ -8,7 +8,22 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 
-const outputDir = '.output/public'
+// Check which output directory exists (Nuxt may use different dirs)
+async function findOutputDir() {
+  const possibleDirs = ['.output/public', 'dist', '.nuxt/dist']
+  
+  for (const dir of possibleDirs) {
+    try {
+      await fs.access(dir)
+      console.log(`Found output directory: ${dir}`)
+      return dir
+    } catch {
+      // Directory doesn't exist, try next
+    }
+  }
+  
+  throw new Error('No output directory found. Tried: ' + possibleDirs.join(', '))
+}
 
 async function restructureFiles(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true })
@@ -49,8 +64,9 @@ async function restructureFiles(dir) {
 
 async function main() {
   console.log('Restructuring files for GitHub Pages...')
-
+  
   try {
+    const outputDir = await findOutputDir()
     await restructureFiles(outputDir)
     console.log('✓ File restructuring complete')
   } catch (error) {
