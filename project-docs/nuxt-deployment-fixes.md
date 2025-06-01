@@ -1,6 +1,10 @@
 # Nuxt 3 Static Site Deployment Fixes
 
-This document captures reusable solutions for common Nuxt 3 static site deployment issues, particularly for GitHub Pages and Netlify deployments.
+> **Last Updated**: January 2025  
+> **Tested With**: Nuxt 3.17.4, Node 20.x  
+> **Primary Use Case**: GitHub Pages & Netlify static deployments
+
+This document captures reusable solutions for common Nuxt 3 static site deployment issues, particularly for GitHub Pages and Netlify deployments. These solutions have been battle-tested on production sites.
 
 ## Issue #1: Trailing Slash 404 Errors on Static Hosts
 
@@ -10,32 +14,93 @@ When deploying Nuxt 3 static sites to GitHub Pages or similar hosts:
 - Refreshing or visiting `/docs/page/` returns 404
 - This is because Nuxt generates `/docs/page.html` but hosts look for `/docs/page/index.html`
 
-### Solution: Generate Directory Structure
+Related Nuxt issues:
+- [#15462](https://github.com/nuxt/nuxt/issues/15462) - Main trailing slash issue (63+ upvotes since 2022)
+- [#31521](https://github.com/nuxt/nuxt/issues/31521) - Trailing slash inconsistency in SSG (closed, fixed in PR #31902)
 
-Create a Nitro plugin at `server/plugins/nitro-static-paths.ts`:
+### Solution: Post-Build Script
 
-```typescript
-// Nitro plugin to generate static files as directories with index.html
-// This fixes the trailing slash issue for GitHub Pages
-export default defineNitroPlugin((nitroApp) => {
-  nitroApp.hooks.hook('prerender:generate', async (route) => {
-    // Skip if it's already index.html or the root
-    if (route.fileName?.endsWith('index.html') || route.route === '/') {
-      return
+Create a post-build script at `scripts/fix-trailing-slash.js`:
+
+```javascript
+#!/usr/bin/env node
+
+/**
+ * Post-build script to restructure generated files for GitHub Pages
+ * Converts /path.html to /path/index.html to handle trailing slashes
+ */
+
+import { promises as fs } from 'fs';
+import path from 'path';
+
+const outputDir = '.output/public';
+
+async function restructureFiles(dir) {
+  const entries = await fs.readdir(dir, { withFileTypes: true });
+  
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    
+    if (entry.isDirectory()) {
+      // Skip special directories
+      if (entry.name.startsWith('_') || entry.name.startsWith('.')) {
+        continue;
+      }
+      // Recursively process subdirectories
+      await restructureFiles(fullPath);
+    } else if (entry.isFile() && entry.name.endsWith('.html') && entry.name !== 'index.html') {
+      // Convert file.html to file/index.html
+      const baseName = entry.name.slice(0, -5); // Remove .html
+      const newDir = path.join(dir, baseName);
+      const newPath = path.join(newDir, 'index.html');
+      
+      // Skip if directory already exists (e.g., already processed)
+      try {
+        await fs.access(newDir);
+        console.log(`Skipping ${fullPath} - directory already exists`);
+        continue;
+      } catch {
+        // Directory doesn't exist, proceed
+      }
+      
+      console.log(`Converting ${fullPath} -> ${newPath}`);
+      
+      // Create directory and move file
+      await fs.mkdir(newDir, { recursive: true });
+      await fs.rename(fullPath, newPath);
     }
+  }
+}
 
-    // Convert /path.html to /path/index.html
-    if (route.fileName?.endsWith('.html')) {
-      const baseName = route.fileName.slice(0, -5) // Remove .html
-      route.fileName = `${baseName}/index.html`
-    }
-  })
-})
+async function main() {
+  console.log('Restructuring files for GitHub Pages...');
+  
+  try {
+    await restructureFiles(outputDir);
+    console.log('✓ File restructuring complete');
+  } catch (error) {
+    console.error('Error restructuring files:', error);
+    process.exit(1);
+  }
+}
+
+main();
+```
+
+Update `package.json`:
+```json
+{
+  "scripts": {
+    "generate": "nuxt generate && node scripts/fix-trailing-slash.js"
+  }
+}
 ```
 
 This generates files as:
 - `/docs/page/index.html` instead of `/docs/page.html`
 - Both `/docs/page` and `/docs/page/` will work correctly
+
+**Note**: The Nitro plugin approach doesn't work because the `prerender:generate` hook doesn't have the right context to modify file paths during generation.
 
 ## Issue #2: Safari Opening New Tabs for Downloads
 
@@ -222,9 +287,31 @@ gh pr create
 
 ## Known Nuxt 3 Issues
 
-1. **Trailing Slashes**: GitHub issue #15462 (open since 2022)
+1. **Trailing Slashes**: 
+   - [#15462](https://github.com/nuxt/nuxt/issues/15462) - Main issue (open since 2022, 63+ upvotes)
+   - [#31521](https://github.com/nuxt/nuxt/issues/31521) - SSG inconsistency (closed, fixed in PR #31902)
+   - Solution: Use post-build script to restructure files
 2. **Apple Silicon Sharp**: Use `provider: 'none'` in image config
 3. **Tailwind Sourcemap Warning**: Known issue, can be ignored
+
+## Related GitHub Issues & Discussions
+
+### Trailing Slash Issues
+- [nuxt/nuxt#15462](https://github.com/nuxt/nuxt/issues/15462) - Trailing slash behavior with Nuxt 3 SSG (63+ upvotes)
+- [nuxt/nuxt#31521](https://github.com/nuxt/nuxt/issues/31521) - Trailing slash inconsistency in SSG
+- [nuxt/nuxt#13953](https://github.com/nuxt/nuxt/issues/13953) - Related trailing slash discussion
+- [nuxt/nuxt#23317](https://github.com/nuxt/nuxt/issues/23317) - GitHub Pages specific trailing slash issue
+
+### Other Deployment Issues
+- [nuxt/image#1818](https://github.com/nuxt/image/issues/1818) - Sharp module issues on Apple Silicon
+- [nuxt/nuxt#14967](https://github.com/nuxt/nuxt/issues/14967) - Static generation memory issues
+
+## Community Solutions & Workarounds
+
+1. **Post-build scripts** (what we use) - Most reliable for GitHub Pages
+2. **Netlify redirects** - Works but only for Netlify
+3. **Cloudflare Pages** - Has better trailing slash handling out of the box
+4. **Custom server middleware** - Not applicable for static sites
 
 ## Resources
 
@@ -233,3 +320,7 @@ gh pr create
 - Nuxt UI Pro: https://ui.nuxt.com/pro
 - GitHub Pages deployment: https://nuxt.com/deploy/github-pages
 - Netlify deployment: https://nuxt.com/deploy/netlify
+
+## Contributing
+
+If you've found other solutions or issues, please feel free to comment on the gist or reach out. This is a living document meant to help the Nuxt community navigate static deployment challenges.
