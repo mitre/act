@@ -22,3 +22,7 @@ pr-summary.md
 # Temporary files and backups
 backup/
 temp/
+*.backup-*
+
+# Local modules
+nuxt-github-pages/

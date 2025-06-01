@@ -1,15 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // Build optimizations
-  vite: {
-    build: {
-      // Increase chunk size warning limit to 600KB (from default 500KB)
-      chunkSizeWarningLimit: 600,
-      // Disable CSS sourcemaps in production to avoid Tailwind warnings
-      sourcemap: false
-    }
-  },
-
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
@@ -19,7 +9,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-og-image',
     '@nuxt/fonts',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    'nuxt-github-pages'
   ],
 
   devtools: {
@@ -53,78 +44,16 @@ export default defineNuxtConfig({
         '/'
       ],
       crawlLinks: true
-    },
-    hooks: {
-      'prerender:done': async () => {
-        // Import fs dynamically
-        const { promises: fs } = await import('fs')
-        const { join, dirname, resolve } = await import('path')
+    }
+  },
 
-        // Determine the output directory based on environment
-        // Netlify uses 'dist' as configured in netlify.toml
-        // Local/GitHub Pages uses '.output/public'
-        const possibleDirs = [
-          resolve('dist'), // Netlify output
-          resolve('.output/public') // Default Nuxt output
-        ]
-
-        let publicDir: string | null = null
-
-        // Find the actual output directory
-        for (const dir of possibleDirs) {
-          try {
-            await fs.access(dir)
-            publicDir = dir
-            console.log(`Found output directory: ${dir}`)
-            break
-          } catch {
-            // Directory doesn't exist, try next
-          }
-        }
-
-        if (!publicDir) {
-          console.log('No output directory found, skipping duplicate file creation')
-          return
-        }
-
-        async function processDirectory(dir: string) {
-          try {
-            const entries = await fs.readdir(dir, { withFileTypes: true })
-
-            for (const entry of entries) {
-              const fullPath = join(dir, entry.name)
-
-              if (entry.isDirectory()) {
-                // Recursively process subdirectories
-                await processDirectory(fullPath)
-              } else if (entry.isFile() && entry.name === 'index.html') {
-                // Found an index.html file
-                const relativePath = fullPath.replace(publicDir! + '/', '')
-                const dirPath = dirname(relativePath)
-
-                // Skip root index.html
-                if (dirPath === '.') continue
-
-                // Create duplicate at parent level
-                const duplicatePath = join(publicDir!, `${dirPath}.html`)
-
-                try {
-                  await fs.copyFile(fullPath, duplicatePath)
-                  console.log(`✓ Created duplicate: ${dirPath}.html`)
-                } catch (error) {
-                  console.error(`Failed to create duplicate for ${relativePath}:`, error)
-                }
-              }
-            }
-          } catch (error) {
-            console.error(`Error processing directory ${dir}:`, error)
-          }
-        }
-
-        console.log('Creating duplicate HTML files for GitHub Pages...')
-        await processDirectory(publicDir)
-        console.log('✓ Duplicate file creation complete')
-      }
+  // Build optimizations
+  vite: {
+    build: {
+      // Increase chunk size warning limit to 600KB (from default 500KB)
+      chunkSizeWarningLimit: 600,
+      // Disable CSS sourcemaps in production to avoid Tailwind warnings
+      sourcemap: false
     }
   },
 
