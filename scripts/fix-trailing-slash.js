@@ -25,7 +25,7 @@ async function findOutputDir() {
   throw new Error('No output directory found. Tried: ' + possibleDirs.join(', '))
 }
 
-async function restructureFiles(dir) {
+async function restructureFiles(dir, outputDir) {
   const entries = await fs.readdir(dir, { withFileTypes: true })
 
   for (const entry of entries) {
@@ -37,8 +37,14 @@ async function restructureFiles(dir) {
         continue
       }
       // Recursively process subdirectories
-      await restructureFiles(fullPath)
+      await restructureFiles(fullPath, outputDir)
     } else if (entry.isFile() && entry.name.endsWith('.html') && entry.name !== 'index.html') {
+      // Skip the custom 404.html file - it needs to stay at the root
+      if (entry.name === '404.html' && dir === outputDir) {
+        console.log(`Skipping 404.html - needs to stay at root for GitHub Pages`)
+        continue
+      }
+      
       // Convert file.html to file/index.html
       const baseName = entry.name.slice(0, -5) // Remove .html
       const newDir = path.join(dir, baseName)
@@ -67,7 +73,20 @@ async function main() {
 
   try {
     const outputDir = await findOutputDir()
-    await restructureFiles(outputDir)
+    await restructureFiles(outputDir, outputDir)
+    
+    // Ensure the custom 404.html is copied to handle GitHub Pages routing
+    const source404 = path.join('public', '404.html')
+    const dest404 = path.join(outputDir, '404.html')
+    
+    try {
+      await fs.access(source404)
+      await fs.copyFile(source404, dest404)
+      console.log('✓ Copied custom 404.html for GitHub Pages routing')
+    } catch (e) {
+      console.log('Note: No custom 404.html found to copy')
+    }
+    
     console.log('✓ File restructuring complete')
   } catch (error) {
     console.error('Error restructuring files:', error)

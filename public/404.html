@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages trailing slash fix
+    // Redirect /path/ to /path (remove trailing slash)
+    const path = window.location.pathname;
+    
+    // Check if we're on a path with trailing slash (except root)
+    if (path.endsWith('/') && path !== '/') {
+      // Remove trailing slash and redirect
+      const newPath = path.slice(0, -1);
+      window.location.replace(newPath);
+    } else {
+      // Not a trailing slash issue, load the app's 404 page
+      window.location.replace('/404');
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
