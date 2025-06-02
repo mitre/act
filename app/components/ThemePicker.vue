@@ -61,7 +61,7 @@ const mode = computed({
 </script>
 
 <template>
-  <UPopover :ui="{ content: 'w-72 px-6 py-4 flex flex-col gap-4' }">
+  <UPopover :ui="{ content: 'w-72 px-6 py-4 flex flex-col gap-4 max-h-[70vh] overflow-y-auto' }">
     <template #default="{ open }">
       <UButton
         icon="i-lucide-swatch-book"
