@@ -44,21 +44,16 @@ const items = [{
     </template>
 
     <template #body>
+      <div class="flex items-center justify-end gap-2 mb-4">
+        <UColorModeButton size="sm" />
+        <ThemePicker />
+      </div>
+
       <UNavigationMenu
         :items="items"
         orientation="vertical"
         class="-mx-2.5"
       />
-
-      <USeparator class="my-6" />
-
-      <div class="flex items-center justify-between px-2">
-        <span class="text-sm text-gray-500 dark:text-gray-400">Theme</span>
-        <div class="flex items-center gap-2">
-          <UColorModeButton size="sm" />
-          <ThemePicker />
-        </div>
-      </div>
 
       <!-- Mobile sign in/sign up buttons - commented out for now -->
       <!-- <USeparator class="my-6" />

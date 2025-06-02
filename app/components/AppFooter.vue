@@ -94,8 +94,6 @@ const columns = [{
     </template>
 
     <template #right>
-      <UColorModeButton />
-
       <UButton
         to="https://github.com/mitre/act"
         target="_blank"
