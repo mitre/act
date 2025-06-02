@@ -34,8 +34,8 @@ const items = [{
     />
 
     <template #right>
-      <UColorModeButton class="mr-2" />
-      <ThemePicker class="mr-2" />
+      <UColorModeButton class="hidden sm:inline-flex" />
+      <ThemePicker class="hidden sm:inline-flex" />
 
       <!-- Sign in/Sign up buttons - commented out for now -->
       <!-- <UButton icon="i-lucide-log-in" color="neutral" variant="ghost" to="/login" class="lg:hidden" />
@@ -49,6 +49,16 @@ const items = [{
         orientation="vertical"
         class="-mx-2.5"
       />
+
+      <USeparator class="my-6" />
+
+      <div class="flex items-center justify-between px-2">
+        <span class="text-sm text-gray-500 dark:text-gray-400">Theme</span>
+        <div class="flex items-center gap-2">
+          <UColorModeButton size="sm" />
+          <ThemePicker />
+        </div>
+      </div>
 
       <!-- Mobile sign in/sign up buttons - commented out for now -->
       <!-- <USeparator class="my-6" />

@@ -29,7 +29,7 @@
     "@vueuse/nuxt": "^13.3.0",
     "defu": "^6.1.4",
     "nuxt": "^3.17.4",
-    "nuxt-github-pages": "github:mitre/nuxt-github-pages",
+    "nuxt-github-pages": "^1.0.0",
     "nuxt-og-image": "^5.1.4",
     "zod": "^3.25.36"
   },

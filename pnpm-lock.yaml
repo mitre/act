@@ -49,8 +49,8 @@ importers:
         specifier: ^3.17.4
         version: 3.17.4(@parcel/watcher@2.5.1)(@types/node@22.15.24)(better-sqlite3@11.10.0)(db0@0.3.2(better-sqlite3@11.10.0))(eslint@9.27.0(jiti@2.4.2))(ioredis@5.6.1)(lightningcss@1.30.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.41.1)(terser@5.40.0)(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.40.0)(yaml@2.8.0))(vue-tsc@2.2.10(typescript@5.8.3))(yaml@2.8.0)
       nuxt-github-pages:
-        specifier: github:mitre/nuxt-github-pages
-        version: https://codeload.github.com/mitre/nuxt-github-pages/tar.gz/0e1885e36e37ab6499d2a8ce87cf806f0799c2e5(magicast@0.3.5)
+        specifier: ^1.0.0
+        version: 1.0.0(magicast@0.3.5)
       nuxt-og-image:
         specifier: ^5.1.4
         version: 5.1.4(@unhead/vue@2.0.10(vue@3.5.16(typescript@5.8.3)))(magicast@0.3.5)(unstorage@1.16.0(db0@0.3.2(better-sqlite3@11.10.0))(ioredis@5.6.1))(vite@6.3.5(@types/node@22.15.24)(jiti@2.4.2)(lightningcss@1.30.1)(terser@5.40.0)(yaml@2.8.0))(vue@3.5.16(typescript@5.8.3))
@@ -4394,9 +4394,8 @@ packages:
     resolution: {integrity: sha512-+e01YjZ9hojroO88dvqiOs/Yh4ff/kbXYcfj70l8KhMpmXITz2GBffT9HqwzFdcTm7iE2C422alG42p7yir2nA==}
     hasBin: true
 
-  nuxt-github-pages@https://codeload.github.com/mitre/nuxt-github-pages/tar.gz/0e1885e36e37ab6499d2a8ce87cf806f0799c2e5:
-    resolution: {tarball: https://codeload.github.com/mitre/nuxt-github-pages/tar.gz/0e1885e36e37ab6499d2a8ce87cf806f0799c2e5}
-    version: 0.1.0
+  nuxt-github-pages@1.0.0:
+    resolution: {integrity: sha512-q+VmoA/7TUJKFMWfBZvt/9BZwYzkcBxLT+iwqeZnUeoMbES8p4Ae7NZAqsdvzNpdCIzVa5kqZzL0Dv/+QHuveQ==}
 
   nuxt-og-image@5.1.4:
     resolution: {integrity: sha512-eDZw6+BRdYWMJUq1V6cJp+CdADKbg+jZZCtHo5D1vL1U/7wWM1D2svRn0xKwGrTZqxg9oJalh7fbZ4/37/sszw==}
@@ -11148,7 +11147,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  nuxt-github-pages@https://codeload.github.com/mitre/nuxt-github-pages/tar.gz/0e1885e36e37ab6499d2a8ce87cf806f0799c2e5(magicast@0.3.5):
+  nuxt-github-pages@1.0.0(magicast@0.3.5):
     dependencies:
       '@nuxt/kit': 3.17.4(magicast@0.3.5)
     transitivePeerDependencies:

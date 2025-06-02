@@ -20,10 +20,23 @@ useHead({
   meta: [
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { key: 'theme-color', name: 'theme-color', content: color }
+    { key: 'theme-color', name: 'theme-color', content: color },
+    // Apple Touch Icon for iOS devices
+    { name: 'apple-mobile-web-app-capable', content: 'yes' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: 'default' }
   ],
   link: [
-    { rel: 'icon', href: '/favicon.ico' }
+    { rel: 'icon', href: '/favicon.ico' },
+    // Apple Touch Icons
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-icon-180x180.png' },
+    { rel: 'apple-touch-icon', sizes: '152x152', href: '/favicons/apple-icon-152x152.png' },
+    { rel: 'apple-touch-icon', sizes: '144x144', href: '/favicons/apple-icon-144x144.png' },
+    { rel: 'apple-touch-icon', sizes: '120x120', href: '/favicons/apple-icon-120x120.png' },
+    { rel: 'apple-touch-icon', sizes: '114x114', href: '/favicons/apple-icon-114x114.png' },
+    { rel: 'apple-touch-icon', sizes: '76x76', href: '/favicons/apple-icon-76x76.png' },
+    { rel: 'apple-touch-icon', sizes: '72x72', href: '/favicons/apple-icon-72x72.png' },
+    { rel: 'apple-touch-icon', sizes: '60x60', href: '/favicons/apple-icon-60x60.png' },
+    { rel: 'apple-touch-icon', sizes: '57x57', href: '/favicons/apple-icon-57x57.png' }
   ],
   script: [
     {
@@ -43,10 +56,27 @@ useHead({
 })
 
 useSeoMeta({
-  titleTemplate: '%s - Nuxt UI Pro - SaaS template',
-  ogImage: 'https://saas-template.nuxt.dev/social-card.png',
-  twitterImage: 'https://saas-template.nuxt.dev/social-card.png',
-  twitterCard: 'summary_large_image'
+  titleTemplate: '%s - MITRE ACT',
+  description: 'MITRE ACT Framework - A structured approach to cybersecurity risk assessment and authorization',
+
+  // Open Graph
+  ogTitle: 'MITRE ACT - Cybersecurity Assessment Framework',
+  ogDescription: 'A structured approach to cybersecurity risk assessment and authorization for federal systems',
+  ogImage: 'https://act.mitre.org/images/act-social-preview.png',
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: 'MITRE ACT - Assessment Collaboration Toolkit',
+  ogSiteName: 'MITRE ACT',
+  ogType: 'website',
+
+  // Twitter
+  twitterTitle: 'MITRE ACT - Cybersecurity Assessment Framework',
+  twitterDescription: 'A structured approach to cybersecurity risk assessment and authorization',
+  twitterImage: 'https://act.mitre.org/images/act-social-preview.png',
+  twitterCard: 'summary_large_image',
+
+  // iOS specific
+  appleMobileWebAppTitle: 'MITRE ACT'
 })
 
 const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
