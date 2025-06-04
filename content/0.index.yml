@@ -54,7 +54,7 @@ sections:
         description: Document findings, develop actionable recommendations, and present results.
         icon: i-heroicons-document-text
   - title: MITRE Cyber Solutions Innovation Center
-    description: MITRE ACT is developed by The MITRE Corporation's Cyber Solutions Innovation Center (CSIC), bringing together world-class expertise to address cybersecurity challenges.
+    description: MITRE ACT was developed by MITRE's Cyber Solutions Innovation Center (CSIC), bringing together world-class expertise to address cybersecurity challenges.
     orientation: horizontal
     reverse: false
     image:
