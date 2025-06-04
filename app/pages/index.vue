@@ -1,113 +1,37 @@
 <script setup lang="ts">
-import type { PageSection } from '~/types'
-
-const { data: page } = await useAsyncData('index', () => queryCollection('index').first())
+definePageMeta({
+  layout: 'landing'
+})
 
 useSeoMeta({
   titleTemplate: '',
-  title: page.value?.seo?.title || page.value?.title,
-  ogTitle: page.value?.seo?.title || page.value?.title,
-  description: page.value?.seo?.description || page.value?.description,
-  ogDescription: page.value?.seo?.description || page.value?.description
+  title: 'MITRE ACT - Coming Soon',
+  ogTitle: 'MITRE ACT - Coming Soon',
+  description: 'MITRE ACT (Adversarial Capability and Testing) website is coming soon.',
+  ogDescription: 'MITRE ACT (Adversarial Capability and Testing) website is coming soon.'
 })
 </script>
 
 <template>
-  <div v-if="page">
-    <UPageHero
-      :title="page.title"
-      :description="page.description"
-      :links="page.hero?.links"
-    >
-      <template #top>
-        <div class="absolute rounded-full dark:bg-(--ui-primary) blur-[300px] size-60 sm:size-80 transform -translate-x-1/2 left-1/2 -translate-y-80" />
-
-        <LazyStarsBg />
-      </template>
-
-      <PromotionalVideo v-if="false" />
-
-      <div class="flex items-center justify-center my-6">
-        <NuxtImg
-          src="/images/logos/mitre-act-arrow-logo.svg"
-          alt="MITRE ACT Logo"
-          class="h-48"
-        />
-      </div>
-    </UPageHero>
-
-    <template v-if="page.sections && page.sections.length">
-      <UPageSection
-        v-for="(section, index) in (page.sections as PageSection[])"
-        :key="index"
-        :title="section.title"
-        :description="section.description"
-        :orientation="section.orientation"
-        :reverse="section.reverse"
-        :features="section.features"
-        :links="section.links"
-      >
-        <NuxtImg
-          v-if="section.image"
-          :src="section.image.src"
-          :alt="section.image.alt || section.title"
-          class="rounded-lg shadow-xl"
-        />
-        <ImagePlaceholder v-else />
-      </UPageSection>
-    </template>
-
-    <UPageSection
-      v-if="page.features"
-      :title="page.features.title"
-      :description="page.features.description"
-    >
-      <UPageGrid>
-        <UPageCard
-          v-for="(item, index) in (page.features.items || [])"
-          :key="index"
-          v-bind="item"
-          spotlight
-        />
-      </UPageGrid>
-    </UPageSection>
-
-    <UPageSection
-      v-if="page.testimonials"
-      id="testimonials"
-      :headline="page.testimonials.headline"
-      :title="page.testimonials.title"
-      :description="page.testimonials.description"
-    >
-      <UPageColumns class="xl:columns-4">
-        <UPageCard
-          v-for="(testimonial, index) in (page.testimonials.items || [])"
-          :key="index"
-          variant="subtle"
-          :description="testimonial.quote"
-          :ui="{ description: 'before:content-[open-quote] after:content-[close-quote]' }"
-        >
-          <template #footer>
-            <UUser
-              v-bind="testimonial.user"
-              size="lg"
-            />
-          </template>
-        </UPageCard>
-      </UPageColumns>
-    </UPageSection>
-
-    <USeparator v-if="page.cta" />
-
-    <UPageCTA
-      v-if="page.cta"
-      v-bind="page.cta"
-      variant="naked"
-      class="overflow-hidden"
-    >
-      <div class="absolute rounded-full dark:bg-(--ui-primary) blur-[250px] size-40 sm:size-50 transform -translate-x-1/2 left-1/2 -translate-y-80" />
-
-      <LazyStarsBg />
-    </UPageCTA>
+  <div class="text-center max-w-3xl mx-auto px-4">
+    <!-- Background effects -->
+    <div class="absolute rounded-full dark:bg-blue-500/20 blur-[200px] size-60 sm:size-80 transform -translate-x-1/2 left-1/2 -translate-y-40 -z-10" />
+    
+    <!-- ACT Logo - Bigger to match larger text -->
+    <NuxtImg
+      src="/images/logos/mitre-act-arrow-logo.svg"
+      alt="MITRE ACT Logo"
+      class="h-24 sm:h-32 md:h-40 lg:h-48 mx-auto mb-4 sm:mb-6"
+    />
+    
+    <!-- Title optimized for mobile and desktop -->
+    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white">
+      MITRE ACT Site Coming Soon
+    </h1>
+    
+    <!-- Description with better mobile sizing -->
+    <p class="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
+      We're working hard to bring you the official MITRE ACT (Adversarial Capability and Testing) website. Check back soon for comprehensive assessment resources and documentation.
+    </p>
   </div>
 </template>
