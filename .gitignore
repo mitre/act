@@ -9,6 +9,7 @@ node_modules
 dist
 .DS_Store
 .data
+__nuxt_content
 
 # Claude documentation and context files
 CLAUDE.md
