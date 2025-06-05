@@ -69,9 +69,6 @@ importers:
       eslint:
         specifier: ^9.28.0
         version: 9.28.0(jiti@2.4.2)
-      husky:
-        specifier: ^9.1.7
-        version: 9.1.7
       lint-staged:
         specifier: ^16.1.0
         version: 16.1.0
@@ -81,6 +78,9 @@ importers:
       sharp:
         specifier: ^0.34.2
         version: 0.34.2
+      simple-git-hooks:
+        specifier: ^2.13.0
+        version: 2.13.0
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -5993,14 +5993,6 @@ packages:
       }
     engines: { node: '>=18.18.0' }
 
-  husky@9.1.7:
-    resolution:
-      {
-        integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==
-      }
-    engines: { node: '>=18' }
-    hasBin: true
-
   ieee754@1.2.1:
     resolution:
       {
@@ -8936,6 +8928,13 @@ packages:
       {
         integrity: sha512-brv7p5WgH0jmQJr1ZDDfKDOSeWWg+OVypG99A/5vYGPqJ6pxiaHLy8nxtFjBA7oMa01ebA9gfh1uMCFqOuXxvA==
       }
+
+  simple-git-hooks@2.13.0:
+    resolution:
+      {
+        integrity: sha512-N+goiLxlkHJlyaYEglFypzVNMaNplPAk5syu0+OPp/Bk6dwVoXF6FfOw2vO0Dp+JHsBaI+w6cm8TnFl2Hw6tDA==
+      }
+    hasBin: true
 
   simple-git@3.27.0:
     resolution:
@@ -14531,8 +14530,6 @@ snapshots:
 
   human-signals@8.0.1: {}
 
-  husky@9.1.7: {}
-
   ieee754@1.2.1: {}
 
   ignore@5.3.2: {}
@@ -16761,6 +16758,8 @@ snapshots:
       decompress-response: 6.0.0
       once: 1.4.0
       simple-concat: 1.0.1
+
+  simple-git-hooks@2.13.0: {}
 
   simple-git@3.27.0:
     dependencies:

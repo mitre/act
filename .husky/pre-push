@@ -1,2 +1,0 @@
-echo "Running type check before push..."
-pnpm typecheck
