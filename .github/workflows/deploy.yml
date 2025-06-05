@@ -2,16 +2,16 @@
 #
 # This workflow builds and deploys the Nuxt site to GitHub Pages
 # It can be triggered by:
-# - Push to main branch
+# - Push to temp-landing-page branch (TEMPORARY - will revert to main)
 # - Creating a GitHub release
 # - Manual workflow dispatch
 #
 name: Deploy to GitHub Pages
 
 on:
-  # Deploy on push to main
+  # Deploy on push to temp-landing-page (temporary - will revert to main later)
   push:
-    branches: ["main"]
+    branches: ["temp-landing-page"]
   
   # Deploy when a release is created
   release:
