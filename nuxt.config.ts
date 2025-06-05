@@ -28,6 +28,15 @@ export default defineNuxtConfig({
 
   ui: {},
 
+  // GitHub Pages configuration
+  githubPages: {
+    // SEO options (recommended to keep enabled)
+    canonicalUrls: true,        // Prevent duplicate content issues
+    trailingSlash: false,       // Use /path instead of /path/ in canonical URLs
+    // Deployment options
+    createDuplicates: true      // Create duplicate HTML files (required for GitHub Pages)
+  },
+
   routeRules: {
     '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
