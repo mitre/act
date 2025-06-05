@@ -14,7 +14,20 @@
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
     "logs:clear": "rm -rf logs/*.log || true",
-    "logs:dir": "mkdir -p logs"
+    "logs:dir": "mkdir -p logs",
+    "prepare": "simple-git-hooks"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "pre-push": "pnpm typecheck"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix"
+    ],
+    "*.{md,yml,yaml,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.45",
@@ -38,7 +51,10 @@
     "@iconify-json/vscode-icons": "^1.2.21",
     "@nuxt/eslint": "^1.4.1",
     "eslint": "^9.27.0",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3",
     "sharp": "^0.34.2",
+    "simple-git-hooks": "^2.13.0",
     "typescript": "^5.8.3",
     "vue-tsc": "2.2.10"
   },
