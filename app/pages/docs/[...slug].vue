@@ -5,15 +5,13 @@ definePageMeta({
 
 const route = useRoute()
 
-// Remove /docs prefix from the path since we're already in the docs collection
-const contentPath = route.path.replace(/^\/docs/, '') || '/'
-const { data: page } = await useAsyncData(route.path, () => queryCollection('docs').path(contentPath).first())
+const { data: page } = await useAsyncData(route.path, () => queryCollection('docs').path(route.path).first())
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
-  return queryCollectionItemSurroundings('docs', contentPath, {
+  return queryCollectionItemSurroundings('docs', route.path, {
     fields: ['description']
   })
 })

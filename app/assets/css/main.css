@@ -211,6 +211,19 @@
   --color-pink-950: #500724;
 }
 
+/* Custom light mode adjustments for softer colors */
+:root {
+  /* Softer text colors in light mode */
+  --ui-text: rgb(55, 65, 81); /* gray-700 - softer than default gray-900 */
+  --ui-text-muted: rgb(107, 114, 128); /* gray-500 */
+  --ui-text-dimmed: rgb(156, 163, 175); /* gray-400 */
+}
+
 .dark {
-  --ui-bg: var(--ui-color-neutral-950);
+  /* Slightly softer dark background */
+  --ui-bg: rgb(10, 10, 10); /* Between neutral-950 and pure black */
+  /* Optimized dark mode text colors for better readability */
+  --ui-text: rgb(240, 240, 240); /* Slightly softer than pure white */
+  --ui-text-muted: var(--ui-color-neutral-400);
+  --ui-text-dimmed: var(--ui-color-neutral-500);
 }

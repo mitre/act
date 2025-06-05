@@ -43,7 +43,7 @@ export default defineNuxtConfig({
       routes: [
         '/'
       ],
-      crawlLinks: false
+      crawlLinks: true
     }
   },
 

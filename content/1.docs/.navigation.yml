@@ -1,8 +1,6 @@
 navigation.icon: i-lucide-book-open
 title: 'Documentation'
 items:
-  - title: 'Getting Started'
-    to: '/docs/getting-started'
-  - title: 'ACT Handbook'
-    to: '/docs/act-handbook'
-    icon: 'heroicons:book-open'
+  - title: 'Privacy Policy'
+    to: '/docs/privacy-policy'
+    icon: 'i-lucide-shield'
