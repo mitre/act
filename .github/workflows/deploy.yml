@@ -9,9 +9,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Deploy on push to main
+  # Deploy on push to temp-landing-page
   push:
-    branches: ["main"]
+    branches: ["temp-landing-page"]
   
   # Deploy when a release is created
   release:
