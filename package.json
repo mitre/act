@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.45",
-    "@iconify-json/simple-icons": "^1.2.36",
+    "@iconify-json/simple-icons": "^1.2.37",
     "@nuxt/content": "https://pkg.pr.new/@nuxt/content@bf24dfe",
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^1.13.0",
@@ -28,16 +28,16 @@
     "@standard-schema/spec": "^1.0.0",
     "@vueuse/nuxt": "^13.3.0",
     "defu": "^6.1.4",
-    "nuxt": "^3.17.4",
-    "nuxt-github-pages": "^1.0.0",
-    "nuxt-og-image": "^5.1.4",
-    "zod": "^3.25.36"
+    "nuxt": "^3.17.5",
+    "nuxt-github-pages": "^1.5.0",
+    "nuxt-og-image": "^5.1.5",
+    "zod": "^3.25.51"
   },
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.2",
-    "@iconify-json/vscode-icons": "^1.2.21",
+    "@iconify-json/vscode-icons": "^1.2.22",
     "@nuxt/eslint": "^1.4.1",
-    "eslint": "^9.27.0",
+    "eslint": "^9.28.0",
     "sharp": "^0.34.2",
     "typescript": "^5.8.3",
     "vue-tsc": "2.2.10"
