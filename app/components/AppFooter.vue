@@ -89,7 +89,7 @@ const columns = [{
     <template #default>
       <p class="text-center text-(--ui-text-muted) text-sm">
         Copyright © 1997-2025, The MITRE Corporation. All rights reserved. <br>
-        MITRE is a registered trademark of The MITRE Corporation. Material on this site may be copied and distributed with permission only.
+        ACT and MITRE ACT are trademarks of The MITRE Corporation. Material on this site may be copied and distributed with permission only.
       </p>
     </template>
 
