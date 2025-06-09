@@ -7,8 +7,8 @@ useSeoMeta({
   titleTemplate: '',
   title: 'MITRE ACT - Coming Soon',
   ogTitle: 'MITRE ACT - Coming Soon',
-  description: 'MITRE ACT (Adversarial Capability and Testing) website is coming soon.',
-  ogDescription: 'MITRE ACT (Adversarial Capability and Testing) website is coming soon.'
+  description: 'MITRE ACT (Adaptive Capabilities Testing) website is coming soon.',
+  ogDescription: 'MITRE ACT (Adaptive Capabilities Testing) website is coming soon.'
 })
 </script>
 
