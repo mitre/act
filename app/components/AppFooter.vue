@@ -38,13 +38,8 @@ const columns = [{
 {
   label: 'Company',
   children: [{
-    label: 'MITRE Corporation',
+    label: 'The MITRE Corporation',
     to: 'https://www.mitre.org/',
-    target: '_blank'
-  },
-  {
-    label: 'Cyber Solutions Innovation Center',
-    to: 'https://www.mitre.org/our-impact/mitre-labs/cyber-solutions-innovation-center',
     target: '_blank'
   },
   {
