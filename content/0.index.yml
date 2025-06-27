@@ -1,4 +1,5 @@
-title: MITRE Adaptive Capabilities Testing (ACT)™
+title: "MITRE Adaptive Capabilities Testing (ACT)<sup>TM</sup>"
+
 description: A comprehensive, flexible, repeatable, and measurable security and risk assessment framework that enables risk-based decision-making.
 seo:
   title: MITRE ACT™ - Adaptive Capabilities Testing
@@ -20,7 +21,7 @@ hero:
     #   target: _blank
 sections:
   - title: Risk-Based Decision Making
-    description: MITRE ACT™ revolutionizes security assessment by focusing on risk at the capability level rather than compliance with technical requirements.
+    description: MITRE ACT<sup>TM</sup> revolutionizes security assessment by focusing on risk at the capability level rather than compliance with technical requirements.
     id: advantages
     orientation: horizontal
     image:
