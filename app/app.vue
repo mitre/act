@@ -56,27 +56,27 @@ useHead({
 })
 
 useSeoMeta({
-  titleTemplate: '%s - MITRE ACT',
-  description: 'MITRE ACT Framework - A structured approach to cybersecurity risk assessment and authorization',
+  titleTemplate: '%s - MITRE ACT™',
+  description: 'MITRE ACT™ Framework - A structured approach to cybersecurity risk assessment and authorization',
 
   // Open Graph
-  ogTitle: 'MITRE ACT - Cybersecurity Assessment Framework',
+  ogTitle: 'MITRE ACT™ - Cybersecurity Assessment Framework',
   ogDescription: 'A structured approach to cybersecurity risk assessment and authorization for federal systems',
   ogImage: 'https://act.mitre.org/images/act-social-preview.png',
   ogImageWidth: 1200,
   ogImageHeight: 630,
-  ogImageAlt: 'MITRE ACT - Assessment Collaboration Toolkit',
-  ogSiteName: 'MITRE ACT',
+  ogImageAlt: 'MITRE ACT™ - Assessment Collaboration Toolkit',
+  ogSiteName: 'MITRE ACT™',
   ogType: 'website',
 
   // Twitter
-  twitterTitle: 'MITRE ACT - Cybersecurity Assessment Framework',
+  twitterTitle: 'MITRE ACT™ - Cybersecurity Assessment Framework',
   twitterDescription: 'A structured approach to cybersecurity risk assessment and authorization',
   twitterImage: 'https://act.mitre.org/images/act-social-preview.png',
   twitterCard: 'summary_large_image',
 
   // iOS specific
-  appleMobileWebAppTitle: 'MITRE ACT'
+  appleMobileWebAppTitle: 'MITRE ACT™'
 })
 
 const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
