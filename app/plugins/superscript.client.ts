@@ -1,5 +1,26 @@
 // Enhanced Superscript Plugin for Nuxt 3 - TypeScript Version
 // Handles superscript/subscript for trademarks, ordinals, chemical formulas, etc.
+//
+// Configuration Interface:
+// The plugin provides runtime configuration through the $superscript interface:
+//
+// Usage in components:
+//   const { $superscript } = useNuxtApp()
+//
+//   // Update positioning for different fonts
+//   $superscript.updatePositioning({
+//     trademark: { body: '-0.4em', headers: '-0.6em' },
+//     registered: { body: '-0.2em', headers: '-0.4em' }
+//   })
+//
+//   // Get current positioning values
+//   const positioning = $superscript.getPositioning()
+//
+// The positioning values can be adjusted based on:
+// - Font family changes
+// - Font size changes
+// - Line height changes
+// - User preferences
 
 interface SuperscriptConfig {
   symbols: {
@@ -16,6 +37,24 @@ interface SuperscriptConfig {
     debounce: number
     batchSize: number
     delay: number
+  }
+  positioning?: {
+    trademark?: {
+      body?: string // e.g., '-0.5em'
+      headers?: string // e.g., '-0.7em'
+      fontSize?: string // e.g., '0.8em'
+    }
+    registered?: {
+      body?: string // e.g., '-0.25em'
+      headers?: string // e.g., '-0.45em'
+      fontSize?: string // e.g., '0.8em'
+    }
+    ordinals?: {
+      fontSize?: string // e.g., '0.75em'
+    }
+    chemicals?: {
+      fontSize?: string // e.g., '0.75em'
+    }
   }
 }
 
@@ -35,7 +74,7 @@ interface PatternSet {
 }
 
 export default defineNuxtPlugin((nuxtApp) => {
-  // Configuration
+  // Configuration with adjustable positioning
   const config: SuperscriptConfig = {
     symbols: {
       trademark: ['™', '(TM)', 'TM'],
@@ -69,6 +108,24 @@ export default defineNuxtPlugin((nuxtApp) => {
       debounce: 100,
       batchSize: 50,
       delay: 1500 // Increased delay to ensure hydration completes
+    },
+    positioning: {
+      trademark: {
+        body: '-0.5em',
+        headers: '-0.7em',
+        fontSize: '0.8em'
+      },
+      registered: {
+        body: '-0.25em', // Adjusted for circle alignment
+        headers: '-0.45em',
+        fontSize: '0.8em'
+      },
+      ordinals: {
+        fontSize: '0.75em'
+      },
+      chemicals: {
+        fontSize: '0.75em'
+      }
     }
   }
 
@@ -131,13 +188,13 @@ export default defineNuxtPlugin((nuxtApp) => {
 
       // Determine match type and handle accordingly
       if (/^(™|\(TM\)|TM)$/.test(matched)) {
-        // Trademark
+        // Trademark - use Unicode character with sup wrapper for proper alignment
         processedContent = '™'
-        scriptType = 'super'
+        scriptType = 'super' // Wrap in sup for consistent positioning
       } else if (/^(®|\(R\))$/.test(matched)) {
-        // Registered
+        // Registered - use Unicode character with sup wrapper for proper alignment
         processedContent = '®'
-        scriptType = 'super'
+        scriptType = 'super' // Wrap in sup for consistent positioning
       } else if (/^(©|\(C\))$/.test(matched)) {
         // Copyright - NOT superscripted
         processedContent = '©'
@@ -224,14 +281,34 @@ export default defineNuxtPlugin((nuxtApp) => {
         if (part.type === 'super') {
           const sup = document.createElement('sup')
           sup.textContent = part.content
-          sup.className = 'auto-super'
-          sup.setAttribute('aria-label', `superscript ${part.content}`)
+
+          // Add specific classes for different types
+          // The CSS classes handle the positioning - no inline styles needed
+          if (part.content === '™') {
+            sup.className = 'auto-super trademark-symbol'
+            sup.setAttribute('aria-label', 'trademark')
+          } else if (part.content === '®') {
+            sup.className = 'auto-super registered-symbol'
+            sup.setAttribute('aria-label', 'registered')
+          } else if (/^(st|nd|rd|th)$/.test(part.content)) {
+            sup.className = 'auto-super ordinal-suffix'
+            // Ordinal suffixes don't need "superscript" prefix
+            sup.setAttribute('aria-label', part.content)
+          } else {
+            sup.className = 'auto-super'
+            sup.setAttribute('aria-label', `superscript ${part.content}`)
+          }
           fragment.appendChild(sup)
         } else if (part.type === 'sub') {
           const sub = document.createElement('sub')
           sub.textContent = part.content
           sub.className = 'auto-sub'
-          sub.setAttribute('aria-label', `subscript ${part.content}`)
+          // For chemical formulas, just the number is clearer
+          if (/^\d+$/.test(part.content)) {
+            sub.setAttribute('aria-label', part.content)
+          } else {
+            sub.setAttribute('aria-label', `subscript ${part.content}`)
+          }
           fragment.appendChild(sub)
         } else {
           fragment.appendChild(document.createTextNode(part.content))
@@ -411,6 +488,21 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.provide('superscript', {
     process: processContent,
     processElement,
-    config
+    config,
+    // Method to update positioning at runtime
+    updatePositioning: (newPositioning: SuperscriptConfig['positioning']) => {
+      if (newPositioning) {
+        config.positioning = { ...config.positioning, ...newPositioning }
+        // Reprocess all content with new settings
+        document.querySelectorAll('[data-superscript-processed]').forEach((el) => {
+          if (el instanceof HTMLElement) {
+            delete el.dataset.superscriptProcessed
+          }
+        })
+        processContent()
+      }
+    },
+    // Method to get current positioning values
+    getPositioning: () => config.positioning
   })
 })

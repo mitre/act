@@ -48,17 +48,48 @@ h3 sup.auto-super, h3 sub.auto-sub {
   font-size: 0.65em;  /* Slightly smaller in headings */
 }
 
-/* For trademark, registered, copyright - could use even smaller size */
-sup.auto-super:has-text("™"),
-sup.auto-super:has-text("®"),
-sup.auto-super:has-text("©") {
-  font-size: 0.7em;
-  top: -0.6em;  /* Raise a bit more */
+/* Special handling for Unicode trademark and registered symbols */
+/* These already have some superscript positioning built into the character */
+/* So we need less vertical adjustment */
+sup.trademark-symbol {
+  font-size: 0.8em;  /* Slightly larger since the Unicode character is already small */
+  vertical-align: baseline;
+  position: relative;
+  top: -0.5em;  /* Fine-tune vertical position */
+  margin-left: 0.05em;
+  margin-right: 0.05em;
 }
 
-/* Alternative using content detection (more compatible) */
-sup.auto-super {
-  /* Default styles above apply */
+/* Registered symbol needs different positioning due to the circle */
+sup.registered-symbol {
+  font-size: 0.8em;
+  vertical-align: baseline;
+  position: relative;
+  top: -0.25em;  /* Lower than TM to account for circle - adjusted for better alignment */
+  margin-left: 0.05em;
+  margin-right: 0.05em;
+}
+
+/* In headings, raise trademark and registered symbols higher */
+h1 sup.trademark-symbol, 
+h2 sup.trademark-symbol, 
+h3 sup.trademark-symbol,
+h4 sup.trademark-symbol,
+h5 sup.trademark-symbol,
+h6 sup.trademark-symbol {
+  top: -0.7em;  /* Raise higher in headings */
+  font-size: 0.65em;
+}
+
+/* Registered in headings - slightly lower than TM */
+h1 sup.registered-symbol,
+h2 sup.registered-symbol,
+h3 sup.registered-symbol,
+h4 sup.registered-symbol,
+h5 sup.registered-symbol,
+h6 sup.registered-symbol {
+  top: -0.45em;  /* Slightly lower than TM to account for circle - adjusted for better alignment */
+  font-size: 0.65em;
 }
 
 /* Specific adjustments for chemical formulas */
