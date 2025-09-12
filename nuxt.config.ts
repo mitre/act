@@ -20,6 +20,10 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  colorMode: {
+    preference: 'dark' // Default to dark mode
+  },
+
   // Nuxt Studio integration
   content: {
     preview: {

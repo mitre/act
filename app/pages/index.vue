@@ -27,11 +27,11 @@ useSeoMeta({
 
       <PromotionalVideo v-if="false" />
 
-      <div class="flex items-center justify-center my-6">
+      <div class="flex items-center justify-center my-2 sm:my-3">
         <NuxtImg
           src="/images/logos/mitre-act-arrow-logo.svg"
           alt="MITRE ACT Logo"
-          class="h-48"
+          class="h-24 sm:h-32 lg:h-40"
         />
       </div>
     </UPageHero>

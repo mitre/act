@@ -5,6 +5,41 @@
 
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
+  
+  /* Tighter container for better readability */
+  --container-xs: 20rem;
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 75rem;
+  
+  /* Adjust typography scale for tighter layout */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-lg: 1.0625rem;
+  --font-size-xl: 1.1875rem;
+  --font-size-2xl: 1.4375rem;
+  --font-size-3xl: 1.75rem;
+  --font-size-4xl: 2.125rem;
+  --font-size-5xl: 2.875rem;
+  
+  /* Tighter line heights */
+  --line-height-xs: 1rem;
+  --line-height-sm: 1.25rem;
+  --line-height-base: 1.5rem;
+  --line-height-lg: 1.625rem;
+  --line-height-xl: 1.75rem;
+  --line-height-2xl: 2rem;
+  --line-height-3xl: 2.25rem;
+  --line-height-4xl: 2.5rem;
+  --line-height-5xl: 1.15;
 
   --color-green-50: #EFFDF5;
   --color-green-100: #D9FBE8;
@@ -213,4 +248,37 @@
 
 .dark {
   --ui-bg: var(--ui-color-neutral-950);
+}
+
+/* Global spacing scale adjustment - reduce all padding/margin by ~50-60% */
+@layer utilities {
+  /* Override padding classes to be much tighter */
+  .py-24 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+  .sm\:py-32 { @media (min-width: 640px) { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; } }
+  .lg\:py-40 { @media (min-width: 1024px) { padding-top: 4rem !important; padding-bottom: 4rem !important; } }
+  
+  .py-16 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+  .sm\:py-24 { @media (min-width: 640px) { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; } }
+  .lg\:py-32 { @media (min-width: 1024px) { padding-top: 3rem !important; padding-bottom: 3rem !important; } }
+  
+  .py-12 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+  .sm\:py-16 { @media (min-width: 640px) { padding-top: 2rem !important; padding-bottom: 2rem !important; } }
+  .lg\:py-20 { @media (min-width: 1024px) { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; } }
+  
+  .py-8 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+  .lg\:py-12 { @media (min-width: 1024px) { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; } }
+  
+  /* Reduce gaps significantly */
+  .gap-16 { gap: 1.5rem !important; }
+  .sm\:gap-16 { @media (min-width: 640px) { gap: 2rem !important; } }
+  .gap-8 { gap: 1rem !important; }
+  .sm\:gap-y-24 { @media (min-width: 640px) { row-gap: 2rem !important; } }
+  
+  /* Mobile-specific adjustments */
+  @media (max-width: 639px) {
+    .py-24 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+    .py-16 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+    .py-12 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+    .py-8 { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+  }
 }

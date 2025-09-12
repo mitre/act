@@ -35,7 +35,8 @@ const items = [{
 
     <template #right>
       <UColorModeButton class="hidden sm:inline-flex" />
-      <ThemePicker class="hidden sm:inline-flex" />
+      <!-- ThemePicker removed per request - keep only light/dark toggle -->
+      <!-- <ThemePicker class="hidden sm:inline-flex" /> -->
 
       <!-- Sign in/Sign up buttons - commented out for now -->
       <!-- <UButton icon="i-lucide-log-in" color="neutral" variant="ghost" to="/login" class="lg:hidden" />
@@ -46,7 +47,8 @@ const items = [{
     <template #body>
       <div class="flex items-center justify-end gap-2 mb-4">
         <UColorModeButton size="sm" />
-        <ThemePicker />
+        <!-- ThemePicker removed per request - keep only light/dark toggle -->
+        <!-- <ThemePicker /> -->
       </div>
 
       <UNavigationMenu
