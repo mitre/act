@@ -30,7 +30,7 @@ export default defineNuxtModule<ModuleOptions>({
     // 1. Add CSS files
     nuxt.options.css.push(resolveModule('../assets/css/design-system.css'))
 
-    // 2. Properly merge app config using defu (module defaults, user overrides)
+    // 2. Set app config defaults using defu
     nuxt.options.appConfig = defu(nuxt.options.appConfig, {
       ui: {
         colors: {
@@ -44,36 +44,38 @@ export default defineNuxtModule<ModuleOptions>({
       }
     })
 
-    // 3. Copy module content to main content directory
+    // 3. Dynamically copy all module content to main content directory
     nuxt.hook('ready', async () => {
-      const { copyFile, mkdir } = await import('fs/promises')
+      const { readdir, copyFile, mkdir, stat } = await import('fs/promises')
       const { existsSync } = await import('fs')
+      const { join } = await import('path')
 
       const moduleContentDir = resolveModule('../content')
       const targetContentDir = resolve(nuxt.options.rootDir, 'content/1.docs')
 
       try {
-        // Ensure target directory exists
-        if (!existsSync(`${targetContentDir}/8.design-system`)) {
-          await mkdir(`${targetContentDir}/8.design-system`, { recursive: true })
+        // Recursively copy all content from module
+        async function copyDir(src: string, dest: string) {
+          if (!existsSync(src)) return
+
+          await mkdir(dest, { recursive: true })
+          const entries = await readdir(src)
+
+          for (const entry of entries) {
+            const srcPath = join(src, entry)
+            const destPath = join(dest, entry)
+            const stats = await stat(srcPath)
+
+            if (stats.isDirectory()) {
+              await copyDir(srcPath, destPath)
+            } else if (entry.endsWith('.md') || entry.endsWith('.yml')) {
+              await copyFile(srcPath, destPath)
+            }
+          }
         }
 
-        // Copy module docs to main content
-        if (existsSync(`${moduleContentDir}/8.design-system/1.overview.md`)) {
-          await copyFile(
-            `${moduleContentDir}/8.design-system/1.overview.md`,
-            `${targetContentDir}/8.design-system/1.overview.md`
-          )
-        }
-
-        if (existsSync(`${moduleContentDir}/8.design-system/2.customization.md`)) {
-          await copyFile(
-            `${moduleContentDir}/8.design-system/2.customization.md`,
-            `${targetContentDir}/8.design-system/2.customization.md`
-          )
-        }
-
-        console.log('📝 ACT Design System docs injected into content')
+        await copyDir(moduleContentDir, targetContentDir)
+        console.log('📝 ACT Design System docs injected dynamically')
       } catch (error) {
         console.warn('⚠️ Failed to inject design system docs:', error)
       }
