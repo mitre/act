@@ -8,6 +8,11 @@ export default defineNuxtConfig({
   // Layer metadata
 
   // Components auto-import
+  $meta: {
+    description: 'ACT™ Design System - Custom spacing, typography, and components for MITRE ACT applications',
+    name: 'act-design-system',
+    version: '1.0.0'
+  },
   components: [
     {
       path: '~/components',
@@ -18,10 +23,5 @@ export default defineNuxtConfig({
   // CSS files for the design system
   css: [
     join(currentDir, './assets/css/design-system.css')
-  ],
-  meta: {
-    name: 'act-design-system',
-    version: '1.0.0',
-    description: 'ACT™ Design System - Custom spacing, typography, and components for MITRE ACT applications'
-  }
+  ]
 })
