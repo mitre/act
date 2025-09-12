@@ -1,7 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // Extend the ACT Design System layer
-  extends: ['./layers/act-design-system'],
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
@@ -10,7 +8,8 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-og-image',
     'nuxt-github-pages',
-    '@mitre/nuxt-smartscript'
+    '@mitre/nuxt-smartscript',
+    './modules/act-design-system'
   ],
 
   devtools: {

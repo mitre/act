@@ -1,5 +1,10 @@
-// Main app configuration - inherits from ACT Design System layer
+// Main app configuration
 export default defineAppConfig({
-  // Add any app-specific overrides here
-  // Design system configuration is provided by the layer
+  ui: {
+    colors: {
+      primary: 'blue',
+      neutral: 'slate'
+    }
+  }
+  // Design system CSS and documentation provided by the ACT Design System module
 })
