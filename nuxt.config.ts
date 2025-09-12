@@ -1,15 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // Extend the ACT Design System layer
+  extends: ['./layers/act-design-system'],
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/ui',
-    '@nuxt/ui-pro',
     '@nuxt/content',
     '@vueuse/nuxt',
     'nuxt-og-image',
-    '@nuxt/fonts',
-    '@nuxt/icon',
     'nuxt-github-pages',
     '@mitre/nuxt-smartscript'
   ],
@@ -114,9 +113,9 @@ export default defineNuxtConfig({
   },
   smartscript: {
     cssVariables: {
-      'tm-top': '-0.68em', // Optimized for large headers - ACT™ branding
+      'tm-top': '-0.4em', // Optimized for Nuxt 4 typography rendering
       'tm-font-size': '0.65em', // Smaller trademark symbol
-      'reg-top': '-0.68em', // Registered symbol positioning
+      'reg-top': '-0.4em', // Registered symbol positioning
       'reg-font-size': '0.65em', // Registered symbol size
       'sup-font-size': '0.75em' // Standard superscript size
     }
