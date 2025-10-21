@@ -27,7 +27,6 @@ useSeoMeta({
       <PromotionalVideo v-if="false" />
 
       <div class="flex items-center justify-center my-2 sm:my-3">
-
         <NuxtImg
           src="/images/heroes/risk-based-decision-making.svg"
           alt="MITRE ACT Logo"
