@@ -2,7 +2,7 @@
 # Increases memory allocation to prevent JavaScript heap out of memory errors
 
 [build]
-  command = "rm -rf node_modules && pnpm install && pnpm run generate"
+  command = "rm -rf node_modules && pnpm install --config.ignore-scripts=false && pnpm run generate"
   publish = "dist"
   environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
 
