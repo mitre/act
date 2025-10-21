@@ -14,10 +14,23 @@ dist
 CLAUDE.md
 session.md
 recovery-prompt.md
+recovery-*.md
 session-*.md
 pr-summary.md
 .vimrc
 .claude/
+
+# Analysis and temporary documentation
+superscript-*.md
+transformation-*.md
+unicode-*.md
+test-superscript.html
+
+# Project info and assets (not for git)
+act-info/
+
+# Auto-generated module documentation (injected at runtime)
+content/1.docs/8.design-system/
 
 # Temporary files and backups
 backup/
