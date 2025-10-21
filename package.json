@@ -3,16 +3,6 @@
   "private": true,
   "type": "module",
   "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@tailwindcss/oxide",
-      "better-sqlite3",
-      "esbuild",
-      "sharp",
-      "simple-git-hooks",
-      "unrs-resolver",
-      "vue-demi"
-    ],
     "overrides": {
       "unimport": "4.1.1",
       "vue-tsc": "2.2.10",
