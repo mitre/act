@@ -11,12 +11,12 @@ name: Deploy to GitHub Pages
 on:
   # Deploy on push to temp-landing-page (temporary - will revert to main later)
   push:
-    branches: ["temp-landing-page"]
-  
+    branches: ['temp-landing-page']
+
   # Deploy when a release is created
   release:
     types: [created]
-  
+
   # Allow manual deployment
   workflow_dispatch:
 
@@ -28,7 +28,7 @@ permissions:
 
 # Allow only one deployment at a time
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -38,31 +38,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v2
         with:
           version: latest
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: "pnpm"
-      
+          node-version: '22'
+          cache: 'pnpm'
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      
+
       - name: Build with Nuxt
         run: pnpm run generate
         env:
           # Add any environment variables needed for build
           NUXT_PUBLIC_SITE_URL: https://act.mitre.org
-          NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
