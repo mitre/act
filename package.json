@@ -41,6 +41,9 @@
     ],
     "*.{md,yml,yaml,json}": [
       "prettier --write"
+    ],
+    "pnpm-lock.yaml": [
+      "git restore --staged"
     ]
   },
   "dependencies": {
