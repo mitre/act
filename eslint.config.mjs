@@ -1,16 +1,15 @@
-// @ts-check
-import withNuxt from './.nuxt/eslint.config.mjs'
+import antfu from '@antfu/eslint-config'
 
-export default withNuxt(
-  // Your custom configs here
-).prepend({
+export default antfu({
+  vue: true,
+  typescript: true,
   ignores: [
-    '**/act-info/**',
-    '**/logs/**',
-    '**/backup/**',
-    '**/project-docs/backups/**',
-    '**/temp/**',
-    '**/tmp/**',
-    '**/.eslintignore'
+    'docs/.vitepress/dist/**',
+    'docs/.vitepress/cache/**',
+    'act-info/**',
+    'project-docs/**',
+    'logs/**',
+    'temp/**',
+    'tmp/**'
   ]
 })
