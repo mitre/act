@@ -46,7 +46,7 @@ The ACT™ methodology offers several advantages over traditional security asses
 
 Whether you're an assessment team member, authorization official, system owner, or security professional, this website provides the resources you need to understand and implement ACT™:
 
-1. **Explore the Documentation**: Start with our [Introduction to MITRE ACT™](/docs) to understand the framework's core principles
+1. **Explore the Documentation**: Start with our [Introduction to MITRE ACT(tm)](/getting-started/) to understand the framework's core principles
 2. **Download Resources**: Visit our [Templates page](/templates) to access templates and assessment tools
 3. **Connect with Us**: Contact the ACT™ team at [act@mitre.org](mailto:act@mitre.org) for support and guidance
 
