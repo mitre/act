@@ -1,11 +1,22 @@
 import { fileURLToPath, URL } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vitepress'
+import { markdownItSmartScript } from './plugins/markdown-it-smartscript'
 
 export default defineConfig({
   title: 'MITRE ACT',
   description: 'Adaptive Capabilities Testing - Risk-Based Security Assessment Framework',
   cleanUrls: true,
+
+  markdown: {
+    config: (md) => {
+      md.use(markdownItSmartScript, {
+        trademark: true,
+        registered: true,
+        copyright: true,
+      })
+    },
+  },
 
   vite: {
     plugins: [tailwindcss()],
