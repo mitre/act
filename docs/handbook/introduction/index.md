@@ -31,16 +31,11 @@ The ACT framework consists of several key components, all of which are explained
 - **Risk Information Sources (RIS)** - The various sources of data that inform the risk assessment, including security control assessments, penetration tests, vulnerability scans, threat intelligence, and operational data.
 - **Assessment Phases** - The ACT methodology is divided into three main phases: Planning, Assessment, and Reporting. Each phase has specific activities and deliverables.
 - **Risk-Based Decision Making** - Converting technical findings into actionable insights for leadership by focusing on business impact and mission risk rather than technical vulnerabilities alone.
-:::
-<div class="flex justify-center my-6">
-  <img 
-    src="/images/act-handbook/security-and-risk-assessment-phases-overview.png" 
-    alt="ACT Methodology Overview" 
-    class="max-w-full" 
-  />
-:::
+
+<!-- Image placeholder: ACT Methodology Overview -->
+
 The ACT methodology provides a structured approach to security and risk assessment while maintaining the flexibility needed to adapt to different organizational contexts and evolving threat landscapes.
 
 ::: tip
-[Continue to Handbook Purpose](/act-handbook/introduction/handbook-purpose)
+[Continue to Handbook Purpose](/handbook/introduction/handbook-purpose)
 :::

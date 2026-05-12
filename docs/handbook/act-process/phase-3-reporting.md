@@ -2,7 +2,7 @@
 
 Phase 3 of the ACT process focuses on consolidating assessment findings into actionable reports that support risk-based decision making.
 
-![Workflow - Phase 3](/images/act-handbook/workflow-phase-3.png)
+<!-- Image placeholder: Workflow - Phase 3 -->
 
 ## Reporting Process Overview
 

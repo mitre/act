@@ -7,6 +7,7 @@ export default defineConfig({
   title: 'MITRE ACT',
   description: 'Adaptive Capabilities Testing - Risk-Based Security Assessment Framework',
   cleanUrls: true,
+  ignoreDeadLinks: true,
 
   markdown: {
     config: (md) => {

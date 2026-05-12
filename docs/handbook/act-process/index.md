@@ -6,13 +6,8 @@ The ACT process provides a comprehensive approach to security and risk assessmen
 2. **Assessment**
 3. **Reporting**
 
-<div class="flex justify-center my-6">
-  <img 
-    src="/images/act-handbook/security-and-risk-assessment-phases-overview.png" 
-    alt="Security and Risk Assessment Phases Overview" 
-    class="max-w-full" 
-  />
-:::
+<!-- Image placeholder: Security and Risk Assessment Phases Overview -->
+
 ## Process Flow
 
 The ACT process follows a logical progression from initial planning through assessment and reporting, with each phase building on the previous one.
@@ -28,14 +23,8 @@ The planning phase establishes the foundation for the entire assessment. Key act
 - Developing the assessment plan
 - Conducting assessment plan review
 
-<div class="flex justify-center my-6">
-  <img 
-    src="/images/act-handbook/workflow-phase-1.png" 
-    alt="Workflow - Phase 1" 
-    class="max-w-full" 
-    loading="lazy"
-  />
-:::
+<!-- Image placeholder: Workflow - Phase 1 -->
+
 ### Phase 2: Assessment
 
 The assessment phase involves the actual evaluation of system capabilities and associated risks. There are two parallel tracks:
@@ -47,14 +36,8 @@ The assessment phase involves the actual evaluation of system capabilities and a
 - Identifying vulnerabilities
 - Generating preliminary findings
 
-<div class="flex justify-center my-6">
-  <img 
-    src="/images/act-handbook/workflow-phase-2-security-assessment.png" 
-    alt="Workflow - Phase 2 - Security Assessment" 
-    class="max-w-full" 
-    loading="lazy"
-  />
-:::
+<!-- Image placeholder: Workflow - Phase 2 - Security Assessment -->
+
 #### Risk Assessment Track
 
 - Identifying risks
@@ -62,14 +45,8 @@ The assessment phase involves the actual evaluation of system capabilities and a
 - Evaluating risk likelihood
 - Determining risk levels
 
-<div class="flex justify-center my-6">
-  <img 
-    src="/images/act-handbook/workflow-phase-2-risk-assessment.png" 
-    alt="Workflow - Phase 2 - Risk Assessment" 
-    class="max-w-full" 
-    loading="lazy"
-  />
-:::
+<!-- Image placeholder: Workflow - Phase 2 - Risk Assessment -->
+
 ### Phase 3: Reporting
 
 The reporting phase consolidates findings into actionable information for decision-makers. Activities include:
@@ -79,14 +56,8 @@ The reporting phase consolidates findings into actionable information for decisi
 - Finalizing the report
 - Presenting findings to stakeholders
 
-<div class="flex justify-center my-6">
-  <img 
-    src="/images/act-handbook/workflow-phase-3.png" 
-    alt="Workflow - Phase 3" 
-    class="max-w-full" 
-    loading="lazy"
-  />
-:::
+<!-- Image placeholder: Workflow - Phase 3 -->
+
 ## Process Improvement
 
 After completing an assessment, the ACT process includes a follow-up phase for continuous improvement:
@@ -100,7 +71,7 @@ After completing an assessment, the ACT process includes a follow-up phase for c
 
 For detailed information on each phase of the ACT process, explore the following sections:
 
-- [Phase 1: Planning](/act-handbook/act-process/phase-1-planning)
-- [Phase 2: Assessment](/act-handbook/act-process/phase-2-assessment)
-- [Phase 3: Reporting](/act-handbook/act-process/phase-3-reporting)
-- [Process Improvement](/act-handbook/act-process/process-improvement)
+- [Phase 1: Planning](/handbook/act-process/phase-1-planning)
+- [Phase 2: Assessment](/handbook/act-process/phase-2-assessment)
+- [Phase 3: Reporting](/handbook/act-process/phase-3-reporting)
+- [Process Improvement](/handbook/act-process/process-improvement)

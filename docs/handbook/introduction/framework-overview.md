@@ -22,8 +22,7 @@ ACT is built on several core principles that differentiate it from traditional c
 
 The ACT assessment process consists of three main phases:
 
-![Security and Risk Assessment Phases Overview](/images/act-handbook/security-and-risk-assessment-phases-overview.png)
-
+<!-- Image placeholder: Security and Risk Assessment Phases Overview -->
 <details>
 <summary><strong>Phase 1: Planning</strong></summary>
 
@@ -35,8 +34,7 @@ Planning involves understanding the system, defining the assessment scope, and d
 - Determining testing methodologies
 - Creating the assessment plan
 
-![Workflow Phase 1](/images/act-handbook/workflow-phase-1.png)
-
+<!-- Image placeholder: Workflow Phase 1 -->
 </details>
 
 <details>
@@ -49,10 +47,8 @@ The assessment phase involves the actual evaluation of system capabilities and a
 - Data collection and analysis
 - Preliminary findings development
 
-![Workflow Phase 2 - Security Assessment](/images/act-handbook/workflow-phase-2-security-assessment.png)
-
-![Workflow Phase 2 - Risk Assessment](/images/act-handbook/workflow-phase-2-risk-assessment.png)
-
+<!-- Image placeholder: Workflow Phase 2 - Security Assessment -->
+<!-- Image placeholder: Workflow Phase 2 - Risk Assessment -->
 </details>
 
 <details>
@@ -66,8 +62,7 @@ The reporting phase consolidates findings into actionable information. This incl
 - Out-briefing to key stakeholders
 - Recommendations for risk mitigation
 
-![Workflow Phase 3](/images/act-handbook/workflow-phase-3.png)
-
+<!-- Image placeholder: Workflow Phase 3 -->
 </details>
 
 ## Key Differentiators

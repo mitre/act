@@ -7,7 +7,7 @@ description: 'Planning and preparation activities for ACT assessments'
 
 Phase 1 of the ACT process focuses on planning and preparation for the assessment. This phase is critical for ensuring that the assessment is well-structured, properly scoped, and aligned with organizational objectives.
 
-![Workflow - Phase 1](/images/act-handbook/workflow-phase-1.png)
+<!-- Image placeholder: Workflow - Phase 1 -->
 
 ## Key Activities
 
@@ -91,7 +91,7 @@ Based on the preliminary discussion and document review, the team develops a det
 
 A clear definition of the assessment boundary is crucial for effective planning. The assessment boundary may differ from the authorization boundary.
 
-![Assessment Boundary Example](/images/act-handbook/Assessment Boundary example.png)
+<!-- Image placeholder: Assessment Boundary Example -->
 
 ## Conduct Assessment Plan Review Meeting
 
@@ -133,4 +133,4 @@ The Assessment Team Lead ensures that all team members:
 
 After incorporating feedback from all review meetings, the Assessment Team Lead delivers the final assessment plan to stakeholders, marking the transition to Phase 2: Assessment.
 
-[Continue to Phase 2: Assessment](/act-handbook/act-process/phase-2-assessment)
+[Continue to Phase 2: Assessment](/handbook/act-process/phase-2-assessment)
