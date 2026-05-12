@@ -1,6 +1,6 @@
 ---
-title: "Phase 1: Planning"
-description: "Planning and preparation activities for ACT assessments"
+title: 'Phase 1: Planning'
+description: 'Planning and preparation activities for ACT assessments'
 ---
 
 # Phase 1: Planning
@@ -31,10 +31,9 @@ The assessment begins with formal initiation by the Assessment Team Lead. This i
 
 ## Conduct Preliminary Discussion
 
-::note
+::: info
 **Best Practice**: Schedule the preliminary discussion at least two weeks before planned assessment activities to allow sufficient time for document collection and review.
-::
-
+:::
 Early in the planning phase, the Assessment Team Lead conducts a preliminary discussion with key stakeholders, including:
 
 - System Owner
@@ -66,34 +65,18 @@ The assessment team reviews key Tier 1 artifacts, including:
 
 This review helps the team understand:
 
-::card-group
-  ::card{title="System Purpose and Functionality" icon="i-heroicons-document-text"}
-    Understanding what the system does, its mission objectives, and key functionality helps the assessment team focus on capabilities that matter most to the organization.
-  ::
-  
-  ::card{title="Key Security Capabilities" icon="i-heroicons-shield-check"}
-    Identifying the critical security functions the system must perform to protect its data and operations provides a foundation for capability-based assessment.
-  ::
-  
-  ::card{title="Previous Security Findings" icon="i-heroicons-document-magnifying-glass"}
-    Reviewing past assessment results helps identify patterns of issues, remediation effectiveness, and areas that may require special attention.
-  ::
-  
-  ::card{title="Known Risks and Vulnerabilities" icon="i-heroicons-exclamation-triangle"}
-    Understanding existing risk acceptance decisions and known vulnerabilities helps the team focus on evolving threats and provides context for new findings.
-  ::
-  
-  ::card{title="Organizational Context" icon="i-heroicons-building-office-2"}
-    Learning about the system's role in the broader organization helps the team understand potential impact levels and interconnections with other systems.
-  ::
-::
+- **System Purpose and Functionality** - Understanding what the system does, its mission objectives, and key functionality helps the assessment team focus on capabilities that matter most to the organization.
+- **Key Security Capabilities** - Identifying the critical security functions the system must perform to protect its data and operations provides a foundation for capability-based assessment.
+- **Previous Security Findings** - Reviewing past assessment results helps identify patterns of issues, remediation effectiveness, and areas that may require special attention.
+- **Known Risks and Vulnerabilities** - Understanding existing risk acceptance decisions and known vulnerabilities helps the team focus on evolving threats and provides context for new findings.
+- **Organizational Context** - Learning about the system's role in the broader organization helps the team understand potential impact levels and interconnections with other systems.
+  :::
 
 ## Develop Assessment Plan
 
-::warning
+::: warning
 **Important Consideration**: The assessment plan should be tailored to the system's complexity, criticality, and available resources. One size does not fit all.
-::
-
+:::
 Based on the preliminary discussion and document review, the team develops a detailed assessment plan that includes:
 
 - Assessment scope and objectives
@@ -120,9 +103,9 @@ Once the assessment plan is drafted, the Assessment Team Lead conducts a review 
 - Finalize assessment activities and timeline
 - Secure stakeholder buy-in for the assessment approach
 
-::tip
+::: tip
 **Success Criteria**: A successful assessment plan review meeting results in documented agreement on scope, approach, timeline, and stakeholder responsibilities.
-::
+:::
 
 ## Conduct Readiness Review Meeting
 
@@ -150,4 +133,4 @@ The Assessment Team Lead ensures that all team members:
 
 After incorporating feedback from all review meetings, the Assessment Team Lead delivers the final assessment plan to stakeholders, marking the transition to Phase 2: Assessment.
 
-[Continue to Phase 2: Assessment](/docs/act-handbook/act-process/phase-2-assessment)
+[Continue to Phase 2: Assessment](/act-handbook/act-process/phase-2-assessment)

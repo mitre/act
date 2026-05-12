@@ -32,6 +32,7 @@ The Assessment Lead is responsible for:
 - Consolidating assessment findings
 
 The Security Assessment Lead specifically:
+
 - Oversees technical testing activities
 - Reviews and approves security findings
 - Ensures technical testing covers all required areas

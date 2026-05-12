@@ -20,7 +20,7 @@ This page provides detailed references for the footnotes cited throughout the AC
 
 8. **High Value Asset Control Overlay**: [CISA High Value Asset Control Overlay](https://www.cisa.gov/publication/high-value-asset-control-overlay)
 
-9. **Independent Assessment**: To be considered _"_independent," the Assessment Contractor, its Assessment Team members, and any contracted third-party individual(s) or organization(s) shall not have a vested interest in the development, maintenance, operation, or documentation of the system to be tested, and shall be free from any actual and reasonably perceived Conflicts of Interest (COI) related to the performance of this work.
+9. **Independent Assessment**: To be considered \_"\_independent," the Assessment Contractor, its Assessment Team members, and any contracted third-party individual(s) or organization(s) shall not have a vested interest in the development, maintenance, operation, or documentation of the system to be tested, and shall be free from any actual and reasonably perceived Conflicts of Interest (COI) related to the performance of this work.
 
 10. **NIST SP 800-53**: [NIST Special Publication 800-53, Revision 5](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) (December 2020).
 

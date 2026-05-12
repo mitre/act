@@ -1,6 +1,6 @@
 ---
-title: "Overview of ACT Framework"
-description: "Core principles and methodology of the Adaptive Capabilities Testing framework"
+title: 'Overview of ACT Framework'
+description: 'Core principles and methodology of the Adaptive Capabilities Testing framework'
 ---
 
 # Overview of ACT Framework and Methodology
@@ -9,38 +9,24 @@ The Adaptive Capabilities Testing (ACT) framework provides a structured approach
 
 ## Core Principles
 
-::callout{icon="i-heroicons-puzzle-piece" color="primary"}
+::: info
 ACT is built on several core principles that differentiate it from traditional compliance-oriented assessment approaches.
-::
+:::
 
-::card-group
-::card{title="Risk-Driven Focus" icon="i-heroicons-adjustments-horizontal"}
-ACT prioritizes identifying and understanding risks at the capability level rather than focusing solely on technical compliance.
-::
-
-::card{title="Capability-Oriented" icon="i-heroicons-cube-transparent"}
-Instead of focusing on individual controls, ACT considers capabilities - the functional objectives a system must achieve to fulfill its mission.
-::
-
-::card{title="Multiple Risk Information Sources" icon="i-heroicons-document-duplicate"}
-ACT draws from various sources of risk data, not just control compliance.
-::
-
-::card{title="Actionable Insights" icon="i-heroicons-light-bulb"}
-ACT produces assessments that are more understandable and actionable for decision-makers.
-::
-::
+- **Risk-Driven Focus** - ACT prioritizes identifying and understanding risks at the capability level rather than focusing solely on technical compliance.
+- **Capability-Oriented** - Instead of focusing on individual controls, ACT considers capabilities - the functional objectives a system must achieve to fulfill its mission.
+- **Multiple Risk Information Sources** - ACT draws from various sources of risk data, not just control compliance.
+- **Actionable Insights** - ACT produces assessments that are more understandable and actionable for decision-makers.
 
 ## Assessment Process
 
 The ACT assessment process consists of three main phases:
 
-::div{class="flex justify-center my-6"}
-<img src="/images/act-handbook/security-and-risk-assessment-phases-overview.png" alt="Security and Risk Assessment Phases Overview" class="max-w-full" />
-::
+![Security and Risk Assessment Phases Overview](/images/act-handbook/security-and-risk-assessment-phases-overview.png)
 
-::accordion
-::accordion-item{label="Phase 1: Planning"}
+<details>
+<summary><strong>Phase 1: Planning</strong></summary>
+
 Planning involves understanding the system, defining the assessment scope, and developing a detailed assessment plan. Key activities include:
 
 - Initial discussions with stakeholders
@@ -49,12 +35,13 @@ Planning involves understanding the system, defining the assessment scope, and d
 - Determining testing methodologies
 - Creating the assessment plan
 
-::div{class="flex justify-center my-4"}
-<img src="/images/act-handbook/workflow-phase-1.png" alt="Workflow Phase 1" class="max-w-full" />
-::
-::
+![Workflow Phase 1](/images/act-handbook/workflow-phase-1.png)
 
-::accordion-item{label="Phase 2: Assessment"}
+</details>
+
+<details>
+<summary><strong>Phase 2: Assessment</strong></summary>
+
 The assessment phase involves the actual evaluation of system capabilities and associated risks. This includes:
 
 - Security assessment activities (testing, interviews, documentation review)
@@ -62,16 +49,15 @@ The assessment phase involves the actual evaluation of system capabilities and a
 - Data collection and analysis
 - Preliminary findings development
 
-::div{class="flex justify-center my-4"}
-<img src="/images/act-handbook/workflow-phase-2-security-assessment.png" alt="Workflow Phase 2 - Security Assessment" class="max-w-full" />
-::
+![Workflow Phase 2 - Security Assessment](/images/act-handbook/workflow-phase-2-security-assessment.png)
 
-::div{class="flex justify-center my-4"}
-<img src="/images/act-handbook/workflow-phase-2-risk-assessment.png" alt="Workflow Phase 2 - Risk Assessment" class="max-w-full" />
-::
-::
+![Workflow Phase 2 - Risk Assessment](/images/act-handbook/workflow-phase-2-risk-assessment.png)
 
-::accordion-item{label="Phase 3: Reporting"}
+</details>
+
+<details>
+<summary><strong>Phase 3: Reporting</strong></summary>
+
 The reporting phase consolidates findings into actionable information. This includes:
 
 - Draft report development
@@ -80,19 +66,15 @@ The reporting phase consolidates findings into actionable information. This incl
 - Out-briefing to key stakeholders
 - Recommendations for risk mitigation
 
-::div{class="flex justify-center my-4"}
-<img src="/images/act-handbook/workflow-phase-3.png" alt="Workflow Phase 3" class="max-w-full" />
-::
-::
-::
+![Workflow Phase 3](/images/act-handbook/workflow-phase-3.png)
+
+</details>
 
 ## Key Differentiators
 
-::callout{icon="i-heroicons-check-badge" color="green"}
+::: info
 The ACT framework differs from traditional approaches in several important ways.
-::
-
-::steps{level="3"}
+:::
 
 ### Focus on Capabilities
 
@@ -114,8 +96,6 @@ ACT considers various sources of risk information, providing a more comprehensiv
 
 ACT promotes clear communication about security risks to all stakeholders, including technical and non-technical audiences.
 
-::
-
-::note
+::: info
 The ACT framework is designed to be adaptable to various organizational contexts and regulatory requirements while maintaining its core risk-focused principles.
-::
+:::

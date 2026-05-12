@@ -15,8 +15,8 @@ The reference materials help ensure consistent understanding and application of 
 
 The reference section includes:
 
-- [Acronyms](/docs/act-handbook/reference/acronyms): A comprehensive list of acronyms used throughout the ACT handbook
-- [Footnotes](/docs/act-handbook/reference/footnotes): Detailed explanations and references cited in the handbook
+- [Acronyms](/act-handbook/reference/acronyms): A comprehensive list of acronyms used throughout the ACT handbook
+- [Footnotes](/act-handbook/reference/footnotes): Detailed explanations and references cited in the handbook
 
 ## Additional Resources
 
