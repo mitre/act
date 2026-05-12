@@ -1,14 +1,11 @@
-# Nuxt
+# VitePress
 node_modules
 *.log*
-.nuxt
-.nitro
-.cache
-.output
+docs/.vitepress/dist
+docs/.vitepress/cache
 .env
 dist
 .DS_Store
-.data
 
 # Claude documentation and context files
 CLAUDE.md
@@ -29,15 +26,10 @@ test-superscript.html
 # Project info and assets (not for git)
 act-info/
 
-# Auto-generated module documentation (injected at runtime)
-content/1.docs/8.design-system/
-
 # Temporary files and backups
 backup/
 temp/
 *.backup-*
 
-# Local modules
-nuxt-github-pages/
 # Local Netlify folder
 .netlify
