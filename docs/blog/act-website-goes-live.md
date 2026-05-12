@@ -30,19 +30,8 @@ Adaptive Capabilities Testing (ACT)™ is a revolutionary security and risk asse
 
 Our new website provides comprehensive resources for security professionals, assessment teams, and organizational leaders:
 
-::card-group
-::card{title="Documentation" icon="i-heroicons-book-open"}
-Access the complete ACT™ methodology documentation, including detailed process guides and best practices
-::
-
-::card{title="Templates & Tools" icon="i-heroicons-arrow-down-tray"}
-Download assessment templates, planning guides, and other practical tools to implement ACT™ in your organization
-::
-
-::card{title="Resources" icon="i-heroicons-academic-cap"}
-Learn about the principles behind ACT™ and how it aligns with the NIST Risk Management Framework
-::
-::
+- **Documentation** - Access the complete ACT™ methodology documentation, including detailed process guides and best practices- **Templates & Tools** - Download assessment templates, planning guides, and other practical tools to implement ACT™ in your organization- **Resources** - Learn about the principles behind ACT™ and how it aligns with the NIST Risk Management Framework
+  :::
 
 ## Key Features of the ACT™ Framework
 
@@ -58,7 +47,7 @@ The ACT™ methodology offers several advantages over traditional security asses
 Whether you're an assessment team member, authorization official, system owner, or security professional, this website provides the resources you need to understand and implement ACT™:
 
 1. **Explore the Documentation**: Start with our [Introduction to MITRE ACT™](/docs) to understand the framework's core principles
-2. **Download Resources**: Visit our [Templates page](/docs/templates) to access templates and assessment tools
+2. **Download Resources**: Visit our [Templates page](/templates) to access templates and assessment tools
 3. **Connect with Us**: Contact the ACT™ team at [act@mitre.org](mailto:act@mitre.org) for support and guidance
 
 ## Looking Ahead
