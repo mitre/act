@@ -1,8 +1,13 @@
+---
+title: Privacy Policy
+sidebar: false
+---
+
 # Privacy Policy
 
-::callout{color="info" icon="i-heroicons-information-circle"}
+::: info
 **THE MITRE CORPORATION RESPECTS THE PRIVACY OF ITS WEBSITE USERS.**
-::
+:::
 
 **Effective Date:** 5/30/2025
 
@@ -160,31 +165,21 @@ If you have questions about this Online Privacy Policy or MITRE's privacy practi
 
 MITRE's Data Protection Officer for Singapore may be contacted as follows:
 
-::div{class="grid md:grid-cols-2 gap-8 mt-8"}
-::card
-#title
-In the United States
+### In the United States
 
-#default
-Dena Kozanas – _Data Protection Officer_
+Dena Kozanas -- _Data Protection Officer_
 Associate General Counsel & Chief Privacy Official
 7515 Colshire Drive
 McLean, VA 22102
 Phone: +1 (703) 269-8515
 Email: privacy@mitre.org
-::
 
-::card
-#title
-In Singapore
+### In Singapore
 
-#default
-MITRE Asia Pacific Singapore  
- Thomas (Tass) Bruce Hudak – _Privacy Coordinator_
+MITRE Asia Pacific Singapore
+Thomas (Tass) Bruce Hudak -- _Privacy Coordinator_
 1 Changi Business Park Avenue 1
 Suite #02-03/04
 Singapore 486058
 Phone: +65 8876 4609
 Email: privacy@mitre.org
-::
-::
