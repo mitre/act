@@ -1,7 +1,24 @@
 <script setup lang="ts">
 import DefaultTheme from 'vitepress/theme'
+import { onMounted } from 'vue'
 
 const { Layout } = DefaultTheme
+
+function showCookiePreferences() {
+  if (typeof window !== 'undefined' && (window as any).Osano?.cm) {
+    (window as any).Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')
+  }
+}
+
+onMounted(() => {
+  const manageCookiesLink = document.querySelector('a.manage-cookies')
+  if (manageCookiesLink) {
+    manageCookiesLink.addEventListener('click', (e) => {
+      e.preventDefault()
+      showCookiePreferences()
+    })
+  }
+})
 </script>
 
 <template>
@@ -12,6 +29,8 @@ const { Layout } = DefaultTheme
           <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
           <span class="footer-separator">&bull;</span>
           <a href="/terms-of-use" class="footer-link">Terms of Use</a>
+          <span class="footer-separator">&bull;</span>
+          <a href="javascript:void(0)" class="footer-link manage-cookies">Manage Cookies</a>
         </div>
         <p class="footer-message">
           MITRE Adaptive Capabilities Testing (MITRE ACT) is a trademark of The MITRE Corporation. Released under the Apache 2.0 License.

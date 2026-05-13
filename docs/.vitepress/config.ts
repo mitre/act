@@ -29,6 +29,10 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }],
+    // Osano cookie consent (required by MITRE Privacy - must be first script)
+    ['script', { src: 'https://cmp.osano.com/AzyhULTdPkqmy4aDN/61e442cb-3c14-4a28-b9ca-5c364a87187f/osano.js' }],
+    // Hide Osano's default widget (we trigger via footer link instead)
+    ['style', {}, '.osano-cm-widget{display: none;}'],
   ],
 
   themeConfig: {
