@@ -1,0 +1,4 @@
+# Deploys via Cloudflare Pages, not Netlify.
+# ignore script exits 0 = skip build.
+[build]
+  ignore = "exit 0"
