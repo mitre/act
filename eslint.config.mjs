@@ -17,7 +17,7 @@ export default antfu({
     'scripts/**',
     '.devcontainer/**',
     '.github/**',
-    '*.md',
+    '**/*.md',
     'pnpm-workspace.yaml',
     '.playwright-mcp/**',
   ],
