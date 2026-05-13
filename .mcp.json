@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["@upstash/context7-mcp@latest"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["@anthropic/github-mcp@latest"]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["@anthropic/brave-search-mcp@latest"]
+    }
+  }
+}
