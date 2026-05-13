@@ -64,6 +64,26 @@
   overflow-x: clip;
 }
 
+/* Hero image: vertically center, rounded corners */
+.VPHero .image-src {
+  border-radius: 1rem;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 24px rgba(0, 82, 136, 0.15));
+}
+
+.dark .VPHero .image-src {
+  filter: drop-shadow(0 4px 24px rgba(77, 166, 217, 0.2));
+}
+
+@media (min-width: 960px) {
+  .VPHero .image-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100%;
+  }
+}
+
 /* ==========================================================================
    SmartScript - trademark symbol positioning
    ========================================================================== */

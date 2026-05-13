@@ -8,8 +8,8 @@ hero:
   text: Adaptive Capabilities Testing™
   tagline: Decide with Insight. ACT with Confidence.
   image:
-    src: /images/heroes/risk-based-decision-making.svg
-    alt: MITRE ACT risk-based decision-making framework diagram
+    src: /images/logos/mitre-act-arrow-logo.svg
+    alt: MITRE ACT logo
   actions:
     - theme: brand
       text: Get Started
