@@ -7,14 +7,11 @@ docs/.vitepress/cache
 dist
 .DS_Store
 
-# Claude documentation and context files
+# Claude session files (not project docs)
 session.md
-recovery-prompt.md
-recovery-*.md
 session-*.md
 pr-summary.md
 .vimrc
-.claude/
 
 # Analysis and temporary documentation
 superscript-*.md
