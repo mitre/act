@@ -32,3 +32,4 @@ temp/
 
 # Local Netlify folder
 .netlify
+test-*.png
