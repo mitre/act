@@ -1,0 +1,3 @@
+# Template download links use {target="_self"} VitePress attributes
+# that prettier incorrectly escapes underscores in
+docs/templates.md
