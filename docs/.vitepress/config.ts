@@ -34,17 +34,34 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }],
-    // Osano cookie consent (required by MITRE Privacy - must be first script)
     ['script', { src: 'https://cmp.osano.com/AzyhULTdPkqmy4aDN/61e442cb-3c14-4a28-b9ca-5c364a87187f/osano.js' }],
-    // Hide Osano's default widget (we trigger via footer link instead)
     ['style', {}, '.osano-cm-widget{display: none;}'],
   ],
 
   themeConfig: {
     logo: '/images/logos/mitre-act-arrow-logo.svg',
+    externalLinkIcon: true,
+    returnToTopLabel: 'Return to top',
+    sidebarMenuLabel: 'Menu',
 
     search: {
       provider: 'local',
+      options: {
+        miniSearch: {
+          searchOptions: {
+            fuzzy: 0.2,
+            prefix: true,
+            boost: { title: 4, text: 2, titles: 1 },
+          },
+        },
+      },
+    },
+
+    notFound: {
+      title: 'Page Not Found',
+      quote: 'The page you\'re looking for doesn\'t exist or may have moved.',
+      linkLabel: 'Return to the ACT homepage',
+      linkText: 'Go Home',
     },
 
     nav: [
@@ -75,6 +92,7 @@ export default defineConfig({
             {
               text: 'Introduction',
               link: '/handbook/introduction/',
+              collapsed: false,
               items: [
                 { text: 'Handbook Purpose', link: '/handbook/introduction/handbook-purpose' },
                 { text: 'How to Use', link: '/handbook/introduction/how-to-use' },
@@ -84,6 +102,7 @@ export default defineConfig({
             {
               text: 'ACT Process',
               link: '/handbook/act-process/',
+              collapsed: false,
               items: [
                 { text: 'Phase 1: Planning', link: '/handbook/act-process/phase-1-planning' },
                 { text: 'Phase 2: Assessment', link: '/handbook/act-process/phase-2-assessment' },
@@ -95,6 +114,7 @@ export default defineConfig({
             {
               text: 'Reference',
               link: '/handbook/reference/',
+              collapsed: true,
               items: [
                 { text: 'Acronyms', link: '/handbook/reference/acronyms' },
                 { text: 'Footnotes', link: '/handbook/reference/footnotes' },
