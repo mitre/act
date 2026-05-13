@@ -23,8 +23,8 @@ onMounted(() => {
 
 <template>
   <Layout>
-    <template #doc-after>
-      <div class="custom-footer">
+    <template #layout-bottom>
+      <footer class="custom-footer">
         <div class="footer-links">
           <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
           <span class="footer-separator">&bull;</span>
@@ -38,15 +38,14 @@ onMounted(() => {
         <p class="footer-copyright">
           Copyright &copy; 2026 The MITRE Corporation
         </p>
-      </div>
+      </footer>
     </template>
   </Layout>
 </template>
 
 <style scoped>
 .custom-footer {
-  margin-top: 4rem;
-  padding-top: 2rem;
+  padding: 2rem 1.5rem;
   border-top: 1px solid var(--vp-c-divider);
   text-align: center;
 }
