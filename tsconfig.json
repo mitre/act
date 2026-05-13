@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
     "target": "ES2022",
+    "jsx": "preserve",
+    "lib": ["ESNext", "DOM"],
+    "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "strict": true,
-    "jsx": "preserve",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "esModuleInterop": true,
-    "lib": ["ESNext", "DOM"],
-    "skipLibCheck": true,
-    "noEmit": true,
-    "baseUrl": ".",
     "paths": {
       "@/*": ["docs/.vitepress/theme/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
   "include": ["docs/.vitepress/**/*.ts", "docs/.vitepress/**/*.vue"],
   "exclude": ["node_modules", "docs/.vitepress/dist", "docs/.vitepress/cache"]

@@ -6,10 +6,18 @@ export default antfu({
   ignores: [
     'docs/.vitepress/dist/**',
     'docs/.vitepress/cache/**',
+    'docs/public/**',
+    'public/**',
     'act-info/**',
     'project-docs/**',
     'logs/**',
     'temp/**',
-    'tmp/**'
-  ]
+    'tmp/**',
+    'tempwebsite/**',
+    'scripts/**',
+    '.devcontainer/**',
+    '.github/**',
+    '*.md',
+    'pnpm-workspace.yaml',
+  ],
 })

@@ -70,7 +70,6 @@ This review helps the team understand:
 - **Previous Security Findings** - Reviewing past assessment results helps identify patterns of issues, remediation effectiveness, and areas that may require special attention.
 - **Known Risks and Vulnerabilities** - Understanding existing risk acceptance decisions and known vulnerabilities helps the team focus on evolving threats and provides context for new findings.
 - **Organizational Context** - Learning about the system's role in the broader organization helps the team understand potential impact levels and interconnections with other systems.
-  :::
 
 ## Develop Assessment Plan
 

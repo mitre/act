@@ -1,3 +1,8 @@
+---
+title: 'Attachments'
+description: 'Supporting materials and templates for ACT assessments'
+---
+
 # ACT Attachments
 
 This section contains supporting materials, templates, and additional resources for implementing the ACT methodology.
@@ -45,7 +50,7 @@ These attachments should be tailored to your organization's specific needs and r
 
 The attachments referenced in this handbook are maintained separately to allow for more frequent updates. The latest versions can be obtained by:
 
-1. Contacting the ACT team at act@mitre.org
+1. Contacting the ACT team at [act@mitre.org](mailto:act@mitre.org)
 2. Visiting the ACT resources portal (for authorized users)
 3. Requesting access through your organization's security assessment office
 
@@ -57,6 +62,6 @@ To contribute:
 
 1. Review your materials to ensure they do not contain sensitive or organization-specific information
 2. Format materials according to ACT documentation standards
-3. Submit materials to the ACT team at act@mitre.org with a brief description
+3. Submit materials to the ACT team at [act@mitre.org](mailto:act@mitre.org) with a brief description
 
 All contributions will be reviewed before being incorporated into the official ACT resources.

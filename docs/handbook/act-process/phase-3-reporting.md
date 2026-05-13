@@ -1,3 +1,8 @@
+---
+title: 'Phase 3: Reporting'
+description: 'Assessment findings documentation and delivery'
+---
+
 # Phase 3: Reporting
 
 Phase 3 of the ACT process focuses on consolidating assessment findings into actionable reports that support risk-based decision making.

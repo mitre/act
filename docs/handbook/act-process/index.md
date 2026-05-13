@@ -1,3 +1,8 @@
+---
+title: 'ACT Process Overview'
+description: 'Overview of the three-phase ACT assessment process'
+---
+
 # ACT Process Overview
 
 The ACT process provides a comprehensive approach to security and risk assessment. It consists of three main phases:

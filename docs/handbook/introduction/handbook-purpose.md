@@ -13,23 +13,21 @@ This handbook is a living document that will evolve as the ACT methodology matur
 
 ## Objectives
 
-#### Provide clear guidelines
+### Provide clear guidelines
 
 Comprehensive instructions for conducting ACT assessments, from planning through reporting
 
-#### Explain the methodology
+### Explain the methodology
 
 Thorough explanation of the ACT approach without being overly prescriptive
 
-#### Offer practical tools
+### Offer practical tools
 
 Templates, checklists, and other resources to assist assessment teams
 
-#### Ensure consistent application
+### Ensure consistent application
 
 Guidance to maintain consistency across different assessment contexts while allowing necessary flexibility
-
-:::
 
 ## Intended Audience
 
@@ -37,7 +35,6 @@ Guidance to maintain consistency across different assessment contexts while allo
 - **Authorization Officials** - Those responsible for making authorization decisions based on assessment results
 - **System Owners** - Individuals accountable for the operation and maintenance of information systems
 - **Security Professionals** - Security practitioners seeking to understand or implement the ACT methodology
-  :::
 
 ## Using This Document
 

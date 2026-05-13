@@ -2,20 +2,6 @@
 title: 'MITRE ACT™ Website Goes Live'
 description: "Announcing the launch of the MITRE ACT™ framework's new web presence, providing easy access to resources and documentation for security professionals."
 date: 2025-05-30
-image:
-  src: '/images/logos/act-logo-slogan.svg'
-  alt: 'MITRE ACT™ Logo'
-tags:
-  - announcement
-  - act
-  - security
-authors:
-  - name: 'Email the MITRE ACT™ Development Team'
-    description: 'MITRE ACT™ Development Team'
-    to: 'mailto:act@mitre.org'
-    avatar:
-      src: '/images/logos/mitre-act-arrow-logo.svg'
-      alt: 'MITRE ACT™ Logo'
 ---
 
 # ACT™ Website Goes Live
@@ -30,8 +16,9 @@ Adaptive Capabilities Testing (ACT)™ is a revolutionary security and risk asse
 
 Our new website provides comprehensive resources for security professionals, assessment teams, and organizational leaders:
 
-- **Documentation** - Access the complete ACT™ methodology documentation, including detailed process guides and best practices- **Templates & Tools** - Download assessment templates, planning guides, and other practical tools to implement ACT™ in your organization- **Resources** - Learn about the principles behind ACT™ and how it aligns with the NIST Risk Management Framework
-  :::
+- **Documentation** - Access the complete ACT™ methodology documentation, including detailed process guides and best practices
+- **Templates & Tools** - Download assessment templates, planning guides, and other practical tools to implement ACT™ in your organization
+- **Resources** - Learn about the principles behind ACT™ and how it aligns with the NIST Risk Management Framework
 
 ## Key Features of the ACT™ Framework
 

@@ -68,26 +68,21 @@ function processInlineTokens(tokens: any[], options: SmartScriptOptions): void {
  * markdown-it plugin
  */
 export function markdownItSmartScript(md: MarkdownIt, options: SmartScriptOptions = {}): void {
-  // Track if we're inside a code block or fence
-  let inCodeBlock = false
-
   md.core.ruler.after('inline', 'smartscript', (state: StateCore) => {
+    let inCodeBlock = false
     const tokens = state.tokens
 
     for (let i = 0; i < tokens.length; i++) {
       const token = tokens[i]
 
-      // Track code blocks and fences (skip processing inside these)
       if (token.type === 'fence' || token.type === 'code_block') {
         continue
       }
 
-      // Process inline tokens
       if (token.type === 'inline' && token.children && !inCodeBlock) {
         processInlineTokens(token.children, options)
       }
 
-      // Track code block boundaries
       if (token.nesting === 1 && (token.tag === 'code' || token.tag === 'pre')) {
         inCodeBlock = true
       }

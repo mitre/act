@@ -84,14 +84,16 @@ jobs:
             const deploymentUrl = '${{ steps.deploy.outputs.deployment-url }}';
             const aliasUrl = '${{ steps.deploy.outputs.pages-deployment-alias-url }}';
 
-            const body = `## Cloudflare Pages Preview
-
-            | | URL |
-            |---|---|
-            | **Preview** | ${aliasUrl || deploymentUrl} |
-            | **Direct** | ${deploymentUrl} |
-
-            Deployed from commit ${{ github.event.workflow_run.head_sha }}`;
+            const body = [
+              '## Cloudflare Pages Preview',
+              '',
+              '| | URL |',
+              '|---|---|',
+              `| **Preview** | ${aliasUrl || deploymentUrl} |`,
+              `| **Direct** | ${deploymentUrl} |`,
+              '',
+              `Deployed from commit ${{ github.event.workflow_run.head_sha }}`,
+            ].join('\n');
 
             const { data: comments } = await github.rest.issues.listComments({
               owner: context.repo.owner,

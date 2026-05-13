@@ -26,10 +26,9 @@ When conducting a Risk Assessment (either stand-alone or in conjunction with a S
 - [Introduction](/handbook/introduction/)
 - [Start Assessment](/handbook/act-process/phase-1-planning#start-assessment)
 - [Conduct Preliminary Discussion](/handbook/act-process/phase-1-planning#conduct-preliminary-discussion)
-- [Review Tier 1](/handbook/act-process/phase-1-planning#review-tier-1)
+- [Review Tier 1 Artifacts](/handbook/act-process/phase-1-planning#review-tier-1-artifacts)
 - [Develop Assessment Plan](/handbook/act-process/phase-1-planning#develop-assessment-plan)
 - [Conduct Assessment Plan Review Meeting](/handbook/act-process/phase-1-planning#conduct-assessment-plan-review-meeting)
-- [Notify Technical Writer/Editor of Key Dates for Report](/handbook/act-process/phase-1-planning#notify-technical-writer-editor)
 - [Deliver Updated Assessment Plan](/handbook/act-process/phase-1-planning#deliver-updated-assessment-plan)
 
 </details>

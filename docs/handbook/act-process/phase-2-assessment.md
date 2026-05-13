@@ -1,3 +1,8 @@
+---
+title: 'Phase 2: Assessment'
+description: 'Security and risk assessment execution phase'
+---
+
 # Phase 2: Assessment
 
 Phase 2 of the ACT process involves conducting the actual assessment activities based on the plan developed in Phase 1. This phase has two parallel tracks:

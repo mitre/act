@@ -26,11 +26,11 @@ This page provides detailed references for the footnotes cited throughout the AC
 
 11. **FIPS 200**: [Federal Information Processing Standards Publication 200](https://csrc.nist.gov/publications/fips/fips200/FIPS-200-final-march.pdf) (March 2006).
 
-12. **Controls Catalog**: Link to Organization Controls Catalog
+12. **Controls Catalog**: [Organization Controls Catalog]
 
-13. **IS2P2**: Link to Organization IS2P2-type document or other document
+13. **IS2P2**: [Organization IS2P2-type document]
 
-14. **TRA**: Link to Organization TRA-type document or other document
+14. **TRA**: [Organization TRA-type document]
 
 15. **Digital Identity Guidelines**: [NIST Special Publication 800-63-3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-63-3.pdf)
 

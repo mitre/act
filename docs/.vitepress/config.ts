@@ -8,6 +8,10 @@ export default defineConfig({
   description: 'Adaptive Capabilities Testing - Risk-Based Security Assessment Framework',
   cleanUrls: true,
 
+  sitemap: {
+    hostname: 'https://act.mitre.org',
+  },
+
   markdown: {
     config: (md) => {
       md.use(markdownItSmartScript, {
@@ -47,6 +51,7 @@ export default defineConfig({
       { text: 'Getting Started', link: '/getting-started/' },
       { text: 'Handbook', link: '/handbook/' },
       { text: 'Templates', link: '/templates' },
+      { text: 'Blog', link: '/blog/' },
     ],
 
     sidebar: {

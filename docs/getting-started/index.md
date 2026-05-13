@@ -159,7 +159,7 @@ Now rewind. The same findings exist, but the team uses the ACT framework to perf
 5. **Document residual risk and rationale**:
    - The AO formally accepts risk for non-critical findings and redirects saved resources to better protect operational workflows.
 
-#### Why This Matters for Cybersecurity
+#### Why This Matters for Your Organization
 
 Instead of blindly chasing a clean findings report, the ACT approach focuses effort where it matters most:
 

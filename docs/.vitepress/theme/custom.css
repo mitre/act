@@ -26,6 +26,10 @@
 }
 
 .dark {
+  --vp-c-brand-1: #4da6d9;
+  --vp-c-brand-2: #6bb8e5;
+  --vp-c-brand-3: #8dcaf0;
+
   --vp-c-bg: #1b1b1f;
   --vp-c-bg-soft: #202127;
   --vp-c-bg-alt: #161618;

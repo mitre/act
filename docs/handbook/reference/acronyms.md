@@ -15,7 +15,7 @@ This page provides a comprehensive list of acronyms used throughout the ACT hand
 | **CCE**     | Common Configuration Enumerations                   |
 | **CDM**     | Continuous Diagnostics and Mitigation               |
 | **CIO**     | Chief Information Officer                           |
-| **CISO**    | Chief Information System Officer                    |
+| **CISO**    | Chief Information Security Officer                  |
 | **CM**      | Configuration Management                            |
 | **COOP**    | Continuity of Operations                            |
 | **CP**      | Contingency Plan                                    |
