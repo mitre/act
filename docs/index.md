@@ -4,7 +4,7 @@ title: MITRE Adaptive Capabilities Testing (ACT)
 
 hero:
   name: MITRE
-  text: Adaptive Capabilities Testing(tm)
+  text: Adaptive Capabilities Testing™
   tagline: Decide with Insight. ACT with Confidence.
   image:
     src: /images/heroes/risk-based-decision-making.svg
