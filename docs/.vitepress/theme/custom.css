@@ -75,11 +75,19 @@
   filter: drop-shadow(0 4px 24px rgba(77, 166, 217, 0.2));
 }
 
+.VPHero .image-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.VPHero .image {
+  display: flex !important;
+  justify-content: center !important;
+}
+
 @media (min-width: 960px) {
   .VPHero .image-container {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
     min-height: 100%;
   }
 }
