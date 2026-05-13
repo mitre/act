@@ -5,7 +5,11 @@ description: 'Security and risk assessment execution phase'
 
 # Phase 2: Assessment
 
-Phase 2 of the ACT process involves conducting the actual assessment activities based on the plan developed in Phase 1. This phase has two parallel tracks:
+::: info
+Phase 2 involves conducting the actual assessment activities based on the plan developed in Phase 1.
+:::
+
+This phase has two parallel tracks:
 
 1. Security Assessment
 2. Risk Assessment
@@ -14,13 +18,9 @@ Phase 2 of the ACT process involves conducting the actual assessment activities 
 
 The Security Assessment focuses on evaluating security controls and identifying vulnerabilities within the system.
 
-<!-- Image placeholder: Workflow - Phase 2 - Security Assessment -->
-
 ## Risk Assessment Track
 
 The Risk Assessment track identifies, analyzes, and evaluates risks associated with the system.
-
-<!-- Image placeholder: Workflow - Phase 2 - Risk Assessment -->
 
 ## Assessment Team Roles and Responsibilities
 
@@ -151,8 +151,6 @@ The Network Assessor evaluates:
 ## Testing Rigor
 
 The depth and breadth of testing should be appropriate for the system's criticality and the assessment's objectives.
-
-<!-- Image placeholder: Levels of Testing Rigor Table -->
 
 ## Assessment Activities
 

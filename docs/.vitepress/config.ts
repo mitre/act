@@ -7,6 +7,7 @@ export default defineConfig({
   title: 'MITRE ACT',
   description: 'Adaptive Capabilities Testing - Risk-Based Security Assessment Framework',
   cleanUrls: true,
+  lastUpdated: true,
 
   sitemap: {
     hostname: 'https://act.mitre.org',
@@ -60,6 +61,9 @@ export default defineConfig({
           text: 'Getting Started',
           items: [
             { text: 'Introduction', link: '/getting-started/' },
+            { text: 'Why ACT Matters', link: '/getting-started/why-act-matters' },
+            { text: 'How ACT Works', link: '/getting-started/how-act-works' },
+            { text: 'ACT in Practice', link: '/getting-started/act-in-practice' },
           ],
         },
       ],
@@ -99,6 +103,20 @@ export default defineConfig({
           ],
         },
       ],
+    },
+
+    editLink: {
+      pattern: 'https://github.com/mitre/act/edit/main/docs/:path',
+      text: 'Edit this page on GitHub',
+    },
+
+    lastUpdated: {
+      text: 'Last updated',
+    },
+
+    outline: {
+      level: 'deep',
+      label: 'On this page',
     },
 
     socialLinks: [

@@ -43,7 +43,7 @@ ACT employs a systematic three-phase methodology to ensure comprehensive securit
 
 | Item            | Value                                                |
 | --------------- | ---------------------------------------------------- |
-| Current Version | 1.0 DRAFT (March 7, 2024)                            |
+| Current Version | 1.0 (March 7, 2024)                                  |
 | Primary Authors | Andrew Bennett, Nate Lee, Ernie Riviere              |
 | Copyright       | (c) 2024 The MITRE Corporation. All rights reserved. |
 

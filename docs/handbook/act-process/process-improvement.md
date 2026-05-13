@@ -5,7 +5,9 @@ description: 'Continuous improvement of the ACT assessment process'
 
 # Process Improvement Follow-Up
 
-After completing an ACT assessment, it's important to review the process and identify opportunities for improvement. This continuous improvement approach helps refine the ACT methodology and enhances future assessments.
+::: info
+After completing an ACT assessment, review the process to identify opportunities for improvement. This continuous improvement approach refines the ACT methodology and enhances future assessments.
+:::
 
 ## Process Improvement Objectives
 

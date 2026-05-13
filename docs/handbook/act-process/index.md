@@ -11,8 +11,6 @@ The ACT process provides a comprehensive approach to security and risk assessmen
 2. **Assessment**
 3. **Reporting**
 
-<!-- Image placeholder: Security and Risk Assessment Phases Overview -->
-
 ## Process Flow
 
 The ACT process follows a logical progression from initial planning through assessment and reporting, with each phase building on the previous one.
@@ -28,8 +26,6 @@ The planning phase establishes the foundation for the entire assessment. Key act
 - Developing the assessment plan
 - Conducting assessment plan review
 
-<!-- Image placeholder: Workflow - Phase 1 -->
-
 ### Phase 2: Assessment
 
 The assessment phase involves the actual evaluation of system capabilities and associated risks. There are two parallel tracks:
@@ -41,16 +37,12 @@ The assessment phase involves the actual evaluation of system capabilities and a
 - Identifying vulnerabilities
 - Generating preliminary findings
 
-<!-- Image placeholder: Workflow - Phase 2 - Security Assessment -->
-
 #### Risk Assessment Track
 
 - Identifying risks
 - Analyzing risk impacts
 - Evaluating risk likelihood
 - Determining risk levels
-
-<!-- Image placeholder: Workflow - Phase 2 - Risk Assessment -->
 
 ### Phase 3: Reporting
 
@@ -60,8 +52,6 @@ The reporting phase consolidates findings into actionable information for decisi
 - Conducting stakeholder review
 - Finalizing the report
 - Presenting findings to stakeholders
-
-<!-- Image placeholder: Workflow - Phase 3 -->
 
 ## Process Improvement
 

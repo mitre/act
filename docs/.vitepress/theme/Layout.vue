@@ -2,6 +2,7 @@
 import DefaultTheme from 'vitepress/theme'
 
 const { Layout } = DefaultTheme
+const year = new Date().getFullYear()
 
 function showCookiePreferences() {
   if (typeof window !== 'undefined' && (window as any).Osano?.cm) {
@@ -25,7 +26,7 @@ function showCookiePreferences() {
           MITRE Adaptive Capabilities Testing (MITRE ACT) is a trademark of The MITRE Corporation. Released under the Apache 2.0 License.
         </p>
         <p class="footer-copyright">
-          Copyright &copy; 2025 The MITRE Corporation
+          Copyright &copy; {{ year }} The MITRE Corporation
         </p>
       </footer>
     </template>

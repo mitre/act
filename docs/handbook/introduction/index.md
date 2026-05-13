@@ -32,8 +32,6 @@ The ACT framework consists of several key components, all of which are explained
 - **Assessment Phases** - The ACT methodology is divided into three main phases: Planning, Assessment, and Reporting. Each phase has specific activities and deliverables.
 - **Risk-Based Decision Making** - Converting technical findings into actionable insights for leadership by focusing on business impact and mission risk rather than technical vulnerabilities alone.
 
-<!-- Image placeholder: ACT Methodology Overview -->
-
 The ACT methodology provides a structured approach to security and risk assessment while maintaining the flexibility needed to adapt to different organizational contexts and evolving threat landscapes.
 
 ::: tip

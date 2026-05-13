@@ -7,8 +7,6 @@ description: 'Planning and preparation activities for ACT assessments'
 
 Phase 1 of the ACT process focuses on planning and preparation for the assessment. This phase is critical for ensuring that the assessment is well-structured, properly scoped, and aligned with organizational objectives.
 
-<!-- Image placeholder: Workflow - Phase 1 -->
-
 ## Key Activities
 
 The Planning phase includes the following key activities:
@@ -89,8 +87,6 @@ Based on the preliminary discussion and document review, the team develops a det
 ### Assessment Boundary
 
 A clear definition of the assessment boundary is crucial for effective planning. The assessment boundary may differ from the authorization boundary.
-
-<!-- Image placeholder: Assessment Boundary Example -->
 
 ## Conduct Assessment Plan Review Meeting
 
