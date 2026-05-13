@@ -14,13 +14,15 @@ function showCookiePreferences() {
 <template>
   <Layout>
     <template #layout-bottom>
-      <footer class="custom-footer">
+      <footer class="custom-footer" aria-label="Site footer">
         <div class="footer-links">
           <a href="/privacy-policy" class="footer-link">Privacy Policy</a>
           <span class="footer-separator">&bull;</span>
           <a href="/terms-of-use" class="footer-link">Terms of Use</a>
           <span class="footer-separator">&bull;</span>
-          <a href="javascript:void(0)" class="footer-link" @click.prevent="showCookiePreferences">Manage Cookies</a>
+          <button type="button" class="footer-link" @click="showCookiePreferences">
+            Manage Cookies
+          </button>
         </div>
         <p class="footer-message">
           MITRE Adaptive Capabilities Testing (MITRE ACT) is a trademark of The MITRE Corporation. Released under the Apache 2.0 License.

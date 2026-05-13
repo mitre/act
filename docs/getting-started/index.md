@@ -1,6 +1,6 @@
 ---
 title: Introduction to MITRE ACT(tm)
-description: Decide with Insight. ACT with Confidence.
+description: Introduction to MITRE ACT — a capabilities-focused, risk-based security assessment framework.
 ---
 
 # Introduction to MITRE ACT(tm)

@@ -1,6 +1,7 @@
 ---
 layout: home
 title: MITRE Adaptive Capabilities Testing (ACT)
+description: 'MITRE ACT is a risk-based security assessment framework that transforms compliance data into actionable intelligence for mission-critical cybersecurity decisions.'
 
 hero:
   name: MITRE
@@ -8,7 +9,7 @@ hero:
   tagline: Decide with Insight. ACT with Confidence.
   image:
     src: /images/heroes/risk-based-decision-making.svg
-    alt: MITRE ACT
+    alt: MITRE ACT risk-based decision-making framework diagram
   actions:
     - theme: brand
       text: Get Started

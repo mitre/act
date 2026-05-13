@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 sidebar: false
+description: 'Privacy policy for the MITRE ACT website, including data collection, usage, and visitor rights.'
 ---
 
 # Privacy Policy
@@ -135,7 +136,7 @@ The GDPR provides individuals with certain rights regarding their personal data.
 
 You may submit these requests by email to privacy@mitre.org. We may require specific information from you to help us verify your identity prior to processing your request. Applicable law may require or permit us to decline your request. If we decline your request, we will tell you why, subject to any legal restrictions on disclosing this information.
 
-If you would like to submit a complaint about our use of your personal data or our response to your request regarding your personal data, you may contact us at privacy@mitre.org or submit a complaint directly to the data protection authority in your jurisdiction. If you reside in the EEA, you can find information about your data protection authority [here](https://edpb.europa.eu/about-edpb/about-edpb/members_en). If you reside in the UK, you may file complaints with the Information Commissioner's Office [here](https://ico.org.uk/make-a-complaint/).
+If you would like to submit a complaint about our use of your personal data or our response to your request regarding your personal data, you may contact us at privacy@mitre.org or submit a complaint directly to the data protection authority in your jurisdiction. If you reside in the EEA, you can find information about your [data protection authority](https://edpb.europa.eu/about-edpb/about-edpb/members_en). If you reside in the UK, you may file complaints with the [Information Commissioner's Office](https://ico.org.uk/make-a-complaint/).
 
 ### Our Retention of Your Personal Data
 

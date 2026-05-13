@@ -1,6 +1,7 @@
 ---
 title: Terms of Use
 sidebar: false
+description: 'License terms, disclaimers, and feedback policy for MITRE ACT.'
 ---
 
 # Terms of Use

@@ -34,8 +34,29 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-icon-180x180.png' }],
+    ['link', { rel: 'manifest', href: '/favicons/manifest.json' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'MITRE ACT' }],
+    ['meta', { property: 'og:image', content: 'https://act.mitre.org/images/act-social-preview.png' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://act.mitre.org/images/act-social-preview.png' }],
     ['script', { src: 'https://cmp.osano.com/AzyhULTdPkqmy4aDN/61e442cb-3c14-4a28-b9ca-5c364a87187f/osano.js' }],
     ['style', {}, '.osano-cm-widget{display: none;}'],
+    ['script', { type: 'application/ld+json' }, JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      'name': 'MITRE ACT',
+      'url': 'https://act.mitre.org',
+      'description': 'Adaptive Capabilities Testing - Risk-Based Security Assessment Framework',
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'The MITRE Corporation',
+        'url': 'https://www.mitre.org',
+      },
+    })],
   ],
 
   themeConfig: {
