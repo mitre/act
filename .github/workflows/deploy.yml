@@ -1,80 +1,128 @@
-# Deploy Nuxt site to GitHub Pages
-#
-# This workflow builds and deploys the Nuxt site to GitHub Pages
-# It can be triggered by:
-# - Push to temp-landing-page branch (TEMPORARY - will revert to main)
-# - Creating a GitHub release
-# - Manual workflow dispatch
-#
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
-  # Deploy on push to temp-landing-page (temporary - will revert to main later)
-  push:
-    branches: ['temp-landing-page']
+  workflow_run:
+    workflows: [ci]
+    types: [completed]
 
-  # Deploy when a release is created
-  release:
-    types: [created]
-
-  # Allow manual deployment
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to deploy'
+        required: true
+        default: 'main'
 
-# Sets permissions of the GITHUB_TOKEN
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one deployment at a time
 concurrency:
-  group: 'pages'
-  cancel-in-progress: false
+  group: deploy-${{ github.event.workflow_run.head_branch || github.event.inputs.branch || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  # Build job
-  build:
+  deploy:
+    name: Build & Deploy
     runs-on: ubuntu-latest
+
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+
+    permissions:
+      contents: read
+      deployments: write
+      pull-requests: write
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.event.inputs.branch || github.ref }}
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: latest
+        uses: pnpm/action-setup@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: 22
           cache: 'pnpm'
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build with Nuxt
-        run: pnpm run generate
-        env:
-          # Add any environment variables needed for build
-          NUXT_PUBLIC_SITE_URL: https://act.mitre.org
+      - name: Build
+        run: pnpm build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        id: deploy
         with:
-          path: ./.output/public
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy docs/.vitepress/dist --project-name=act-site --branch=${{ github.event.workflow_run.head_branch || github.event.inputs.branch || 'main' }}
 
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Find PR number
+        if: github.event.workflow_run.event == 'pull_request'
+        id: find-pr
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const response = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: '${{ github.event.workflow_run.head_sha }}',
+            });
+            const pr = response.data[0];
+            if (pr) {
+              core.setOutput('number', pr.number);
+            }
+
+      - name: Comment on PR
+        if: steps.find-pr.outputs.number
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = ${{ steps.find-pr.outputs.number }};
+            const deploymentUrl = '${{ steps.deploy.outputs.deployment-url }}';
+            const aliasUrl = '${{ steps.deploy.outputs.pages-deployment-alias-url }}';
+
+            const body = `## Cloudflare Pages Preview
+
+            | | URL |
+            |---|---|
+            | **Preview** | ${aliasUrl || deploymentUrl} |
+            | **Direct** | ${deploymentUrl} |
+
+            Deployed from commit ${{ github.event.workflow_run.head_sha }}`;
+
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' &&
+              c.body.includes('Cloudflare Pages Preview')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: body,
+              });
+            }
+
+      - name: Output deployment URL
+        run: |
+          echo "## Deployment Complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**URL:** ${{ steps.deploy.outputs.deployment-url }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Alias:** ${{ steps.deploy.outputs.pages-deployment-alias-url }}" >> $GITHUB_STEP_SUMMARY

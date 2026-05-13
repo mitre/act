@@ -1,9 +1,0 @@
-# Netlify configuration for MITRE ACT website (VitePress)
-
-[build]
-  command = "pnpm install && pnpm build"
-  publish = "docs/.vitepress/dist"
-  environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
-
-[build.processing]
-  skip_processing = true
