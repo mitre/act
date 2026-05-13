@@ -17,6 +17,10 @@ Need all templates at once? Individual downloads are further down this page, but
 This package includes all ACT templates, guidance documents, and work aids in a single download.
 :::
 
+## ACT Fact Sheet
+
+[MITRE ACT Fact Sheet](/downloads/mitre-act-fact-sheet.pdf){target="_self"} - One-page overview of the ACT framework.
+
 ## Usage Notes
 
 ::: tip
