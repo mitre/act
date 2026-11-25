@@ -1,0 +1,127 @@
+import { fileURLToPath, URL } from 'node:url'
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vitepress'
+import { markdownItSmartScript } from './plugins/markdown-it-smartscript'
+
+export default defineConfig({
+  title: 'MITRE ACT',
+  description: 'Adaptive Cybersecurity Testing - Risk-Based Security Assessment Framework',
+  cleanUrls: true,
+  lastUpdated: true,
+
+  sitemap: {
+    hostname: 'https://act.mitre.org',
+  },
+
+  markdown: {
+    config: (md) => {
+      md.use(markdownItSmartScript, {
+        trademark: true,
+        registered: true,
+        copyright: true,
+      })
+    },
+  },
+
+  vite: {
+    plugins: [tailwindcss()],
+    resolve: {
+      alias: {
+        '@': fileURLToPath(new URL('./theme', import.meta.url)),
+      },
+    },
+  },
+
+  head: [
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/favicons/favicon.ico' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' }],
+    ['link', { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-icon-180x180.png' }],
+    ['link', { rel: 'manifest', href: '/favicons/manifest.json' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: 'MITRE ACT' }],
+    ['meta', { property: 'og:image', content: 'https://act.mitre.org/images/act-social-preview.png' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: 'https://act.mitre.org/images/act-social-preview.png' }],
+    ['script', { src: 'https://cmp.osano.com/AzyhULTdPkqmy4aDN/61e442cb-3c14-4a28-b9ca-5c364a87187f/osano.js' }],
+    ['style', {}, '.osano-cm-widget{display: none;}'],
+    ['script', { type: 'application/ld+json' }, JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      'name': 'MITRE ACT',
+      'url': 'https://act.mitre.org',
+      'description': 'Adaptive Cybersecurity Testing - Risk-Based Security Assessment Framework',
+      'publisher': {
+        '@type': 'Organization',
+        'name': 'The MITRE Corporation',
+        'url': 'https://www.mitre.org',
+      },
+    })],
+  ],
+
+  themeConfig: {
+    logo: '/images/logos/mitre-act-arrow-logo.svg',
+    externalLinkIcon: true,
+    returnToTopLabel: 'Return to top',
+    sidebarMenuLabel: 'Menu',
+
+    search: {
+      provider: 'local',
+      options: {
+        miniSearch: {
+          searchOptions: {
+            fuzzy: 0.2,
+            prefix: true,
+            boost: { title: 4, text: 2, titles: 1 },
+          },
+        },
+      },
+    },
+
+    notFound: {
+      title: 'Page Not Found',
+      quote: 'The page you\'re looking for doesn\'t exist or may have moved.',
+      linkLabel: 'Return to the ACT homepage',
+      linkText: 'Go Home',
+    },
+
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Introduction', link: '/introduction/' },
+      { text: 'Templates', link: '/templates' },
+      { text: 'Agentic ACT', link: '/agentic-act' },
+      // { text: 'Blog', link: '/blog/' },
+    ],
+
+    sidebar: {
+      '/introduction/': [
+        {
+          text: 'Introduction',
+          link: '/introduction/',
+          items: [
+            { text: 'Why ACT Matters', link: '/introduction/why-act-matters' },
+            { text: 'How ACT Works', link: '/introduction/how-act-works' },
+          ],
+        },
+      ],
+    },
+
+    // editLink: {
+    //  pattern: 'https://github.com/mitre/act/edit/main/docs/:path',
+    //  text: 'Edit this page on GitHub',
+    // },
+
+    lastUpdated: {
+      text: 'Last updated',
+    },
+
+    outline: {
+      level: 'deep',
+      label: 'On this page',
+    },
+
+    // socialLinks: [
+    //  { icon: 'github', link: 'https://github.com/mitre/act' },
+    // ],
+  },
+})

@@ -1,18 +1,4 @@
-# Netlify configuration for MITRE ACT website
-# Increases memory allocation to prevent JavaScript heap out of memory errors
-
+# Deploys via Cloudflare Pages, not Netlify.
+# ignore script exits 0 = skip build.
 [build]
-  command = "rm -rf node_modules && pnpm install && pnpm run generate"
-  publish = "dist"
-  environment = { NODE_OPTIONS = "--max-old-space-size=8192" }
-
-[build.processing]
-  # Disable Netlify's post-processing to avoid conflicts with our structure
-  skip_processing = true
-
-[build.processing.html]
-  # Disable Pretty URLs since we handle it ourselves
-  pretty_urls = false
-
-# Note: Trailing slash handling is now done by generating directory structure
-# with index.html files, which works on both GitHub Pages and Netlify
+ignore = "exit 0"

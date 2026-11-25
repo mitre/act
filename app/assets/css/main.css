@@ -1,8 +1,0 @@
-@import "tailwindcss";
-@import "@nuxt/ui";
-
-@source "../../../content/**/*";
-
-/* App-specific styles - design system provided by ACT Design System layer */
-
-/* Add any app-specific overrides here if needed */

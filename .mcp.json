@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@0.0.79"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["@upstash/context7-mcp@4.0.0"]
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["@brave/brave-search-mcp-server@2.1.0"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      }
+    }
+  }
+}
