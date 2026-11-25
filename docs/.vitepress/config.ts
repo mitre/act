@@ -101,16 +101,15 @@ export default defineConfig({
           items: [
             { text: 'Why ACT Matters', link: '/introduction/why-act-matters' },
             { text: 'How ACT Works', link: '/introduction/how-act-works' },
-            { text: 'ACT in Practice', link: '/introduction/act-in-practice' },
           ],
         },
       ],
     },
 
-    editLink: {
-      pattern: 'https://github.com/mitre/act/edit/main/docs/:path',
-      text: 'Edit this page on GitHub',
-    },
+    // editLink: {
+    //  pattern: 'https://github.com/mitre/act/edit/main/docs/:path',
+    //  text: 'Edit this page on GitHub',
+    // },
 
     lastUpdated: {
       text: 'Last updated',
@@ -121,8 +120,8 @@ export default defineConfig({
       label: 'On this page',
     },
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/mitre/act' },
-    ],
+    // socialLinks: [
+    //  { icon: 'github', link: 'https://github.com/mitre/act' },
+    // ],
   },
 })

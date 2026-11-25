@@ -12,8 +12,7 @@ Start with what you already have. Evidence that a requirement is met is as valua
 ## Learn the process
 
 1. [Why ACT Matters](/introduction/why-act-matters) shows how a disaster response team chooses what to fix first when it receives 137 findings.
-2. [How ACT Works](/introduction/how-act-works) shows how the team combines different sources of evidence to make a decision.
-3. [ACT in Practice](/introduction/act-in-practice) helps you choose an assessment approach and take the first steps.
+2. [How ACT Works](/introduction/how-act-works) shows how the team combines evidence to make a decision, then helps you plan your own assessment.
 
 ## Use ACT today
 

@@ -25,4 +25,4 @@ AACT is designed to support on-device models, organization-hosted models, and co
 
 ## Use ACT today
 
-Learn [the ACT process](/introduction/) or see [which manual templates document the portal finding and risk](/templates#record-the-portal-finding-and-risk).
+Learn [the ACT process](/introduction/) or see [which manual templates document the portal finding and risk](/introduction/how-act-works#risk-based-decision-making-framework).

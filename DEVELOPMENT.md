@@ -46,7 +46,7 @@ docs/                               # VitePress content root
 │   └── plugins/
 │       └── markdown-it-smartscript.ts  # Trademark symbol plugin
 ├── index.md                        # Homepage
-├── introduction/                   # Introduction section (4 pages)
+├── introduction/                   # Introduction section (3 pages)
 ├── agentic-act.md                  # Agentic ACT overview
 ├── templates.md                    # Downloadable templates
 ├── blog/                           # Blog posts

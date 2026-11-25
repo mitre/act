@@ -15,7 +15,7 @@ hero:
       text: Learn the ACT process
       link: /introduction/
     - theme: alt
-      text: Download manual templates
+      text: Download templates
       link: /templates
     - theme: alt
       text: Explore Agentic ACT (planned for 2027)

@@ -1,6 +1,6 @@
 ---
 title: How ACT Works
-description: See how ACT connects compliance results, running configurations, and other risk information to decisions about mission risk.
+description: See how ACT uses risk information to guide decisions, then learn how to plan your own assessment.
 ---
 
 # How ACT Works
@@ -37,4 +37,18 @@ The public portal’s sign-in configuration, relevant threat reporting, and the 
 
 The team prioritizes MFA on the public portal and works with the system owner to schedule the admin patch around critical operations. It records the sources it relied on, the safeguards it verified, how it handled conflicting requirements, and the risk that remains.
 
-See [the process templates](/templates#record-the-portal-finding-and-risk) or read [ACT in Practice](/introduction/act-in-practice) for real-world examples.
+Record the portal finding in the [Security Assessment Findings spreadsheet (C-05)](/templates#collect-evidence) and the risk decision in the [Risk Assessment Risks spreadsheet (C-06)](/templates#analyze-risk).
+
+## Put ACT into practice
+
+### Choose an assessment approach {#assessment-types}
+
+Start with the risk information you already have. Inventory available evidence and identify gaps that could change a decision. If you need fresh evidence about selected requirements, add an optional security assessment. Use both compliance and noncompliance results in the risk assessment.
+
+### Plan your assessment {#getting-started-with-act}
+
+1. Use the [Preliminary Intake Form (P-01)](/templates#plan-the-assessment) to capture the mission, stakeholders, and available evidence. For the disaster response team, that means identifying who depends on the deployment portal and what the team already knows about sign-in and access.
+2. Agree with the system team on the assessment boundary and scope. Choose one of ACT’s four levels of assessment rigor based on what the assessment needs to establish.
+3. Record those choices in a risk assessment plan, a security assessment plan, or both, depending on the work in scope.
+
+The [planning templates](/templates#plan-the-assessment) include the intake form, assessment plans, and guidance on rigor. The [downloadable ACT Handbook](/templates#handbook-and-fact-sheet) walks through the full process.

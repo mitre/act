@@ -222,7 +222,7 @@ docs/                                # All site content
 │   └── plugins/
 │       └── markdown-it-smartscript.ts  # Typography conversions at build time
 ├── index.md                         # Homepage (layout: home with hero + features)
-├── introduction/                    # 4 pages: intro, why, how, practice
+├── introduction/                    # Introduction, Why ACT Matters, How ACT Works
 ├── agentic-act.md                   # Agentic ACT overview
 ├── templates.md                     # Download links to 38 template files
 ├── blog/                            # Blog index + posts
