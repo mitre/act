@@ -40,7 +40,7 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) for detailed setup instructions.
 - Use heading levels in order (don't skip from h2 to h4)
 - One h1 per page (from the frontmatter title or first heading)
 - Use VitePress containers (`::: info`, `::: tip`, `::: warning`) for callouts
-- Use `(tm)` for trademark symbols in body text; use `™` in frontmatter
+- Use Unicode `™` for trademark symbols in Markdown and YAML frontmatter
 
 ### File Naming
 

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-The MITRE Adaptive Capabilities Testing (ACT) framework website — a VitePress static site for security and risk assessment documentation with MITRE branding.
+The MITRE Adaptive Cybersecurity Testing (ACT) framework website — a VitePress static site for security and risk assessment documentation with MITRE branding.
 
 **Stack:** VitePress 2.x, Vue 3, Tailwind CSS 4, TypeScript, pnpm, Node.js 22.x
 
@@ -25,7 +25,7 @@ No test framework configured. Verify with `pnpm lint && pnpm typecheck && pnpm b
 
 ### Content
 
-All content in `docs/` as Markdown. File path = URL (`docs/handbook/index.md` → `/handbook/`).
+All content in `docs/` as Markdown. File path = URL (`docs/introduction/index.md` → `/introduction/`).
 
 ### Configuration
 
@@ -33,7 +33,7 @@ All content in `docs/` as Markdown. File path = URL (`docs/handbook/index.md` �
 - `docs/.vitepress/theme/index.ts` — custom theme extending DefaultTheme
 - `docs/.vitepress/theme/custom.css` — MITRE brand colors (light + dark mode), layout overrides
 - `docs/.vitepress/theme/Layout.vue` — site-wide footer (privacy, terms, cookie consent)
-- `docs/.vitepress/plugins/markdown-it-smartscript.ts` — (tm)→™ at build time
+- `docs/.vitepress/plugins/markdown-it-smartscript.ts` — typography conversions at build time
 
 ### Static Assets
 
@@ -42,7 +42,7 @@ Files in `docs/public/` served at root URL. Images in `docs/public/images/`, dow
 ### Key Patterns
 
 - **Download links** use `{target="_self"}` VitePress attribute — without it, VitePress treats them as dead page links
-- **Trademark symbols** — `(tm)` works in markdown body text only. In frontmatter YAML, use Unicode `™` directly
+- **Trademark symbols** — use Unicode `™` in Markdown and YAML frontmatter
 - **Containers** — `::: info`, `::: tip`, `::: warning` (close with `:::`)
 - **Footer renders on ALL pages** via `#layout-bottom` slot, not `#doc-after` (which is doc pages only)
 - **Collapsible sections** — use `<details><summary>` HTML, not Nuxt MDC `::accordion`

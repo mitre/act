@@ -23,6 +23,7 @@
   --vp-c-text-2: rgba(60, 60, 67, 0.78);
   --vp-c-text-3: rgba(60, 60, 67, 0.74);
   --vp-c-divider: rgba(60, 60, 67, 0.12);
+  --vp-sidebar-width: 200px;
 }
 
 .dark {

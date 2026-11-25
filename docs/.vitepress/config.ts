@@ -5,7 +5,7 @@ import { markdownItSmartScript } from './plugins/markdown-it-smartscript'
 
 export default defineConfig({
   title: 'MITRE ACT',
-  description: 'Adaptive Capabilities Testing - Risk-Based Security Assessment Framework',
+  description: 'Adaptive Cybersecurity Testing - Risk-Based Security Assessment Framework',
   cleanUrls: true,
   lastUpdated: true,
 
@@ -50,7 +50,7 @@ export default defineConfig({
       '@type': 'WebSite',
       'name': 'MITRE ACT',
       'url': 'https://act.mitre.org',
-      'description': 'Adaptive Capabilities Testing - Risk-Based Security Assessment Framework',
+      'description': 'Adaptive Cybersecurity Testing - Risk-Based Security Assessment Framework',
       'publisher': {
         '@type': 'Organization',
         'name': 'The MITRE Corporation',
@@ -87,60 +87,21 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Getting Started', link: '/getting-started/' },
-      { text: 'Handbook', link: '/handbook/' },
+      { text: 'Introduction', link: '/introduction/' },
       { text: 'Templates', link: '/templates' },
-      { text: 'Blog', link: '/blog/' },
+      { text: 'Agentic ACT', link: '/agentic-act' },
+      // { text: 'Blog', link: '/blog/' },
     ],
 
     sidebar: {
-      '/getting-started/': [
+      '/introduction/': [
         {
-          text: 'Getting Started',
+          text: 'Introduction',
+          link: '/introduction/',
           items: [
-            { text: 'Introduction', link: '/getting-started/' },
-            { text: 'Why ACT Matters', link: '/getting-started/why-act-matters' },
-            { text: 'How ACT Works', link: '/getting-started/how-act-works' },
-            { text: 'ACT in Practice', link: '/getting-started/act-in-practice' },
-          ],
-        },
-      ],
-      '/handbook/': [
-        {
-          text: 'ACT Handbook',
-          link: '/handbook/',
-          items: [
-            {
-              text: 'Introduction',
-              link: '/handbook/introduction/',
-              collapsed: false,
-              items: [
-                { text: 'Handbook Purpose', link: '/handbook/introduction/handbook-purpose' },
-                { text: 'How to Use', link: '/handbook/introduction/how-to-use' },
-                { text: 'Framework Overview', link: '/handbook/introduction/framework-overview' },
-              ],
-            },
-            {
-              text: 'ACT Process',
-              link: '/handbook/act-process/',
-              collapsed: false,
-              items: [
-                { text: 'Phase 1: Planning', link: '/handbook/act-process/phase-1-planning' },
-                { text: 'Phase 2: Assessment', link: '/handbook/act-process/phase-2-assessment' },
-                { text: 'Phase 3: Reporting', link: '/handbook/act-process/phase-3-reporting' },
-                { text: 'Process Improvement', link: '/handbook/act-process/process-improvement' },
-              ],
-            },
-            { text: 'Attachments', link: '/handbook/attachments/' },
-            {
-              text: 'Reference',
-              link: '/handbook/reference/',
-              collapsed: true,
-              items: [
-                { text: 'Acronyms', link: '/handbook/reference/acronyms' },
-                { text: 'Footnotes', link: '/handbook/reference/footnotes' },
-              ],
-            },
+            { text: 'Why ACT Matters', link: '/introduction/why-act-matters' },
+            { text: 'How ACT Works', link: '/introduction/how-act-works' },
+            { text: 'ACT in Practice', link: '/introduction/act-in-practice' },
           ],
         },
       ],

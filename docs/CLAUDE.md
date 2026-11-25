@@ -5,8 +5,8 @@ All site content lives here as Markdown files. Each `.md` file becomes a page.
 ## File → URL
 
 - `docs/index.md` → `/`
-- `docs/getting-started/index.md` → `/getting-started/`
-- `docs/handbook/act-process/phase-1-planning.md` → `/handbook/act-process/phase-1-planning`
+- `docs/introduction/index.md` → `/introduction/`
+- `docs/introduction/how-act-works.md` → `/introduction/how-act-works`
 
 ## Frontmatter
 
@@ -22,7 +22,7 @@ description: 'Brief SEO description'
 ## Markdown Rules
 
 - `::: info` / `::: tip` / `::: warning` for callouts (close with `:::`)
-- `(tm)` → ™ in body text only. Use Unicode `™` in frontmatter YAML
+- Use Unicode `™` in Markdown and YAML frontmatter
 - `{target="_self"}` on download links: `[text](/downloads/file.docx){target="_self"}`
 - `<details><summary>Title</summary>` for collapsible sections
 - `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]` for GitHub-style alerts

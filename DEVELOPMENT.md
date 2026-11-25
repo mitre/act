@@ -46,8 +46,8 @@ docs/                               # VitePress content root
 │   └── plugins/
 │       └── markdown-it-smartscript.ts  # Trademark symbol plugin
 ├── index.md                        # Homepage
-├── getting-started/                # Getting Started section (4 pages)
-├── handbook/                       # ACT Assessment Handbook
+├── introduction/                   # Introduction section (4 pages)
+├── agentic-act.md                  # Agentic ACT overview
 ├── templates.md                    # Downloadable templates
 ├── blog/                           # Blog posts
 ├── privacy-policy.md
@@ -132,15 +132,16 @@ Important warning.
 > This is a warning.
 ```
 
-### Trademark symbols
+### Trademark and copyright symbols
 
-Automatically converted at build time in markdown body text:
+Use Unicode `™` in Markdown and YAML frontmatter.
 
-- `(tm)` renders as ™
+These markers are converted at build time in Markdown body text:
+
 - `(r)` renders as ®
 - `(c)` renders as ©
 
-In frontmatter YAML, use the Unicode characters directly: `™`, `®`, `©`
+Use Unicode `®` and `©` in YAML frontmatter.
 
 ### Collapsible sections
 

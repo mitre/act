@@ -12,7 +12,7 @@ description: 'Privacy policy for the MITRE ACT website, including data collectio
 
 **Effective Date:** 5/30/2025
 
-This Online Privacy Policy explains the types of personal information that The MITRE Corporation ("MITRE," "we," "our," "us") collects from visitors to the Adaptive Capabilities Testing (ACT™) website (the "Site"); how MITRE uses, shares, protects, stores, and otherwise processes that personal information; and your choices with respect to our use of your personal information. By using our Sites, you acknowledge that you understand and agree to the terms outlined in this Privacy Policy. If you have any questions, you may contact us using the information provided at the end of this Privacy Policy.
+This Online Privacy Policy explains the types of personal information that The MITRE Corporation ("MITRE," "we," "our," "us") collects from visitors to the Adaptive Cybersecurity Testing (ACT™) website (the "Site"); how MITRE uses, shares, protects, stores, and otherwise processes that personal information; and your choices with respect to our use of your personal information. By using our Sites, you acknowledge that you understand and agree to the terms outlined in this Privacy Policy. If you have any questions, you may contact us using the information provided at the end of this Privacy Policy.
 
 This notice is provided in a layered format so you can click through to the specific areas listed below.
 

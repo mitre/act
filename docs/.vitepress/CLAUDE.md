@@ -20,7 +20,7 @@ Main site configuration. Key sections:
 
 ## plugins/
 
-- `markdown-it-smartscript.ts` — build-time (tm)→™ conversion. `inCodeBlock` resets per page. Regexes at module scope.
+- `markdown-it-smartscript.ts` — build-time typography conversions. `inCodeBlock` resets per page. Regexes at module scope.
 
 ## Key Constraints
 

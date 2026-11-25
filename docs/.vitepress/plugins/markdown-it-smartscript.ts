@@ -3,7 +3,7 @@
  * Build-time typography transformations for VitePress
  *
  * Transforms patterns at build time (zero client-side cost):
- * - (tm) or (TM) → <span class="ss-tm">™</span>
+ * - Parenthesized TM → <span class="ss-tm">™</span>
  * - (r) or (R) → <span class="ss-reg">®</span>
  * - (c) or (C) → ©
  */

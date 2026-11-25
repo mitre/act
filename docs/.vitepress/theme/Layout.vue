@@ -25,7 +25,7 @@ function showCookiePreferences() {
           </button>
         </div>
         <p class="footer-message">
-          MITRE Adaptive Capabilities Testing (MITRE ACT) is a trademark of The MITRE Corporation. Released under the Apache 2.0 License.
+          MITRE Adaptive Cybersecurity Testing (MITRE ACT) is a trademark of The MITRE Corporation. Released under the Apache 2.0 License.
         </p>
         <p class="footer-copyright">
           Copyright &copy; {{ year }} The MITRE Corporation

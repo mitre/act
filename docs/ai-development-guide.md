@@ -57,7 +57,7 @@ description: "Brief description for SEO"
 After creating the file, add it to the sidebar in docs/.vitepress/config.ts
 under the appropriate section in the sidebar object.
 
-File → URL mapping: docs/handbook/new-page.md → /handbook/new-page
+File → URL mapping: docs/introduction/new-page.md → /introduction/new-page
 ```
 
 ### Editing Content
@@ -68,8 +68,8 @@ I need to edit content on the ACT VitePress site.
 The file is at docs/[path].md. VitePress uses standard Markdown plus:
 - ::: info / ::: tip / ::: warning containers (close with :::)
 - {target="_self"} attribute on download links to static files
-- (tm) → ™, (r) → ®, (c) → © via smartscript plugin (body text only)
-- In frontmatter YAML, use Unicode ™ directly (smartscript doesn't process YAML)
+- Use Unicode ™ in Markdown and YAML frontmatter
+- (r) → ® and (c) → © via the smartscript plugin in Markdown body text
 - <details><summary> for collapsible sections
 - Standard markdown tables with header rows
 
@@ -82,16 +82,18 @@ This is VitePress, not Nuxt.
 ```
 I need to add a downloadable template file to the ACT site.
 
-1. Place the file in docs/public/downloads/ (use hyphens, no spaces in filename)
+1. Place the file in docs/public/downloads/act-templates/individual-templates/.
 2. Add a link in docs/templates.md using this format:
 
-| ID | [Document Name](/downloads/filename.docx){target="_self"} | Description |
+| G-01 | [MITRE ACT Assessment Handbook](/downloads/act-templates/individual-templates/G-01%20-%20MITRE%20ACT%20Assessment%20Handbook.docx){target="_self"} | Assessment methodology |
 
 The {target="_self"} attribute tells VitePress this is a static file download,
 not a page navigation link. Without it, VitePress will try to route it as a page.
 
 DO NOT use markdown links without {target="_self"} for download files.
-DO NOT put spaces in filenames.
+Encode spaces and other special characters in the URL. Place the full
+template-set ZIP directly in docs/public/downloads/act-templates/ and update
+the full download link in docs/templates.md when the ZIP filename changes.
 ```
 
 ### Modifying Navigation
@@ -145,7 +147,7 @@ date: YYYY-MM-DD
 - [Post Title](/blog/slug) - Brief description. *(Month Day, Year)*
 
 Blog posts support all VitePress markdown features.
-Use (tm) for trademark symbols in body text.
+Use Unicode ™ for trademark symbols in Markdown and YAML frontmatter.
 ```
 
 ### Debugging Build Errors
@@ -171,19 +173,19 @@ Config: docs/.vitepress/config.ts
 
 Tell your AI tool about these so it uses them correctly:
 
-| Feature       | How to Use                                                  |
+| Feature | How to Use |
 | ------------- | ----------------------------------------------------------- | ------- |
-| Info box      | `::: info` ... `:::`                                        |
-| Tip box       | `::: tip` ... `:::`                                         |
-| Warning box   | `::: warning` ... `:::`                                     |
-| GitHub alerts | `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`, `> [!CAUTION]`     |
-| Collapsible   | `<details><summary>Title</summary>` ... `</details>`        |
-| Trademark     | `(tm)` in body text, `™` in frontmatter                     |
-| Download link | `[text](/downloads/file.ext){target="_self"}`               |
-| External link | Shows icon automatically via `externalLinkIcon: true`       |
-| Code blocks   | Standard fenced code blocks with language tag               |
-| Tables        | Standard markdown tables with `                             | ` pipes |
-| Images        | `![alt](/images/path.png)` — files in `docs/public/images/` |
+| Info box | `::: info` ... `:::` |
+| Tip box | `::: tip` ... `:::` |
+| Warning box | `::: warning` ... `:::` |
+| GitHub alerts | `> [!NOTE]`, `> [!TIP]`, `> [!WARNING]`, `> [!CAUTION]` |
+| Collapsible | `<details><summary>Title</summary>` ... `</details>` |
+| Trademark | `™` in Markdown and YAML frontmatter |
+| Download link | `[text](/downloads/file.ext){target="_self"}` |
+| External link | Shows icon automatically via `externalLinkIcon: true` |
+| Code blocks | Standard fenced code blocks with language tag |
+| Tables | Standard markdown tables with `                            |` pipes |
+| Images | `![alt](/images/path.png)` — files in `docs/public/images/` |
 
 ## What NOT to Do
 
@@ -204,7 +206,6 @@ Also do not:
 - Skip heading levels (h2 → h4 without h3)
 - Use multiple h1 headings per page
 - Use ignoreDeadLinks in config — fix the links instead
-- Put (tm) in frontmatter YAML — use Unicode ™ directly
 - Use <a href="javascript:void(0)"> — use <button> for actions
 ```
 
@@ -219,17 +220,19 @@ docs/                                # All site content
 │   │   ├── custom.css               # Brand colors, dark mode, layout overrides
 │   │   └── Layout.vue               # Footer with privacy/terms/cookies
 │   └── plugins/
-│       └── markdown-it-smartscript.ts  # (tm)→™ at build time
+│       └── markdown-it-smartscript.ts  # Typography conversions at build time
 ├── index.md                         # Homepage (layout: home with hero + features)
-├── getting-started/                 # 4 pages: intro, why, how, practice
-├── handbook/                        # 14 pages: full ACT assessment handbook
+├── introduction/                    # 4 pages: intro, why, how, practice
+├── agentic-act.md                   # Agentic ACT overview
 ├── templates.md                     # Download links to 38 template files
 ├── blog/                            # Blog index + posts
 ├── privacy-policy.md
 ├── terms-of-use.md
 └── public/                          # Static assets (served at root URL)
     ├── images/
-    ├── downloads/act-templates/     # 38 .docx/.xlsx/.pptx/.zip files
+    ├── downloads/act-templates/
+    │   ├── individual-templates/    # 38 .docx/.xlsx/.pptx/.zip files
+    │   └── MITRE ACT Template Set 20261125.zip
     ├── favicons/
     └── robots.txt
 

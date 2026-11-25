@@ -1,6 +1,6 @@
-# MITRE Adaptive Capabilities Testing (ACT)
+# MITRE Adaptive Cybersecurity Testing (ACT)
 
-The MITRE Adaptive Capabilities Testing (ACT) framework is a comprehensive approach to security and risk assessment that facilitates and encourages risk-based decision-making.
+The MITRE Adaptive Cybersecurity Testing (ACT) framework is a comprehensive approach to security and risk assessment that facilitates and encourages risk-based decision-making.
 
 ![MITRE ACT](./docs/public/images/mitre-act-arrow-square-600.png)
 
@@ -74,14 +74,12 @@ All site content lives in the `docs/` directory. Every `.md` file becomes a page
 
 ### File → URL Mapping
 
-| File Path                                       | URL                                      |
-| ----------------------------------------------- | ---------------------------------------- |
-| `docs/index.md`                                 | `/`                                      |
-| `docs/getting-started/index.md`                 | `/getting-started/`                      |
-| `docs/templates.md`                             | `/templates`                             |
-| `docs/handbook/index.md`                        | `/handbook/`                             |
-| `docs/handbook/act-process/phase-1-planning.md` | `/handbook/act-process/phase-1-planning` |
-| `docs/blog/act-website-goes-live.md`            | `/blog/act-website-goes-live`            |
+| File Path                            | URL                           |
+| ------------------------------------ | ----------------------------- |
+| `docs/index.md`                      | `/`                           |
+| `docs/introduction/index.md`         | `/introduction/`              |
+| `docs/templates.md`                  | `/templates`                  |
+| `docs/blog/act-website-goes-live.md` | `/blog/act-website-goes-live` |
 
 **Rules:**
 
@@ -94,28 +92,10 @@ All site content lives in the `docs/` directory. Every `.md` file becomes a page
 ```
 docs/
 ├── index.md                          # Homepage (uses layout: home)
-├── getting-started/
+├── introduction/
 │   └── index.md                      # Introduction to ACT
 ├── templates.md                      # Downloadable ACT templates
-├── handbook/                         # ACT Assessment Handbook
-│   ├── index.md                      # Handbook overview
-│   ├── introduction/
-│   │   ├── index.md                  # Introduction section
-│   │   ├── handbook-purpose.md
-│   │   ├── how-to-use.md
-│   │   └── framework-overview.md
-│   ├── act-process/
-│   │   ├── index.md                  # Process overview
-│   │   ├── phase-1-planning.md
-│   │   ├── phase-2-assessment.md
-│   │   ├── phase-3-reporting.md
-│   │   └── process-improvement.md
-│   ├── attachments/
-│   │   └── index.md
-│   └── reference/
-│       ├── index.md
-│       ├── acronyms.md
-│       └── footnotes.md
+├── agentic-act.md                    # Agentic ACT overview
 ├── blog/
 │   ├── index.md                      # Blog listing
 │   └── act-website-goes-live.md      # Blog post
@@ -207,10 +187,9 @@ Important warning.
 :::
 ```
 
-**Trademark symbols** — automatically converted at build time:
+Use Unicode `™` for trademarks, as in `MITRE ACT™`. Registration and copyright markers in Markdown body text are converted at build time.
 
 ```markdown
-MITRE ACT(tm) → MITRE ACT™
 Product(r) → Product®
 Copyright(c) → Copyright©
 ```
@@ -244,9 +223,9 @@ Navigation is configured in `docs/.vitepress/config.ts`:
 ```ts
 nav: [
   { text: 'Home', link: '/' },
-  { text: 'Getting Started', link: '/getting-started/' },
-  { text: 'Handbook', link: '/handbook/' },
+  { text: 'Introduction', link: '/introduction/' },
   { text: 'Templates', link: '/templates' },
+  { text: 'Agentic ACT', link: '/agentic-act' },
 ],
 ```
 
@@ -254,12 +233,12 @@ nav: [
 
 ```ts
 sidebar: {
-  '/handbook/': [
+  '/introduction/': [
     {
-      text: 'ACT Handbook',
-      link: '/handbook/',
+      text: 'Introduction',
+      link: '/introduction/',
       items: [
-        { text: 'Introduction', link: '/handbook/introduction/' },
+        { text: 'Why ACT Matters', link: '/introduction/why-act-matters' },
         // ... more items
       ],
     },
